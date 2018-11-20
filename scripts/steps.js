@@ -17,6 +17,12 @@ import {
   CoverageOptions
 } from './ui-components.js';
 
+import {
+  INSURANCE_SITUATION,
+  HAS_INSURANCE,
+  NO_INSURANCE
+} from './constants.js';
+
 export const welcome = new StepQuestion({
   label: 'Welcome, let\'s get your business insured.',
   explainer: 'We\'re goin to ask you a few details about you and your business. You should have a quote in no less than 5 minutes.',
@@ -39,11 +45,7 @@ export const currentSituation = new StepQuestion({
   id: 'currentSituation',
   fields: [
     new RadioGroup({
-      options: [
-        'I don\'t have any',
-        'I have an existing policy',
-        'I\'m not sure'
-      ],
+      options: INSURANCE_SITUATION,
       id: 'currentSituation',
       advance: true,
       form: 'introQuestions'
@@ -68,7 +70,7 @@ export const reasonForShopping = new StepQuestion({
       options: [
         'I just need proof of insurance',
         'I’m a new business',
-        'It’s about time I got covered',
+        'It’s about time I got the right coverage',
         'None of these'
       ],
       id: 'reasonForShopping',

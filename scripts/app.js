@@ -20,6 +20,11 @@ import {
   chooseCoverage
 } from './steps.js';
 
+import {
+  HAS_INSURANCE,
+  NO_INSURANCE,
+} from './constants.js';
+
 export const STATE = {
   currentStep: 0,
   currentSubstep: 0,
@@ -72,10 +77,20 @@ const navigateStep = step => {
   navigation.index = STATE.currentStep;
 
   if(step.fullWidth) {
-    console.log('hi');
     $('mainContainer').classList.add('main-container__full-width');
   } else {
     $('mainContainer').classList = 'main-container';
+  }
+
+  console.log(step)
+
+  if(step.id === 'reasonForShopping') {
+    if(STATE.data.introQuestions.currentSituation === 'I don\'t have any') {
+      console.log('match')
+      step.fields[0].options = NO_INSURANCE;
+    } else {
+      step.fields[0].options = HAS_INSURANCE;
+    }
   }
 
   render('breadCrumb', breadcrumb);

@@ -70,6 +70,7 @@ export class RadioGroup {
 
 export class StepQuestion {
   constructor(args) {
+    this.id = args.id;
     this.label = args.label;
     this.explainer = args.explainer;
     this.fields = args.fields;

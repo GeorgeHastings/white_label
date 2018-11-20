@@ -380,7 +380,7 @@ body {
   max-width: 40rem;
   padding-left: 5rem; }
   .right-rail code {
-    display: none;
+    display: block;
     font-family: 'Menlo';
     white-space: pre;
     font-size: 1.2rem;
