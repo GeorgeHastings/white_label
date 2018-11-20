@@ -87,6 +87,10 @@ body {
 	padding: 3rem;
 	height: 100%;
 	background-color: $white;
+
+	@media (max-width: $small) {
+		display: none;
+	}
 }
 
 .header {
@@ -190,6 +194,13 @@ body {
 	margin-left: 27rem;
 	padding: 5rem 7rem;
 
+	@media (max-width: $small) {
+		margin-left: 0;
+		width: 100%;
+		flex-direction: column;
+		padding: 3rem 5rem;
+	}
+
 	&.main-container__full-width {
 		flex-direction: column;
 
@@ -224,6 +235,10 @@ body {
 
 .step-container {
 	width: 66rem;
+
+	@media (max-width: $small) {
+		width: auto;
+	}
 }
 
 .question-heading {
@@ -257,6 +272,16 @@ body {
 	width: 100%;
 	max-width: 40rem;
 	padding-left: 5rem;
+
+	@media (max-width: $small) {
+		max-width: none;
+		padding: 0;
+		margin-top: 5rem;
+
+		.help-card {
+			padding: 0;
+		}
+	}
 
 	code {
 		display: block;
