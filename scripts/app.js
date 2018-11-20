@@ -82,11 +82,8 @@ const navigateStep = step => {
     $('mainContainer').classList = 'main-container';
   }
 
-  console.log(step)
-
   if(step.id === 'reasonForShopping') {
-    if(STATE.data.introQuestions.currentSituation === 'I don\'t have any') {
-      console.log('match')
+    if(STATE.data.introQuestions.currentSituation && STATE.data.introQuestions.currentSituation === 'I don\'t have any') {
       step.fields[0].options = NO_INSURANCE;
     } else {
       step.fields[0].options = HAS_INSURANCE;

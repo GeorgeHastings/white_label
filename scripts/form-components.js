@@ -129,9 +129,11 @@ export class InputField {
 
     input.onchange = this.onchange;
 
-    input.oninput = () => {
-      input.value = intToMoney(input.value);
-    };
+    if(this.money) {
+      input.oninput = () => {
+        input.value = intToMoney(input.value);
+      };
+    }
 
     if(entered) {
       input.value = entered;
