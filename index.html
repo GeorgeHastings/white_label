@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Attune</title>
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <meta name="description" content="Attune">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	  <meta name="apple-mobile-web-app-capable" content="yes" />
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <div class="sidebar">
+        <div class="header">
+          <div class="logo"></div>
+        </div>
+        <div id="navigationContainer" class="navigation-container">
+          <div class="navigation">
+            <div class="nav-item nav-item__active">
+              <div class="nav-circle"></div>
+              <span>About you</span>
+            </div>
+            <div class="nav-item">
+              <div class="nav-circle"></div>
+              <span>Business info</span>
+            </div>
+            <div class="nav-item">
+              <div class="nav-circle"></div>
+              <span>Coverage</span>
+            </div>
+          </div>
+        </div>
+        <div class="unlink">No longer interested?<br>Unlink this app</div>
+      </div>
+      <div id="mainContainer" class="main-container">
+        <div class="step-container">
+          <div id="breadCrumb" class="breadcrumb-container">
+            <div class="back-button">
+              <img src="assets/images/arrow.svg">
+            </div>
+            <div class="breadcrumb">1 / 3</div>
+          </div>
+          <div id="questionContainer" class="question-container">
+          </div>
+        </div>
+        <div id="rightRail" class="right-rail">
+          <div class="help-card">
+            <img src="assets/images/help.svg">
+            <div>
+              <h3>Need help?</h3>
+              <p class="small-text">Our licensed agents are standing by ready to assist you.</p>
+            </div>
+            <div class="button button__small button__secondary">Chat with an agent</div>
+          </div>
+          <div id="adminz-only"></div>
+        </div>
+      </div>
+    </div>
+    <canvas id="canvas"></canvas>
+  </body>
+  <script type="module" src="scripts/app.js"></script>
+</html>
