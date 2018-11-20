@@ -83,7 +83,7 @@ const navigateStep = step => {
   }
 
   if(step.id === 'reasonForShopping') {
-    if(STATE.data.introQuestions.currentSituation && STATE.data.introQuestions.currentSituation === 'I don\'t have any') {
+    if(STATE.data.introQuestions && STATE.data.introQuestions.currentSituation === 'I don\'t have any') {
       step.fields[0].options = NO_INSURANCE;
     } else {
       step.fields[0].options = HAS_INSURANCE;
