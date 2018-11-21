@@ -25,7 +25,7 @@ import {
 
 export const welcome = new StepQuestion({
   label: 'Welcome, let\'s get your business insured.',
-  explainer: 'We\'re goin to ask you a few details about you and your business. You should have a quote in no less than 5 minutes.',
+  explainer: 'We\'re going to ask you a few details about you and your business. You should have a quote in no less than 5 minutes.',
   id: 'propertyInfo',
   fields: [
     new Button({

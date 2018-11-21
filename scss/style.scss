@@ -319,7 +319,7 @@ body {
 .coverage-option {
 	width: calc(33.3% - 2rem);
 	background-color: $white;
-	padding: 3rem 3rem 5rem;
+	padding: 3rem;
 	text-align: center;
 
 	.button__tertiary {
@@ -338,6 +338,7 @@ body {
 .coverage-price {
 	display: flex;
 	margin-top: 3rem;
+	margin-bottom: 2rem;
 	font-size: 1.6rem;
 	justify-content: center;
 	align-items: flex-end;
