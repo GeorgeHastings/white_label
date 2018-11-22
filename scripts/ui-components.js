@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 
 import {
+  $,
   toHTML,
 } from './helpers.js';
 
@@ -40,7 +41,11 @@ export class NavigationItem {
   render() {
     const html = toHTML(`
       <div class="nav-item ${this.state}">
-        <div class="nav-circle"></div>
+        <div class="nav-circle">
+          <svg height="40" width="40">
+            <circle stroke-dasharray="160" stroke-dashoffset="0" cx="20" cy="20" r="18.5" stroke="#E6FAFA" stroke-width="3.2" fill="transparent" />
+          </svg>
+        </div>
         <span>${this.navName}</span>
       </div>
     `);
@@ -60,9 +65,25 @@ export class Navigation {
     this.subIndex = subIndex;
   }
 
+  update(amount) {
+    const navItems = $('navigation').querySelectorAll('.nav-item');
+
+    navItems.forEach((item, index) => {
+      if(index < this.index) {
+        item.classList = 'nav-item nav-item__complete';
+      } else if(index === this.index) {
+        item.classList = 'nav-item nav-item__active';
+        item.querySelector('circle').setAttribute('stroke-dasharray', 125);
+        item.querySelector('circle').setAttribute('stroke-dashoffset', (125*amount));
+      } else {
+        item.classList = 'nav-item';
+      }
+    });
+  }
+
   render() {
     const html = toHTML(`
-      <div class="navigation"></div>
+      <div id="navigation" class="navigation"></div>
     `);
     const parent = html.querySelector('.navigation');
 
@@ -90,7 +111,7 @@ export class Button {
 
   render() {
     const html = toHTML(`
-      <a class="button ${this.style}" href="javscript:void(0)">${this.text}</a>
+      <a class="button ${this.style}" href="javascript:void(0)">${this.text}</a>
     `);
 
     html.querySelector('.button').onclick = this.handleClick;

@@ -92,16 +92,25 @@ const navigateStep = step => {
 
   render('breadCrumb', breadcrumb);
   render('questionContainer', step);
-  render('navigationContainer', navigation);
+
+  if($('navigation')) {
+    navigation.update(breadcrumb.currentStep/breadcrumb.totalSteps);
+  } else {
+    render('navigationContainer', navigation);
+    navigation.update(breadcrumb.currentStep/breadcrumb.totalSteps);
+  }
 };
 
 export const stepForwards = () => {
   STATE.currentSubstep++;
+  navigation.subIndex++;
   let step = STEPS[STATE.currentStep][STATE.currentSubstep];
 
   if(!step) {
     STATE.currentStep++;
+    navigation.index++;
     STATE.currentSubstep = 0;
+    navigation.subIndex = 0;
 
     if(STEPS[STATE.currentStep]) {
       step = STEPS[STATE.currentStep][STATE.currentSubstep];
@@ -115,11 +124,14 @@ export const stepForwards = () => {
 
 export const stepBackwards = () => {
   STATE.currentSubstep--;
+  navigation.subIndex--;
   let step = STEPS[STATE.currentStep][STATE.currentSubstep];
 
   if(!step) {
     STATE.currentStep--;
+    navigation.index--;
     STATE.currentSubstep = STEPS[STATE.currentStep].length - 1;
+    navigation.subIndex = STEPS[STATE.currentStep].length - 1;
 
     if(STEPS[STATE.currentStep]) {
       step = STEPS[STATE.currentStep][STATE.currentSubstep];

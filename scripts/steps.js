@@ -115,7 +115,7 @@ export const insuranceLiteracy = new StepQuestion({
 });
 
 export const contactInfo = new StepQuestion({
-  label: 'Now let\'s cover some basics.',
+  label: 'Let\'s cover some basics.',
   explainer: 'We can use this to pull some data automatically to speed up the process.',
   id: 'contactInfo',
   fields: [

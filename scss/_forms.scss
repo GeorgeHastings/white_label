@@ -41,6 +41,10 @@
     margin-bottom: 2rem;
     font-weight: 500;
   }
+
+  & + .button__primary {
+    margin-top: 5rem;
+  }
 }
 
 input[type="text"],
@@ -151,7 +155,7 @@ input[type="radio"] {
   display: inline-block;
   margin-right: auto;
   padding: 3rem 5rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
   background-color: $blue;
   color: $white;
   font-size: 1.8rem;
