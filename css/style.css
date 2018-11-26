@@ -56,11 +56,11 @@ table {
   .form-field__zip {
     width: calc(30% - 1.5rem); }
   .form-field + .form-field {
-    margin-top: 3rem; }
+    margin-top: 4rem; }
   .form-field > label {
     display: block;
     margin-bottom: 2rem;
-    font-weight: 500; }
+    font-weight: 600; }
   .form-field + .button__primary {
     margin-top: 5rem; }
 
@@ -71,7 +71,7 @@ input[type="number"] {
   width: 100%;
   border: 0;
   border-radius: 0.3rem;
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   padding: 0 3rem;
   transition: box-shadow 0.15s ease; }
   input[type="text"]:focus,
@@ -84,14 +84,15 @@ input[type="number"] {
   flex-wrap: wrap;
   justify-content: space-between; }
   .address-fields-container .form-field {
-    margin-bottom: 1.5rem;
     margin-top: 0; }
+  .address-fields-container .form-field:first-child {
+    margin-bottom: 1.5rem; }
 
 input[type="radio"] {
   display: inline-block;
   position: absolute;
   top: 50%;
-  left: 5rem;
+  left: 3rem;
   width: 3rem;
   height: 3rem;
   -webkit-appearance: none;
@@ -120,11 +121,11 @@ input[type="radio"] {
     .radio-group .radio-button + .radio-button {
       margin-top: 1.5rem; }
     .radio-group .radio-button label {
-      position: relative;
-      display: inline-block;
-      padding: 0 7rem 0 10rem;
       height: 7.5rem;
       line-height: 7.5rem;
+      position: relative;
+      display: inline-block;
+      padding: 0 5rem 0 8rem;
       margin-bottom: 0;
       width: inherit;
       overflow: hidden;
@@ -150,7 +151,7 @@ input[type="radio"] {
   background-color: #0D00FF;
   color: #ffffff;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   border-radius: 0.3rem;
   cursor: pointer;
@@ -170,7 +171,7 @@ input[type="radio"] {
     text-align: left;
     margin-top: 1.5rem;
     padding: 2rem 5rem;
-    font-weight: 400; }
+    font-weight: 500; }
   .button__small {
     padding: 1.5rem 3rem;
     font-size: 1.6rem;
@@ -178,6 +179,29 @@ input[type="radio"] {
   .button:focus {
     outline: none;
     box-shadow: 0 0 0 0.4rem #E6FAFA, 0 0 0 0.7rem #00E5E6; }
+
+@font-face {
+  font-family: 'GT America';
+  src: url("/assets/fonts/GT-America-Standard-Regular.eot");
+  src: url("/assets/fonts/GT-America-Standard-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/GT-America-Standard-Regular.woff2") format("woff2"), url("/assets/fonts/GT-America-Standard-Regular.woff") format("woff"), url("/assets/fonts/GT-America-Standard-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'GT America';
+  src: url("/assets/fonts/GT-America-Standard-Medium.eot");
+  src: url("/assets/fonts/GT-America-Standard-Medium.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/GT-America-Standard-Medium.woff2") format("woff2"), url("/assets/fonts/GT-America-Standard-Medium.woff") format("woff"), url("/assets/fonts/GT-America-Standard-Medium.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'GT America';
+  src: url("/assets/fonts/GT-America-Standard-Bold.eot");
+  src: url("/assets/fonts/GT-America-Standard-Bold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/GT-America-Standard-Bold.woff2") format("woff2"), url("/assets/fonts/GT-America-Standard-Bold.woff") format("woff"), url("/assets/fonts/GT-America-Standard-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-weight: 700;
+  font-style: normal; }
 
 h1, h2, h3, h4, p {
   line-height: 1.5; }
@@ -187,14 +211,14 @@ h1 {
   margin-top: 3rem;
   font-size: 3.2rem;
   margin-bottom: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   color: inherit; }
 
 h2 {
   display: inline-block;
   margin-bottom: 1rem;
   font-size: 3.6rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #0A1031; }
   h2 a {
     color: inherit;
@@ -206,7 +230,7 @@ h3 {
   display: inline-block;
   margin-bottom: 1rem;
   font-size: 2.1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: inherit; }
 
 h4 {
@@ -286,7 +310,7 @@ body {
   padding: 1rem 2rem;
   background-color: #ffffff;
   color: #0D00FF;
-  font-weight: 500; }
+  font-weight: 600; }
 
 .navigation {
   margin-top: 5rem; }
@@ -304,8 +328,8 @@ body {
       border: 0.3rem solid #0D00FF;
       background-color: #ffffff; }
     .nav-item__active svg {
-      top: -0.32rem;
-      left: -0.32rem; }
+      top: -0.3rem;
+      left: -0.3rem; }
   .nav-item__complete .nav-circle {
     position: relative;
     background-color: #0D00FF;
@@ -452,7 +476,7 @@ body {
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   color: #0D00FF; }
 
 .coverage-price {

@@ -43,7 +43,7 @@ export class NavigationItem {
       <div class="nav-item ${this.state}">
         <div class="nav-circle">
           <svg height="4rem" width="4rem">
-            <circle stroke-dasharray="160" stroke-dashoffset="0" cx="2rem" cy="2rem" r="1.82rem" stroke="#E6FAFA" stroke-width="0.38rem" fill="transparent" />
+            <circle stroke-dasharray="16rem" stroke-dashoffset="0" cx="2rem" cy="2rem" r="1.82rem" stroke="#E6FAFA" stroke-width="0.38rem" fill="transparent" />
           </svg>
         </div>
         <span>${this.navName}</span>
@@ -73,8 +73,8 @@ export class Navigation {
         item.classList = 'nav-item nav-item__complete';
       } else if(index === this.index) {
         item.classList = 'nav-item nav-item__active';
-        item.querySelector('circle').setAttribute('stroke-dasharray', 125);
-        item.querySelector('circle').setAttribute('stroke-dashoffset', (125*amount));
+        item.querySelector('circle').setAttribute('stroke-dasharray', '12.5rem');
+        item.querySelector('circle').setAttribute('stroke-dashoffset', (125*amount*0.1)+'rem');
       } else {
         item.classList = 'nav-item';
       }

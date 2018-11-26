@@ -9,6 +9,111 @@
 	],
 "creatorBuild": "28905",
 "files": {
+	"/assets/fonts/GT-America-Standard-Bold.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Bold.eot",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Bold.otf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Bold.otf",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Bold.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Bold.ttf",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Bold.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Bold.woff",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Bold.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Bold.woff2",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Medium.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Medium.eot",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Medium.otf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Medium.otf",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Medium.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Medium.ttf",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Medium.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Medium.woff",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Medium.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Medium.woff2",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Regular.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Regular.eot",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Regular.otf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Regular.otf",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Regular.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Regular.ttf",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Regular.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Regular.woff",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Regular.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Regular.woff2",
+		"oF": 0
+		},
 	"/assets/images/arrow.svg": {
 		"ft": 2097152,
 		"miP": 0,

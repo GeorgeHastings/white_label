@@ -25,7 +25,7 @@ import {
 
 export const welcome = new StepQuestion({
   label: 'Welcome, let\'s get your business insured.',
-  explainer: 'We\'re going to ask you a few details about you and your business. You should have a quote in no less than 5 minutes.',
+  explainer: 'We\'re going to ask you a few details about you and your business. You should have a quote in as few as 5 minutes.',
   id: 'propertyInfo',
   fields: [
     new Button({
@@ -120,15 +120,25 @@ export const contactInfo = new StepQuestion({
   id: 'contactInfo',
   fields: [
     new InputField({
-      label: 'Business name',
+      label: 'Legal business name',
       type: 'text',
-      id: 'businessName',
+      id: 'legalBusinessName',
       form: 'bizDetails'
     }),
+    new RadioGroup({
+      options: [
+        'Yes',
+        'No'
+      ],
+      id: 'hasBizDba',
+      label: 'Does your busiess operate under a different name?',
+      form: 'bizDetails',
+      style: 'radio-group__split'
+    }),
     new InputField({
-      label: 'Email address',
+      label: 'Business email address',
       type: 'text',
-      id: 'emailAddress',
+      id: 'bizEmailAddress',
       form: 'bizDetails'
     }),
     new AddressField({
@@ -141,8 +151,8 @@ export const contactInfo = new StepQuestion({
         'Yes',
         'No'
       ],
-      id: 'moreThanOneLocation',
-      label: 'Do you operate more than one location?',
+      id: 'sameAsMailing',
+      label: 'Is this the same as your mailing address?',
       form: 'bizDetails',
       style: 'radio-group__split'
     }),
@@ -164,10 +174,10 @@ export const ownOrRent = new StepQuestion({
   fields: [
     new RadioGroup({
       options: [
+        'I have a home office',
         'I rent my workspace',
         'I own an office or building that I rent to a tenant',
         'I own a building that I fully occupy',
-        'I have a home office',
       ],
       id: 'ownOrRent',
       form: 'bizDetails'
@@ -186,10 +196,20 @@ export const ownOrRent = new StepQuestion({
 //Exposure
 
 export const basicBizInfo = new StepQuestion({
-  label: 'Tell us about your operation.',
+  label: 'Tell us about your business.',
   explainer: 'This information helps us better understand your risk.',
   id: 'operationsInfo',
   fields: [
+    new RadioGroup({
+      options: [
+        'Yes',
+        'No'
+      ],
+      id: 'moreThanOneLocation',
+      label: 'Do you operate more than one location?',
+      form: 'bizDetails',
+      style: 'radio-group__split'
+    }),
     new InputField({
       label: 'Number of employees',
       type: 'number',
@@ -223,7 +243,7 @@ export const basicBizInfo = new StepQuestion({
 
 export const propertyInfo = new StepQuestion({
   label: 'What is the total value of the property you would like to insure?',
-  explainer: 'Your insurance policy must include the value of all of the belongings owned by your business. This includes things like furniture and equipment. It does not include vehicles.',
+  explainer: 'Your policy must include the cost of replacing all of the belongings owned by your business. This includes things like furniture and equipment. It does not include vehicles.',
   id: 'propertyInfo',
   fields: [
     new InputField({
