@@ -304,8 +304,8 @@ body {
       border: 0.3rem solid #0D00FF;
       background-color: #ffffff; }
     .nav-item__active svg {
-      top: -0.3rem;
-      left: -0.3rem; }
+      top: -0.32rem;
+      left: -0.32rem; }
   .nav-item__complete .nav-circle {
     position: relative;
     background-color: #0D00FF;

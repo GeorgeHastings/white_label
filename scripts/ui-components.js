@@ -42,8 +42,8 @@ export class NavigationItem {
     const html = toHTML(`
       <div class="nav-item ${this.state}">
         <div class="nav-circle">
-          <svg height="40" width="40">
-            <circle stroke-dasharray="160" stroke-dashoffset="0" cx="20" cy="20" r="18.5" stroke="#E6FAFA" stroke-width="3.2" fill="transparent" />
+          <svg height="4rem" width="4rem">
+            <circle stroke-dasharray="160" stroke-dashoffset="0" cx="2rem" cy="2rem" r="1.82rem" stroke="#E6FAFA" stroke-width="0.38rem" fill="transparent" />
           </svg>
         </div>
         <span>${this.navName}</span>
