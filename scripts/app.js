@@ -16,6 +16,7 @@ import {
   contactInfo,
   ownOrRent,
   basicBizInfo,
+  buildingInfo,
   propertyInfo,
   chooseCoverage
 } from './steps.js';
@@ -42,6 +43,9 @@ const STEPS = [
     contactInfo,
     ownOrRent,
     basicBizInfo,
+  ],
+  [
+    buildingInfo,
     propertyInfo
   ],
   [
@@ -89,6 +93,8 @@ const navigateStep = step => {
       step.fields[0].options = HAS_INSURANCE;
     }
   }
+
+  window.scrollTo(0, 0);
 
   render('breadCrumb', breadcrumb);
   render('questionContainer', step);

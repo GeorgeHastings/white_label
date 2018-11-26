@@ -5,25 +5,6 @@
 
 * {box-sizing: border-box;}
 
-$white: #ffffff;
-$black: #0A1031;
-$gray: #7392B0;
-
-$blue: #0D00FF;
-$teal: #00E5E6;
-$teal10: #E6FAFA;
-$pink: #FD337D;
-
-$background-color: $teal10;
-$text-color: $black;
-
-$mobile: 580px;
-$small: 768px;
-$full: 1440px;
-$big: 1600px;
-$huge: 1820px;
-
-
 @mixin section-padding {
 	padding: 6rem 8rem;
 
@@ -48,6 +29,10 @@ $huge: 1820px;
 			transform: translate3d(0, 0rem, 0);
 		}
 	}
+}
+
+._hidden {
+	display: none;
 }
 
 body,
@@ -91,10 +76,6 @@ body {
 	@media (max-width: $small) {
 		display: none;
 	}
-}
-
-.header {
-
 }
 
 .logo {

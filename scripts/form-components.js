@@ -3,7 +3,8 @@
 import {
   $,
   toHTML,
-  intToMoney
+  intToMoney,
+  getFormField
 } from './helpers.js';
 
 import {
@@ -21,6 +22,7 @@ export class RadioGroup {
     this.form = args.form || null;
     this.style = args.style;
     this.onchange = this.onchange.bind(this);
+    this.conditional = args.conditional;
   }
 
   onchange(index) {
@@ -29,10 +31,19 @@ export class RadioGroup {
       value: this.options[index],
       form: this.form
     });
+
     if(this.advance) {
       setTimeout(() => {
         stepForwards();
       }, 400);
+    }
+
+    if(this.conditional) {
+      if(this.conditional.value === this.options[index]) {
+        $(this.conditional.target).parentElement.classList.remove('_hidden');
+      } else {
+        $(this.conditional.target).parentElement.classList.add('_hidden');
+      }
     }
   }
 
@@ -107,6 +118,8 @@ export class InputField {
     this.form = args.form || null;
     this.onchange = this.onchange.bind(this);
     this.money = args.money;
+    this.focusTip = args.focusTip;
+    this.hide = args.hide;
   }
 
   onchange(ev) {
@@ -120,9 +133,10 @@ export class InputField {
   render() {
     const entered = this.form && STATE.data[this.form] ? STATE.data[this.form][this.id] : STATE.data[this.id];
     const html = toHTML(`
-      <div class="form-field ${this.style}">
+      <div class="form-field ${this.style} ${this.hide ? `_hidden` : ''}">
         ${this.label ? `<label>${this.label}</label>` : ''}
         <input id="${this.id}" type="${this.type}" placeholder="${this.placeholder}">
+        ${this.focusTip ? `<span class="focus-tip">${this.focusTip}</span>` : ''}
       </div>
     `);
     const input = html.querySelector('input');
@@ -148,13 +162,15 @@ export class AddressField {
     this.id = args.id;
     this.label = args.label;
     this.form = args.form;
+    this.hide = args.hide;
+    this.style = args.style;
   }
 
   render() {
     const html = toHTML(`
-      <div class="form-field">
+      <div class="form-field ${this.style} ${this.hide ? '_hidden' : ''}">
         <label>${this.label}</label>
-        <div class="address-fields-container"></div>
+        <div class="address-fields-container" id="${this.id}"></div>
       </div>
     `);
     const parent = html.querySelector('.address-fields-container');

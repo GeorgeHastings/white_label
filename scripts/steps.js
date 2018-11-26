@@ -133,13 +133,26 @@ export const contactInfo = new StepQuestion({
       id: 'hasBizDba',
       label: 'Does your busiess operate under a different name?',
       form: 'bizDetails',
-      style: 'radio-group__split'
+      style: 'radio-group__split',
+      conditional: {
+        value: 'Yes',
+        target: 'doingBizAs'
+      }
+    }),
+    new InputField({
+      label: 'Doing business as name',
+      type: 'text',
+      id: 'doingBizAs',
+      form: 'bizDetails',
+      style: 'load-in',
+      hide: true
     }),
     new InputField({
       label: 'Business email address',
       type: 'text',
       id: 'bizEmailAddress',
-      form: 'bizDetails'
+      form: 'bizDetails',
+      focusTip: 'Invoices will be sent to this email.'
     }),
     new AddressField({
       label: 'Business address',
@@ -154,7 +167,18 @@ export const contactInfo = new StepQuestion({
       id: 'sameAsMailing',
       label: 'Is this the same as your mailing address?',
       form: 'bizDetails',
-      style: 'radio-group__split'
+      style: 'radio-group__split',
+      conditional: {
+        value: 'No',
+        target: 'businessMailingAddress'
+      }
+    }),
+    new AddressField({
+      label: 'Business mailing address',
+      id: 'businessMailingAddress',
+      form: 'bizMailingAddress',
+      style: 'load-in',
+      hide: true
     }),
     new Button({
       id: 'nextButton',
@@ -241,6 +265,40 @@ export const basicBizInfo = new StepQuestion({
   ]
 });
 
+export const buildingInfo = new StepQuestion({
+  label: 'Give us some details about your building.',
+  explainer: 'This information helps us better understand your risk.',
+  id: 'propertyInfo',
+  fields: [
+    new InputField({
+      label: 'Square footage of your building',
+      type: 'number',
+      id: 'squareFootage',
+      form: 'propertyInfo'
+    }),
+    new RadioGroup({
+      options: [
+        '1',
+        '2',
+        '3',
+        '4+'
+      ],
+      id: 'numberOfFloors',
+      label: 'Number of stories in the building',
+      form: 'propertyInfo',
+      style: 'radio-group__split'
+    }),
+    new Button({
+      id: 'nextButton',
+      style: 'button__primary',
+      text: 'Next',
+      handleClick: () => {
+        stepForwards();
+      }
+    })
+  ]
+});
+
 export const propertyInfo = new StepQuestion({
   label: 'What is the total value of the property you would like to insure?',
   explainer: 'Your policy must include the cost of replacing all of the belongings owned by your business. This includes things like furniture and equipment. It does not include vehicles.',
@@ -253,12 +311,6 @@ export const propertyInfo = new StepQuestion({
       form: 'propertyInfo',
       money: true
     }),
-    // new InputField({
-    //   label: 'Square footage of your building',
-    //   type: 'number',
-    //   id: 'squareFootage',
-    //   form: 'propertyInfo'
-    // }),
     new Button({
       id: 'nextButton',
       style: 'button__primary',

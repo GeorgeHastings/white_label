@@ -16,11 +16,17 @@ export const intToMoney = (value) => {
   let commator = 3;
   val = val.replace(/([,$]|\D)/g,'');
   let len = val.length;
-  console.log(val)
   while(commator < len) {
     let comma = len - commator;
     val = val.splice(comma, 0, ',');
     commator += 3;
   }
   return '$' + val;
+};
+
+export const getFormField = function ( elem, selector ) {
+  if(!elem.classList.contains('form-field')){
+    while ((elem = elem.parentElement) && !elem.classList.contains(selector));
+  }
+  return elem;
 };

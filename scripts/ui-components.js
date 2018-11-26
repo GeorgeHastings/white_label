@@ -9,6 +9,10 @@ import {
   stepBackwards
 } from './app.js';
 
+import {
+  NAVIGATION_ITEMS
+} from './constants.js';
+
 export class BreadCrumb {
   constructor(showBackButton, currentStep, totalSteps) {
     this.showBackButton = showBackButton;
@@ -56,11 +60,7 @@ export class NavigationItem {
 
 export class Navigation {
   constructor(index, subIndex) {
-    this.items = [
-      'About you',
-      'Business info',
-      'Coverage'
-    ];
+    this.items = NAVIGATION_ITEMS;
     this.index = index;
     this.subIndex = subIndex;
   }
@@ -73,8 +73,8 @@ export class Navigation {
         item.classList = 'nav-item nav-item__complete';
       } else if(index === this.index) {
         item.classList = 'nav-item nav-item__active';
-        item.querySelector('circle').setAttribute('stroke-dasharray', '12.5rem');
-        item.querySelector('circle').setAttribute('stroke-dashoffset', (125*amount*0.1)+'rem');
+        item.querySelector('circle').setAttribute('stroke-dasharray', '11.68rem');
+        item.querySelector('circle').setAttribute('stroke-dashoffset', (120*amount*0.1)+'rem');
       } else {
         item.classList = 'nav-item';
       }

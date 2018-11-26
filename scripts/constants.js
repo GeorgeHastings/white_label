@@ -17,3 +17,10 @@ export const NO_INSURANCE = [
   'I just need to check the box',
   'It\'s time to get coverered',
 ];
+
+export const NAVIGATION_ITEMS = [
+  'About you',
+  'Business info',
+  'Property info',
+  'Coverage'
+];
