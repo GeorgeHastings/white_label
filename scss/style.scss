@@ -5,32 +5,6 @@
 
 * {box-sizing: border-box;}
 
-@mixin section-padding {
-	padding: 6rem 8rem;
-
-	@media (max-width: $small) {
-		padding: 3rem 4rem;
-	}
-}
-
-@mixin load-in {
-	transform: translate3d(0, 1em, 0);
-	opacity: 0;
-	animation: loadin 0.25s cubic-bezier(.74,.24,.21,.77);
-	animation-fill-mode: forwards;
-
-	@keyframes loadin {
-		0% {
-			transform: translate3d(0, 1em, 0);
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-			transform: translate3d(0, 0rem, 0);
-		}
-	}
-}
-
 ._hidden {
 	display: none;
 }
@@ -44,10 +18,10 @@ html {
 		font-size: 8px;
 	}
 	@media (min-width: $big) {
-		font-size: 12px;
+		font-size: 11px;
 	}
 	@media (min-width: $huge) {
-		font-size: 14px;
+		font-size: 12px;
 	}
 }
 
@@ -98,6 +72,7 @@ body {
 	bottom: 0rem;
 	left: 0rem;
 	padding: 3rem;
+	font-size: 1.6rem;
 	color: $gray;
 }
 
@@ -153,17 +128,9 @@ body {
 				display: inline-block;
 			}
 
-			// &:after {
-			// 	position: absolute;
-			// 	left: 0;
-			// 	right: 0;
-			// 	top: 4rem;
-			// 	margin: 0 auto;
-			// 	content: "";
-			// 	width: 0.3rem;
-			// 	height: 2rem;
-			// 	background-color: $blue;
-			// }
+			svg {
+				display: none;
+			}
 		}
 	}
 }
@@ -216,7 +183,7 @@ body {
 		.right-rail {
 			max-width: none;
 			padding-left: 0;
-			margin-top: 4rem;
+			margin-top: 5rem;
 		}
 
 		.help-card {
@@ -300,7 +267,11 @@ body {
 }
 
 .load-in {
-	@include load-in
+	@include load-in;
+}
+
+.load-up {
+	@include load-up;
 }
 
 .help-card {
@@ -328,7 +299,8 @@ body {
 .coverage-option {
 	width: calc(33.3% - 2rem);
 	background-color: $white;
-	padding: 3rem;
+	padding: 5rem 3rem;
+	border-radius: 0.5rem;
 	text-align: center;
 
 	.button__tertiary {
@@ -351,10 +323,15 @@ body {
 .coverage-price {
 	display: flex;
 	margin-top: 3rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	font-size: 1.6rem;
 	justify-content: center;
 	align-items: flex-end;
+}
+
+.price-annual {
+	font-size: 1.6rem;
+	// color: $gray;
 }
 
 .coverage-dollars {

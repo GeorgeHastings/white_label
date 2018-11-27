@@ -27,7 +27,7 @@ import {
 } from './constants.js';
 
 export const STATE = {
-  currentStep: 0,
+  currentStep: 3,
   currentSubstep: 0,
   data: {}
 };
@@ -105,6 +105,10 @@ const navigateStep = step => {
     render('navigationContainer', navigation);
     navigation.update(breadcrumb.currentStep/breadcrumb.totalSteps);
   }
+
+  // const searchParamString = `q=URLUtils.searchParams&step=${STATE.currentStep}&substep=${STATE.currentSubstep}`;
+  // const searchParams = new URLSearchParams(searchParamString);
+  // window.location.replace(window.location.origin + searchParams);
 };
 
 export const stepForwards = () => {
@@ -150,7 +154,7 @@ export const stepBackwards = () => {
 };
 
 const onInit = () => {
-  navigateStep(welcome);
+  navigateStep(STEPS[STATE.currentStep][STATE.currentSubstep]);
 };
 
 onInit();

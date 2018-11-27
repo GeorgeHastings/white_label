@@ -53,3 +53,53 @@ $huge: 1820px;
 }
 
 $grotesk: 'GT America', -apple-system, BlinkMacSystemFont, Helvetica, 'Helvetica Neue', Arial, sans-serif;
+
+@mixin section-padding {
+	padding: 6rem 8rem;
+
+	@media (max-width: $small) {
+		padding: 3rem 4rem;
+	}
+}
+
+@mixin load-in {
+	transform: translate3d(0, 1em, 0);
+	opacity: 0;
+	animation: loadin 0.25s cubic-bezier(.74,.24,.21,.77);
+	animation-fill-mode: forwards;
+
+	@keyframes loadin {
+		0% {
+			transform: translate3d(0, 1em, 0);
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+			transform: translate3d(0, 0rem, 0);
+		}
+	}
+}
+
+@mixin load-up {
+	transform: translate3d(0, -1em, 0);
+	opacity: 0;
+	animation: loadup 0.25s cubic-bezier(.74,.24,.21,.77);
+	animation-fill-mode: forwards;
+  margin-top: -3rem;
+
+	@keyframes loadup {
+		0% {
+      margin-top: -3rem;
+			transform: translate3d(0, -1em, 0);
+			opacity: 0;
+		}
+    50% {
+      opacity: 0;
+    }
+		100% {
+      margin-top: 4rem;
+			opacity: 1;
+			transform: translate3d(0, 0rem, 0);
+		}
+	}
+}

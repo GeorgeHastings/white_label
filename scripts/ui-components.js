@@ -137,6 +137,7 @@ export class CoverageOption {
           <div class="coverage-dollars">${this.price}</div>
           / month
         </div>
+        <div class="price-annual">or $${this.price*12 - 60}/year</div>
         <div class="button button__small ${this.actionStyle}">Choose this</div>
         <div class="coverage-limits">
           ${this.coverages.map(coverage => {
@@ -148,7 +149,6 @@ export class CoverageOption {
             `;
           }).join(' ')}
         </div>
-        <div class="button__small button__tertiary">Learn more</div>
       </div>
     `);
 

@@ -144,7 +144,7 @@ export const contactInfo = new StepQuestion({
       type: 'text',
       id: 'doingBizAs',
       form: 'bizDetails',
-      style: 'load-in',
+      style: 'load-up',
       hide: true
     }),
     new InputField({
@@ -177,7 +177,7 @@ export const contactInfo = new StepQuestion({
       label: 'Business mailing address',
       id: 'businessMailingAddress',
       form: 'bizMailingAddress',
-      style: 'load-in',
+      style: 'load-up',
       hide: true
     }),
     new Button({
@@ -245,14 +245,16 @@ export const basicBizInfo = new StepQuestion({
       type: 'text',
       id: 'annualRevenue',
       form: 'operationsInfo',
-      money: true
+      money: true,
+      hide: true
     }),
     new InputField({
       label: 'Revenue from alcohol sales',
       type: 'text',
       id: 'alcoholRevenue',
       form: 'operationsInfo',
-      money: true
+      money: true,
+      hide: true
     }),
     new Button({
       id: 'nextButton',
