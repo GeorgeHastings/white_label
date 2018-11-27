@@ -131,7 +131,7 @@ export const contactInfo = new StepQuestion({
         'No'
       ],
       id: 'hasBizDba',
-      label: 'Does your busiess operate under a different name?',
+      label: 'Does your business operate under a different name?',
       form: 'bizDetails',
       style: 'radio-group__split',
       conditional: {
