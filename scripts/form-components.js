@@ -8,7 +8,7 @@ import {
 } from './helpers.js';
 
 import {
-  STATE,
+  getStatePropValue,
   updateState,
   stepForwards,
 } from './app.js';
@@ -62,7 +62,7 @@ export class RadioGroup {
       </div>`);
 
     html.querySelectorAll('input').forEach((input, index) => {
-      const selected = this.form && STATE.data[this.form] ? STATE.data[this.form][this.id] : STATE.data[this.id];
+      const selected = getStatePropValue(this.id);
 
       input.onchange = () => {
         this.onchange(index);
@@ -73,35 +73,6 @@ export class RadioGroup {
       } else {
         input.checked = false;
       }
-    });
-
-    return html.body.childNodes[0];
-  }
-}
-
-export class StepQuestion {
-  constructor(args) {
-    this.id = args.id;
-    this.label = args.label;
-    this.explainer = args.explainer;
-    this.components = args.components;
-    this.fullWidth = args.fullWidth;
-  }
-
-  render() {
-    const html = toHTML(`
-      <div class="load-in">
-        <div class="question-heading">
-          <h1>${this.label}</h1>
-          <p class="explainer">${this.explainer}</p>
-        </div>
-        <div class="form-container"></div>
-      </div>
-    `);
-    const parent = html.querySelector('.form-container');
-
-    this.components.forEach(component => {
-      parent.appendChild(component.render());
     });
 
     return html.body.childNodes[0];
@@ -131,7 +102,7 @@ export class InputField {
   }
 
   render() {
-    const entered = this.form && STATE.data[this.form] ? STATE.data[this.form][this.id] : STATE.data[this.id];
+    const entered = this.form && getStatePropValue(this.id);
     const html = toHTML(`
       <div class="form-field ${this.style} ${this.hide ? `_hidden` : ''}">
         ${this.label ? `<label>${this.label}</label>` : ''}

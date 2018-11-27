@@ -122,6 +122,40 @@ export class Button {
   }
 }
 
+export class StepQuestion {
+  constructor(args) {
+    this.id = args.id;
+    this.label = args.label;
+    this.explainer = args.explainer;
+    this.components = args.components;
+    this.fullWidth = args.fullWidth;
+    this.oninit = args.oninit && args.oninit.bind(this);
+  }
+
+  render() {
+    if(this.oninit) {
+      this.oninit(this);
+    }
+
+    const html = toHTML(`
+      <div class="load-in">
+        <div class="question-heading">
+          <h1>${this.label}</h1>
+          <p class="explainer">${this.explainer}</p>
+        </div>
+        <div class="form-container"></div>
+      </div>
+    `);
+    const parent = html.querySelector('.form-container');
+
+    this.components.forEach(component => {
+      parent.appendChild(component.render());
+    });
+
+    return html.body.childNodes[0];
+  }
+}
+
 export class CoverageOption {
   constructor(args) {
     this.id = args.id;
@@ -156,7 +190,7 @@ export class CoverageOption {
 
     html.querySelector('.button').onclick = () => {
       updateState({
-        id: 'coverageOptions',
+        id: 'coverageOption',
         value: this.id,
       });
       stepForwards();
@@ -167,6 +201,25 @@ export class CoverageOption {
 }
 
 export class CoverageOptions {
+  constructor(args) {
+    this.id = args.id;
+    this.options = args.options;
+  }
+
+  render() {
+    const html = toHTML(`
+      <div class="coverage-container"></div>
+    `);
+
+    this.options.forEach(option => {
+      html.querySelector('.coverage-container').appendChild(option.render());
+    });
+
+    return html.body.childNodes[0];
+  }
+}
+
+export class DetailsSummary {
   constructor(args) {
     this.id = args.id;
     this.options = args.options;

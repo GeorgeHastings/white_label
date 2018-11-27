@@ -1,7 +1,6 @@
 /*jshint esversion: 6 */
 
 import {
-  StepQuestion,
   RadioGroup,
   InputField,
   AddressField,
@@ -10,12 +9,14 @@ import {
 
 import {
   stepForwards,
+  getStatePropValue
 } from './app.js';
 
 import {
   Button,
   CoverageOption,
-  CoverageOptions
+  CoverageOptions,
+  StepQuestion,
 } from './ui-components.js';
 
 import {
@@ -242,6 +243,24 @@ export const basicBizInfo = new StepQuestion({
       form: 'operationsInfo'
     }),
     new InputField({
+      label: 'Square footage of your building',
+      type: 'number',
+      id: 'squareFootage',
+      form: 'propertyInfo'
+    }),
+    new RadioGroup({
+      options: [
+        '1',
+        '2',
+        '3',
+        '4+'
+      ],
+      id: 'numberOfFloors',
+      label: 'Number of stories in the building',
+      form: 'propertyInfo',
+      style: 'radio-group__split'
+    }),
+    new InputField({
       label: 'Annual revenue',
       type: 'text',
       id: 'annualRevenue',
@@ -415,12 +434,15 @@ export const reviewCoverage = new StepQuestion({
     new Button({
       id: 'nextButton',
       style: 'button__primary',
-      text: 'Choose this coverage',
+      text: 'Continue with this',
       handleClick: () => {
         stepForwards();
       }
     })
-  ]
+  ],
+  oninit: self => {
+    self.label = `Summary of ${getStatePropValue('coverageOption').replace('Coverage', '')} coverage`;
+  }
 });
 
 export const effectiveDate = new StepQuestion({

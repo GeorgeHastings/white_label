@@ -132,6 +132,9 @@ input[type="number"] {
   display: flex; }
   .date-picker-container .form-field {
     margin-top: 0; }
+  .date-picker-container .form-field:nth-child(1),
+  .date-picker-container .form-field:nth-child(2) {
+    width: 50%; }
   .date-picker-container .form-field + .form-field {
     margin-left: 1.5rem; }
 

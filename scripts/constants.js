@@ -19,8 +19,34 @@ export const NO_INSURANCE = [
 ];
 
 export const NAVIGATION_ITEMS = [
-  'About you',
+  // 'About you',
   'Business info',
-  'Property info',
-  'Coverage'
+  'Coverage',
+  'Summary'
 ];
+
+export const MOCK_DATA = {
+  "bizDetails": {
+    "legalBusinessName": "Bobby Vans",
+    "hasBizDba": "No",
+    "bizEmailAddress": "bobbyvans@gmail.com",
+    "sameAsMailing": "Yes",
+    "ownOrRent": "I rent my workspace",
+    "moreThanOneLocation": "No"
+  },
+  "bizAddress": {
+    "businessStreetAddress": "34 Exchange Place",
+    "businessAddressCity": "New York",
+    "businessAddressState": "NY",
+    "businessAddressZip": "10013"
+  },
+  "operationsInfo": {
+    "numEmployees": "30"
+  },
+  "propertyInfo": {
+    "squareFootage": "2800",
+    "numberOfFloors": "2",
+    "bppValue": "$600,000"
+  },
+  "coverageOption": "standardCoverage"
+}

@@ -104,6 +104,11 @@ input[type="number"] {
     margin-top: 0;
   }
 
+  .form-field:nth-child(1),
+  .form-field:nth-child(2) {
+    width: 50%;
+  }
+
   .form-field + .form-field {
     margin-left: 1.5rem;
   }

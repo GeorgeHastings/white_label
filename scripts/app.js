@@ -28,28 +28,29 @@ import {
   NO_INSURANCE,
 } from './constants.js';
 
-export const STATE = {
+const STATE = {
   currentStep: 0,
   currentSubstep: 0,
   data: {}
 };
 
 const STEPS = [
-  [
-    welcome,
-    currentSituation,
-    reasonForShopping,
-    insuranceLiteracy
-  ],
+  // [
+  //   welcome,
+  //   currentSituation,
+  //   reasonForShopping,
+  //   insuranceLiteracy
+  // ],
   [
     contactInfo,
     ownOrRent,
     basicBizInfo,
-  ],
-  [
-    buildingInfo,
     propertyInfo
   ],
+  // [
+  //   buildingInfo,
+  //   propertyInfo
+  // ],
   [
     chooseCoverage,
     reviewCoverage,
@@ -72,6 +73,20 @@ export const updateState = args => {
   $('adminz-only').innerHTML = `<code>${JSON.stringify(STATE.data, undefined, 2)}</code>`;
 };
 
+export const getStatePropValue = id => {
+  for(let prop in STATE.data) {
+    if (typeof STATE.data[prop] === 'object') {
+      for(let subprop in STATE.data[prop]) {
+        if(subprop === id) {
+          return STATE.data[prop][subprop];
+        }
+      }
+    } else if(id === prop) {
+      return STATE.data[prop];
+    }
+  }
+};
+
 const render = (id, component) => {
   $(id).innerHTML = null;
   $(id).appendChild(component.render());
@@ -92,9 +107,9 @@ const navigateStep = step => {
 
   if(step.id === 'reasonForShopping') {
     if(STATE.data.introQuestions && STATE.data.introQuestions.currentSituation === 'I don\'t have any') {
-      step.fields[0].options = NO_INSURANCE;
+      step.components[0].options = NO_INSURANCE;
     } else {
-      step.fields[0].options = HAS_INSURANCE;
+      step.components[0].options = HAS_INSURANCE;
     }
   }
 
