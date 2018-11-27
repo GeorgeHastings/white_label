@@ -52,7 +52,7 @@ html {
 }
 
 body {
-  font-family: 'GT America', -apple-system, BlinkMacSystemFont, Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-family: $grotesk;
   -webkit-font-smoothing: antialiased;
   -webkit-text-rendering: optimizeLegibility;
   font-smoothing: antialiased;
@@ -203,7 +203,7 @@ body {
 		margin-left: 0;
 		width: 100%;
 		flex-direction: column;
-		padding: 3rem 5rem;
+		padding: 3rem;
 	}
 
 	&.main-container__full-width {
@@ -319,6 +319,10 @@ body {
 .coverage-container {
 	display: flex;
 	justify-content: space-between;
+
+	@media (max-width: $small) {
+		flex-direction: column;
+	}
 }
 
 .coverage-option {
@@ -329,6 +333,10 @@ body {
 
 	.button__tertiary {
 		text-align: center;
+	}
+
+	@media (max-width: $small) {
+		width: 100%;
 	}
 }
 
