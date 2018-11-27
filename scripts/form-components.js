@@ -84,7 +84,7 @@ export class StepQuestion {
     this.id = args.id;
     this.label = args.label;
     this.explainer = args.explainer;
-    this.fields = args.fields;
+    this.components = args.components;
     this.fullWidth = args.fullWidth;
   }
 
@@ -100,8 +100,8 @@ export class StepQuestion {
     `);
     const parent = html.querySelector('.form-container');
 
-    this.fields.forEach(field => {
-      parent.appendChild(field.render());
+    this.components.forEach(component => {
+      parent.appendChild(component.render());
     });
 
     return html.body.childNodes[0];
@@ -152,6 +152,51 @@ export class InputField {
     if(entered) {
       input.value = entered;
     }
+
+    return html.body.childNodes[0];
+  }
+}
+
+export class DateField {
+  constructor(args) {
+    this.id = args.id;
+    this.label = args.label;
+    this.month = args.month;
+    this.day = args.day;
+    this.year = args.year;
+  }
+
+  render() {
+    const html = toHTML(`
+      <div class="form-field date-picker-container">
+        ${this.label ? `<label>${this.label}</label>` : ''}
+      </div>
+    `);
+
+    const fields = [
+      new InputField({
+        id: 'effectiveDateMonth',
+        type: 'number',
+        placeholder: 'MM',
+        form: 'effectiveDate'
+      }),
+      new InputField({
+        id: 'effectiveDateDay',
+        type: 'number',
+        placeholder: 'DD',
+        form: 'effectiveDate'
+      }),
+      new InputField({
+        id: 'effectiveDateYear',
+        type: 'number',
+        placeholder: 'YYYY',
+        form: 'effectiveDate'
+      }),
+    ];
+
+    fields.forEach(field => {
+      html.querySelector('.date-picker-container').appendChild(field.render());
+    });
 
     return html.body.childNodes[0];
   }

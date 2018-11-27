@@ -18,7 +18,9 @@ import {
   basicBizInfo,
   buildingInfo,
   propertyInfo,
-  chooseCoverage
+  chooseCoverage,
+  reviewCoverage,
+  effectiveDate
 } from './steps.js';
 
 import {
@@ -27,7 +29,7 @@ import {
 } from './constants.js';
 
 export const STATE = {
-  currentStep: 3,
+  currentStep: 0,
   currentSubstep: 0,
   data: {}
 };
@@ -49,7 +51,9 @@ const STEPS = [
     propertyInfo
   ],
   [
-    chooseCoverage
+    chooseCoverage,
+    reviewCoverage,
+    effectiveDate
   ]
 ];
 

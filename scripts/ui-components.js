@@ -6,7 +6,9 @@ import {
 } from './helpers.js';
 
 import {
-  stepBackwards
+  stepBackwards,
+  stepForwards,
+  updateState
 } from './app.js';
 
 import {
@@ -138,7 +140,7 @@ export class CoverageOption {
           / month
         </div>
         <div class="price-annual">or $${this.price*12 - 60}/year</div>
-        <div class="button button__small ${this.actionStyle}">Choose this</div>
+        <a class="button button__small ${this.actionStyle}" href="javascript:void(0)">Learn more</a>
         <div class="coverage-limits">
           ${this.coverages.map(coverage => {
             return `
@@ -151,6 +153,14 @@ export class CoverageOption {
         </div>
       </div>
     `);
+
+    html.querySelector('.button').onclick = () => {
+      updateState({
+        id: 'coverageOptions',
+        value: this.id,
+      });
+      stepForwards();
+    };
 
     return html.body.childNodes[0];
   }

@@ -4,7 +4,8 @@ import {
   StepQuestion,
   RadioGroup,
   InputField,
-  AddressField
+  AddressField,
+  DateField
 } from './form-components.js';
 
 import {
@@ -27,7 +28,7 @@ export const welcome = new StepQuestion({
   label: 'Welcome, let\'s get your business insured.',
   explainer: 'We\'re going to ask you a few details about you and your business. You should have a quote in as few as 5 minutes.',
   id: 'propertyInfo',
-  fields: [
+  components: [
     new Button({
       id: 'nextButton',
       style: 'button__primary',
@@ -43,7 +44,7 @@ export const currentSituation = new StepQuestion({
   label: 'First, what is your current business insurance situation?',
   explainer: 'This helps us tailor the experience in a way that makes the most sense for you.',
   id: 'currentSituation',
-  fields: [
+  components: [
     new RadioGroup({
       options: INSURANCE_SITUATION,
       id: 'currentSituation',
@@ -65,7 +66,7 @@ export const reasonForShopping = new StepQuestion({
   label: 'Any particular reason why you’re shopping for it today?',
   explainer: 'This helps us tailor the experience in a way that makes the most sense for you.',
   id: 'reasonForShopping',
-  fields: [
+  components: [
     new RadioGroup({
       options: [
         'I just need proof of insurance',
@@ -92,7 +93,7 @@ export const insuranceLiteracy = new StepQuestion({
   label: 'Lastly, how much would you say you know about business insurance?',
   explainer: 'This helps us tailor the experience in a way that makes the most sense for you.',
   id: 'insuranceLiteracy',
-  fields: [
+  components: [
     new RadioGroup({
       options: [
         'I\'m an expert',
@@ -118,7 +119,7 @@ export const contactInfo = new StepQuestion({
   label: 'Let\'s cover some basics.',
   explainer: 'We can use this to pull some data automatically to speed up the process.',
   id: 'contactInfo',
-  fields: [
+  components: [
     new InputField({
       label: 'Legal business name',
       type: 'text',
@@ -195,7 +196,7 @@ export const ownOrRent = new StepQuestion({
   label: 'How would you describe where you operate your business?',
   explainer: 'This tells us whether or not we need to insure a building.',
   id: 'ownOrRent',
-  fields: [
+  components: [
     new RadioGroup({
       options: [
         'I have a home office',
@@ -223,7 +224,7 @@ export const basicBizInfo = new StepQuestion({
   label: 'Tell us about your business.',
   explainer: 'This information helps us better understand your risk.',
   id: 'operationsInfo',
-  fields: [
+  components: [
     new RadioGroup({
       options: [
         'Yes',
@@ -271,7 +272,7 @@ export const buildingInfo = new StepQuestion({
   label: 'Give us some details about your building.',
   explainer: 'This information helps us better understand your risk.',
   id: 'propertyInfo',
-  fields: [
+  components: [
     new InputField({
       label: 'Square footage of your building',
       type: 'number',
@@ -305,7 +306,7 @@ export const propertyInfo = new StepQuestion({
   label: 'What is the total value of the property you would like to insure?',
   explainer: 'Your policy must include the cost of replacing all of the belongings owned by your business. This includes things like furniture and equipment. It does not include vehicles.',
   id: 'propertyInfo',
-  fields: [
+  components: [
     new InputField({
       label: 'Value of personal property',
       type: 'text',
@@ -329,9 +330,9 @@ export const chooseCoverage = new StepQuestion({
   explainer: 'Based on what you\'ve told us we are presenting the following coverage options.',
   id: 'chooseCoverage',
   fullWidth: true,
-  fields: [
+  components: [
     new CoverageOptions({
-      id: 'CoverageOptions',
+      id: 'coverageOption',
       options: [
         new CoverageOption({
           id: 'basicCoverage',
@@ -350,7 +351,7 @@ export const chooseCoverage = new StepQuestion({
           ]
         }),
         new CoverageOption({
-          id: 'basicCoverage',
+          id: 'standardCoverage',
           name: 'Standard',
           price: 55,
           actionStyle: 'button__primary',
@@ -374,7 +375,7 @@ export const chooseCoverage = new StepQuestion({
           ]
         }),
         new CoverageOption({
-          id: 'basicCoverage',
+          id: 'premiumCoverage',
           name: 'Premium',
           price: 78,
           actionStyle: 'button__secondary-alt',
@@ -402,6 +403,41 @@ export const chooseCoverage = new StepQuestion({
           ]
         })
       ]
+    })
+  ]
+});
+
+export const reviewCoverage = new StepQuestion({
+  label: 'Here is the coverage',
+  explainer: 'Read on up',
+  id: 'propertyInfo',
+  components: [
+    new Button({
+      id: 'nextButton',
+      style: 'button__primary',
+      text: 'Choose this coverage',
+      handleClick: () => {
+        stepForwards();
+      }
+    })
+  ]
+});
+
+export const effectiveDate = new StepQuestion({
+  label: 'When would you like the policy to start?',
+  explainer: 'The "effective date" indicates when your coverage starts. It will renew every year on the same day and month.',
+  id: 'propertyInfo',
+  components: [
+    new DateField({
+      id: 'effectiveDate',
+    }),
+    new Button({
+      id: 'nextButton',
+      style: 'button__primary',
+      text: 'Next',
+      handleClick: () => {
+        stepForwards();
+      }
     })
   ]
 });

@@ -128,6 +128,13 @@ input[type="number"] {
   .address-fields-container .form-field:first-child {
     margin-bottom: 1.5rem; }
 
+.date-picker-container {
+  display: flex; }
+  .date-picker-container .form-field {
+    margin-top: 0; }
+  .date-picker-container .form-field + .form-field {
+    margin-left: 1.5rem; }
+
 input[type="radio"] {
   display: inline-block;
   position: absolute;

@@ -97,6 +97,18 @@ input[type="number"] {
   }
 }
 
+.date-picker-container {
+  display: flex;
+
+  .form-field {
+    margin-top: 0;
+  }
+
+  .form-field + .form-field {
+    margin-left: 1.5rem;
+  }
+}
+
 input[type="radio"] {
   display: inline-block;
   position: absolute;
