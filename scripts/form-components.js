@@ -23,6 +23,10 @@ class Input {
     this.hide = args.hide;
     this.onchange = this.onchange && this.onchange.bind(this);
   }
+
+  oninit() {
+
+  }
 }
 
 export class RadioGroup extends Input {
