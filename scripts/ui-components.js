@@ -129,6 +129,7 @@ export class StepQuestion {
     this.explainer = args.explainer;
     this.components = args.components;
     this.fullWidth = args.fullWidth;
+    this.loadTime = args.loadTime;
     this.oninit = args.oninit && args.oninit.bind(this);
   }
 

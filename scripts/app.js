@@ -17,10 +17,12 @@ import {
   ownOrRent,
   basicBizInfo,
   buildingInfo,
+  constructionType,
   propertyInfo,
   chooseCoverage,
   reviewCoverage,
-  effectiveDate
+  effectiveDate,
+  bindPolicy
 } from './steps.js';
 
 import {
@@ -45,6 +47,7 @@ const STEPS = [
     contactInfo,
     ownOrRent,
     basicBizInfo,
+    constructionType,
     propertyInfo
   ],
   // [
@@ -54,7 +57,10 @@ const STEPS = [
   [
     chooseCoverage,
     reviewCoverage,
-    effectiveDate
+  ],
+  [
+    effectiveDate,
+    bindPolicy
   ]
 ];
 
@@ -148,7 +154,15 @@ export const stepForwards = () => {
     }
   }
 
-  navigateStep(step);
+  if(step.loadTime) {
+    $('fullScreenLoader').classList.remove('_hidden');
+    setTimeout(() => {
+      $('fullScreenLoader').classList.add('_hidden');
+      navigateStep(step);
+    }, step.loadTime);
+  } else {
+    navigateStep(step);
+  }
 };
 
 export const stepBackwards = () => {

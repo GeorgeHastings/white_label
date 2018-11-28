@@ -197,10 +197,11 @@ export const ownOrRent = new StepQuestion({
   label: 'How would you describe where you operate your business?',
   explainer: 'This tells us whether or not we need to insure a building.',
   id: 'ownOrRent',
+  loadTime: 3000,
   components: [
     new RadioGroup({
       options: [
-        'I have a home office',
+        'I work from home',
         'I rent my workspace',
         'I own an office or building that I rent to a tenant',
         'I own a building that I fully occupy',
@@ -287,6 +288,49 @@ export const basicBizInfo = new StepQuestion({
   ]
 });
 
+export const constructionType = new StepQuestion({
+  label: 'Which of these best describes your building?',
+  explainer: 'This helps us determine risk',
+  id: 'propertyInfo',
+  components: [
+    new RadioGroup({
+      // label: 'Which of these best describes your building?',
+      id: 'bestDescriptionOfBuilding',
+      form: 'buildingClassification',
+      options: [
+        'Residential or small retail shop',
+        'Warehouse or manufacturing facility',
+        'Strip mall or small office building',
+        'High rise office building',
+      ],
+      conditional: {
+        value: 'Residential or small retail shop',
+        target: 'wallMaterial'
+      }
+    }),
+    new RadioGroup({
+      options: [
+        'Concrete/masonry',
+        'Wood frame',
+        'Not sure'
+      ],
+      id: 'wallMaterial',
+      label: 'What are the exterior walls made of?',
+      form: 'buildingClassification',
+      style: 'load-up',
+      hide: true
+    }),
+    new Button({
+      id: 'nextButton',
+      style: 'button__primary',
+      text: 'Next',
+      handleClick: () => {
+        stepForwards();
+      }
+    })
+  ]
+});
+
 export const buildingInfo = new StepQuestion({
   label: 'Give us some details about your building.',
   explainer: 'This information helps us better understand your risk.',
@@ -322,7 +366,7 @@ export const buildingInfo = new StepQuestion({
 });
 
 export const propertyInfo = new StepQuestion({
-  label: 'What is the total value of the property you would like to insure?',
+  label: 'What is the total value of your business’s personal property?',
   explainer: 'Your policy must include the cost of replacing all of the belongings owned by your business. This includes things like furniture and equipment. It does not include vehicles.',
   id: 'propertyInfo',
   components: [
@@ -462,4 +506,23 @@ export const effectiveDate = new StepQuestion({
       }
     })
   ]
+});
+
+export const bindPolicy = new StepQuestion({
+  label: 'Confirm your details and you\'re on your way!',
+  explainer: 'Read on up',
+  id: 'bindPolicy',
+  components: [
+    new Button({
+      id: 'nextButton',
+      style: 'button__confirm',
+      text: 'Get policy',
+      handleClick: () => {
+        stepForwards();
+      }
+    })
+  ],
+  oninit: self => {
+    self.label = `Summary of ${getStatePropValue('coverageOption').replace('Coverage', '')} coverage`;
+  }
 });

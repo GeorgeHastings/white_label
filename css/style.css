@@ -198,8 +198,6 @@ input[type="radio"] {
   margin-right: auto;
   padding: 3rem 5rem;
   margin-top: 2rem;
-  background-color: #0D00FF;
-  color: #ffffff;
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
@@ -207,6 +205,12 @@ input[type="radio"] {
   cursor: pointer;
   text-decoration: none;
   transition: box-shadow 0.15s ease; }
+  .button__confirm {
+    background-color: #00E5E6;
+    color: #ffffff; }
+  .button__primary {
+    background-color: #0D00FF;
+    color: #ffffff; }
   .button__secondary {
     box-shadow: inset 0 0 0 0.3rem #00E5E6;
     background-color: transparent;
@@ -569,6 +573,29 @@ body {
   font-size: 1.6rem;
   color: #7392B0;
   margin-bottom: 1rem; }
+
+.full-screen-loader {
+  transform: translate3d(0, 1em, 0);
+  opacity: 0;
+  animation: loadin 0.25s cubic-bezier(0.74, 0.24, 0.21, 0.77);
+  animation-fill-mode: forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #E6FAFA;
+  text-align: center;
+  line-height: 100vh;
+  font-size: 2.6rem; }
+
+@keyframes loadin {
+  0% {
+    transform: translate3d(0, 1em, 0);
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0rem, 0); } }
 
 canvas {
   position: absolute;
