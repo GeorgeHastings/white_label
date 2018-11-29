@@ -25,6 +25,23 @@ export const NAVIGATION_ITEMS = [
   'Summary'
 ];
 
+export const ORGANIZATION_TYPES = [
+  'Common Ownership',
+  'Corporation',
+  'Executor Trustee',
+  'Government',
+  'Individual',
+  'Joint Venture',
+  'Limited Partnership',
+  'LLC',
+  'LLP',
+  'Non-Profit',
+  'Partnership',
+  'Religious',
+  'Sole Proprietorship',
+  'Trust Estate',
+];
+
 export const MOCK_DATA = {
   "bizDetails": {
     "legalBusinessName": "Bobby Vans",

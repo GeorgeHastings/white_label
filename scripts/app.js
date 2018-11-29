@@ -3,26 +3,27 @@
 import {
   $,
 } from './helpers.js';
-import { dropColors } from './wingdings.js';
+
 import {
   BreadCrumb,
-  Navigation
+  Navigation,
+  HelpCard
 } from './ui-components.js';
 import {
-  welcome,
-  currentSituation,
-  reasonForShopping,
-  insuranceLiteracy,
+  // welcome,
+  // currentSituation,
+  // reasonForShopping,
+  // insuranceLiteracy,
   contactInfo,
   ownOrRent,
   basicBizInfo,
-  buildingInfo,
   constructionType,
   propertyInfo,
   chooseCoverage,
   reviewCoverage,
   effectiveDate,
-  bindPolicy
+  bindPolicy,
+  nextSteps
 } from './steps.js';
 
 import {
@@ -37,12 +38,6 @@ const STATE = {
 };
 
 const STEPS = [
-  // [
-  //   welcome,
-  //   currentSituation,
-  //   reasonForShopping,
-  //   insuranceLiteracy
-  // ],
   [
     contactInfo,
     ownOrRent,
@@ -50,17 +45,14 @@ const STEPS = [
     constructionType,
     propertyInfo
   ],
-  // [
-  //   buildingInfo,
-  //   propertyInfo
-  // ],
   [
     chooseCoverage,
     reviewCoverage,
   ],
   [
     effectiveDate,
-    bindPolicy
+    bindPolicy,
+    nextSteps
   ]
 ];
 
@@ -68,6 +60,8 @@ const navigation = new Navigation(STATE.currentStep, STATE.currentSubstep);
 const breadcrumb = new BreadCrumb(false, STATE.currentSubstep + 1, STEPS[STATE.currentStep].length);
 
 export const updateState = args => {
+  const step = STEPS[STATE.currentStep][STATE.currentSubstep];
+
   if(args.form) {
     if(!STATE.data[args.form]) {
       STATE.data[args.form] = {};
@@ -76,6 +70,17 @@ export const updateState = args => {
   } else {
     STATE.data[args.id] = args.value;
   }
+
+  step.components.forEach(component => {
+    if(component.show) {
+      if(component.show()) {
+        $(component.id).parentElement.classList.remove('_hidden');
+      } else {
+        $(component.id).parentElement.classList.add('_hidden');
+      }
+     }
+  });
+
   $('adminz-only').innerHTML = `<code>${JSON.stringify(STATE.data, undefined, 2)}</code>`;
 };
 
@@ -105,18 +110,10 @@ const navigateStep = step => {
   breadcrumb.totalSteps = STEPS[STATE.currentStep].length;
   navigation.index = STATE.currentStep;
 
-  if(step.fullWidth) {
-    $('mainContainer').classList.add('main-container__full-width');
+  if(step.style) {
+    $('mainContainer').classList.add(step.style);
   } else {
     $('mainContainer').classList = 'main-container';
-  }
-
-  if(step.id === 'reasonForShopping') {
-    if(STATE.data.introQuestions && STATE.data.introQuestions.currentSituation === 'I don\'t have any') {
-      step.components[0].options = NO_INSURANCE;
-    } else {
-      step.components[0].options = HAS_INSURANCE;
-    }
   }
 
   window.scrollTo(0, 0);
@@ -130,10 +127,6 @@ const navigateStep = step => {
     render('navigationContainer', navigation);
     navigation.update(breadcrumb.currentStep/breadcrumb.totalSteps);
   }
-
-  // const searchParamString = `q=URLUtils.searchParams&step=${STATE.currentStep}&substep=${STATE.currentSubstep}`;
-  // const searchParams = new URLSearchParams(searchParamString);
-  // window.location.replace(window.location.origin + searchParams);
 };
 
 export const stepForwards = () => {
@@ -184,6 +177,17 @@ export const stepBackwards = () => {
   }
 
   navigateStep(step);
+};
+
+export const configCompeltedLayout = () => {
+  $('wrapper').classList.add('wrapper__last-step');
+  render('rightRail', new HelpCard({
+    id: 'questionsHelp',
+    icon: 'assets/images/question.svg',
+    label: 'Questions?',
+    body: 'Our licensed agents are standing by ready to assist you.',
+    cta: 'Chat with an agent'
+  }));
 };
 
 const onInit = () => {

@@ -128,7 +128,7 @@ export class StepQuestion {
     this.label = args.label;
     this.explainer = args.explainer;
     this.components = args.components;
-    this.fullWidth = args.fullWidth;
+    this.style = args.style;
     this.loadTime = args.loadTime;
     this.oninit = args.oninit && args.oninit.bind(this);
   }
@@ -234,6 +234,31 @@ export class DetailsSummary {
     this.options.forEach(option => {
       html.querySelector('.coverage-container').appendChild(option.render());
     });
+
+    return html.body.childNodes[0];
+  }
+}
+
+export class HelpCard {
+  constructor(args) {
+    this.id = args.id;
+    this.icon = args.icon;
+    this.label = args.label;
+    this.body = args.body;
+    this.cta = args.cta;
+  }
+
+  render() {
+    const html = toHTML(`
+      <div class="help-card">
+        <img src="${this.icon}">
+        <div>
+          <h3>${this.label}</h3>
+          <p class="small-text">${this.body}</p>
+        </div>
+        <div class="button button__small button__secondary">${this.cta}</div>
+      </div>
+    `);
 
     return html.body.childNodes[0];
   }

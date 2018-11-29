@@ -17,15 +17,13 @@ html {
 	@media (max-width: $small) {
 		font-size: 8px;
 	}
-	@media (min-width: $big) {
-		font-size: 11px;
-	}
 	@media (min-width: $huge) {
 		font-size: 12px;
 	}
 }
 
 body {
+	height: 100%;
   font-family: $grotesk;
   -webkit-font-smoothing: antialiased;
   -webkit-text-rendering: optimizeLegibility;
@@ -36,6 +34,23 @@ body {
   background-color: $background-color;
 	color: $text-color;
 	overflow-x: hidden;
+}
+
+.wrapper.wrapper__last-step {
+	height: 100%;
+
+	.sidebar {
+		display: none;
+	}
+
+	.main-container {
+		max-width: 102.4rem;
+		margin: 0 auto;
+	}
+
+	.breadcrumb-container {
+		display: none;
+	}
 }
 
 .sidebar {
@@ -201,6 +216,19 @@ body {
 			margin-left: 5rem;
 			margin-right: 0;
 			margin-top: 0;
+		}
+	}
+
+	&.main-container__complete {
+		margin: 0 auto;
+		max-width: 128rem;
+
+		& ~ .sidebar {
+			opacity: 0;
+		}
+
+		.breadcrumb-container  {
+			display: none;
 		}
 	}
 }
@@ -372,6 +400,7 @@ body {
 }
 
 canvas {
+	@include load-in;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -379,7 +408,7 @@ canvas {
 	height: 100%;
 	z-index: -2;
 	animation-delay: 1s;
-	padding: 4rem 4rem 4rem;
+	// padding: 4rem 4rem 4rem;
 	border-radius: 7rem;
 	overflow: hidden;
 }

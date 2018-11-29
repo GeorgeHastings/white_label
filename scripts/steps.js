@@ -4,13 +4,20 @@ import {
   RadioGroup,
   InputField,
   AddressField,
-  DateField
+  DateField,
+  Checkbox,
+  Select
 } from './form-components.js';
 
 import {
   stepForwards,
-  getStatePropValue
+  getStatePropValue,
+  configCompeltedLayout
 } from './app.js';
+
+import {
+  dropConfetti
+} from './confetti.js';
 
 import {
   Button,
@@ -22,99 +29,9 @@ import {
 import {
   INSURANCE_SITUATION,
   HAS_INSURANCE,
-  NO_INSURANCE
+  NO_INSURANCE,
+  ORGANIZATION_TYPES
 } from './constants.js';
-
-export const welcome = new StepQuestion({
-  label: 'Welcome, let\'s get your business insured.',
-  explainer: 'We\'re going to ask you a few details about you and your business. You should have a quote in as few as 5 minutes.',
-  id: 'propertyInfo',
-  components: [
-    new Button({
-      id: 'nextButton',
-      style: 'button__primary',
-      text: 'Get started',
-      handleClick: () => {
-        stepForwards();
-      }
-    })
-  ]
-});
-
-export const currentSituation = new StepQuestion({
-  label: 'First, what is your current business insurance situation?',
-  explainer: 'This helps us tailor the experience in a way that makes the most sense for you.',
-  id: 'currentSituation',
-  components: [
-    new RadioGroup({
-      options: INSURANCE_SITUATION,
-      id: 'currentSituation',
-      advance: true,
-      form: 'introQuestions'
-    }),
-    new Button({
-      id: 'nextButton',
-      style: 'button__tertiary',
-      text: 'Skip this',
-      handleClick: () => {
-        stepForwards();
-      }
-    })
-  ],
-});
-
-export const reasonForShopping = new StepQuestion({
-  label: 'Any particular reason why you’re shopping for it today?',
-  explainer: 'This helps us tailor the experience in a way that makes the most sense for you.',
-  id: 'reasonForShopping',
-  components: [
-    new RadioGroup({
-      options: [
-        'I just need proof of insurance',
-        'I’m a new business',
-        'It’s about time I got the right coverage',
-        'None of these'
-      ],
-      id: 'reasonForShopping',
-      advance: true,
-      form: 'introQuestions'
-    }),
-    new Button({
-      id: 'nextButton',
-      style: 'button__tertiary',
-      text: 'Skip this',
-      handleClick: () => {
-        stepForwards();
-      }
-    })
-  ]
-});
-
-export const insuranceLiteracy = new StepQuestion({
-  label: 'Lastly, how much would you say you know about business insurance?',
-  explainer: 'This helps us tailor the experience in a way that makes the most sense for you.',
-  id: 'insuranceLiteracy',
-  components: [
-    new RadioGroup({
-      options: [
-        'I\'m an expert',
-        'I know a bit',
-        'I know almost nothing',
-      ],
-      id: 'insuranceLiteracy',
-      advance: true,
-      form: 'introQuestions'
-    }),
-    new Button({
-      id: 'nextButton',
-      style: 'button__tertiary',
-      text: 'Skip this',
-      handleClick: () => {
-        stepForwards();
-      }
-    })
-  ]
-});
 
 export const contactInfo = new StepQuestion({
   label: 'Let\'s cover some basics.',
@@ -125,7 +42,7 @@ export const contactInfo = new StepQuestion({
       label: 'Legal business name',
       type: 'text',
       id: 'legalBusinessName',
-      form: 'bizDetails'
+      form: 'basicInfo'
     }),
     new RadioGroup({
       options: [
@@ -134,32 +51,36 @@ export const contactInfo = new StepQuestion({
       ],
       id: 'hasBizDba',
       label: 'Does your business operate under a different name?',
-      form: 'bizDetails',
+      form: 'basicInfo',
       style: 'radio-group__split',
-      conditional: {
-        value: 'Yes',
-        target: 'doingBizAs'
-      }
     }),
     new InputField({
       label: 'Doing business as name',
       type: 'text',
       id: 'doingBizAs',
-      form: 'bizDetails',
+      form: 'basicInfo',
       style: 'load-up',
-      hide: true
+      show: () => {
+        return getStatePropValue('hasBizDba') === 'Yes';
+      }
+    }),
+    new Select({
+      options: ORGANIZATION_TYPES,
+      label: 'Legal entity type',
+      id: 'legalEntityType',
+      form: 'basicInfo'
     }),
     new InputField({
       label: 'Business email address',
       type: 'text',
       id: 'bizEmailAddress',
-      form: 'bizDetails',
+      form: 'basicInfo',
       focusTip: 'Invoices will be sent to this email.'
     }),
     new AddressField({
       label: 'Business address',
       id: 'businessAddress',
-      form: 'bizAddress'
+      form: 'businessAddress'
     }),
     new RadioGroup({
       options: [
@@ -168,19 +89,17 @@ export const contactInfo = new StepQuestion({
       ],
       id: 'sameAsMailing',
       label: 'Is this the same as your mailing address?',
-      form: 'bizDetails',
+      form: 'basicInfo',
       style: 'radio-group__split',
-      conditional: {
-        value: 'No',
-        target: 'businessMailingAddress'
-      }
     }),
     new AddressField({
       label: 'Business mailing address',
       id: 'businessMailingAddress',
-      form: 'bizMailingAddress',
+      form: 'businessMailingAddress',
       style: 'load-up',
-      hide: true
+      show: () => {
+        return getStatePropValue('sameAsMailing') === 'No';
+      }
     }),
     new Button({
       id: 'nextButton',
@@ -207,7 +126,7 @@ export const ownOrRent = new StepQuestion({
         'I own a building that I fully occupy',
       ],
       id: 'ownOrRent',
-      form: 'bizDetails'
+      form: 'businessDetails'
     }),
     new Button({
       id: 'nextButton',
@@ -234,20 +153,20 @@ export const basicBizInfo = new StepQuestion({
       ],
       id: 'moreThanOneLocation',
       label: 'Do you operate more than one location?',
-      form: 'bizDetails',
+      form: 'businessDetails',
       style: 'radio-group__split'
     }),
     new InputField({
       label: 'Number of employees',
       type: 'number',
       id: 'numEmployees',
-      form: 'operationsInfo'
+      form: 'businessDetails'
     }),
     new InputField({
       label: 'Square footage of your building',
       type: 'number',
       id: 'squareFootage',
-      form: 'propertyInfo'
+      form: 'businessDetails'
     }),
     new RadioGroup({
       options: [
@@ -258,14 +177,14 @@ export const basicBizInfo = new StepQuestion({
       ],
       id: 'numberOfFloors',
       label: 'Number of stories in the building',
-      form: 'propertyInfo',
+      form: 'businessDetails',
       style: 'radio-group__split'
     }),
     new InputField({
       label: 'Annual revenue',
       type: 'text',
       id: 'annualRevenue',
-      form: 'operationsInfo',
+      form: 'businessDetails',
       money: true,
       hide: true
     }),
@@ -273,7 +192,7 @@ export const basicBizInfo = new StepQuestion({
       label: 'Revenue from alcohol sales',
       type: 'text',
       id: 'alcoholRevenue',
-      form: 'operationsInfo',
+      form: 'businessDetails',
       money: true,
       hide: true
     }),
@@ -294,19 +213,15 @@ export const constructionType = new StepQuestion({
   id: 'propertyInfo',
   components: [
     new RadioGroup({
-      // label: 'Which of these best describes your building?',
       id: 'bestDescriptionOfBuilding',
       form: 'buildingClassification',
       options: [
         'Residential or small retail shop',
-        'Warehouse or manufacturing facility',
         'Strip mall or small office building',
-        'High rise office building',
+        'High rise condo or office building',
+        'Warehouse or manufacturing facility',
+        'None of these'
       ],
-      conditional: {
-        value: 'Residential or small retail shop',
-        target: 'wallMaterial'
-      }
     }),
     new RadioGroup({
       options: [
@@ -315,44 +230,13 @@ export const constructionType = new StepQuestion({
         'Not sure'
       ],
       id: 'wallMaterial',
-      label: 'What are the exterior walls made of?',
+      label: 'What are the structural walls made of?',
       form: 'buildingClassification',
       style: 'load-up',
-      hide: true
-    }),
-    new Button({
-      id: 'nextButton',
-      style: 'button__primary',
-      text: 'Next',
-      handleClick: () => {
-        stepForwards();
+      show: () => {
+        return getStatePropValue('bestDescriptionOfBuilding') === 'Residential or small retail shop' ||
+          getStatePropValue('bestDescriptionOfBuilding') === 'None of these';
       }
-    })
-  ]
-});
-
-export const buildingInfo = new StepQuestion({
-  label: 'Give us some details about your building.',
-  explainer: 'This information helps us better understand your risk.',
-  id: 'propertyInfo',
-  components: [
-    new InputField({
-      label: 'Square footage of your building',
-      type: 'number',
-      id: 'squareFootage',
-      form: 'propertyInfo'
-    }),
-    new RadioGroup({
-      options: [
-        '1',
-        '2',
-        '3',
-        '4+'
-      ],
-      id: 'numberOfFloors',
-      label: 'Number of stories in the building',
-      form: 'propertyInfo',
-      style: 'radio-group__split'
     }),
     new Button({
       id: 'nextButton',
@@ -371,16 +255,15 @@ export const propertyInfo = new StepQuestion({
   id: 'propertyInfo',
   components: [
     new InputField({
-      label: 'Value of personal property',
       type: 'text',
       id: 'bppValue',
-      form: 'propertyInfo',
+      form: 'businessDetails',
       money: true
     }),
     new Button({
       id: 'nextButton',
       style: 'button__primary',
-      text: 'Next',
+      text: 'Calculate my rate',
       handleClick: () => {
         stepForwards();
       }
@@ -392,7 +275,8 @@ export const chooseCoverage = new StepQuestion({
   label: 'Choose your coverage.',
   explainer: 'Based on what you\'ve told us we are presenting the following coverage options.',
   id: 'chooseCoverage',
-  fullWidth: true,
+  style: 'main-container__full-width',
+  loadTime: 5000,
   components: [
     new CoverageOptions({
       id: 'coverageOption',
@@ -485,7 +369,8 @@ export const reviewCoverage = new StepQuestion({
     })
   ],
   oninit: self => {
-    self.label = `Summary of ${getStatePropValue('coverageOption').replace('Coverage', '')} coverage`;
+    const selectedCoverage = getStatePropValue('coverageOption') && getStatePropValue('coverageOption').replace('Coverage', '');
+    self.label = `Summary of ${selectedCoverage || ''} coverage`;
   }
 });
 
@@ -509,20 +394,31 @@ export const effectiveDate = new StepQuestion({
 });
 
 export const bindPolicy = new StepQuestion({
-  label: 'Confirm your details and you\'re on your way!',
+  label: 'Let\'s put a bow on this thing.',
   explainer: 'Read on up',
   id: 'bindPolicy',
   components: [
+    new Checkbox({
+      id: 'agreeToTerms',
+      label: 'By checking this box you agree to get coverage for your business'
+    }),
     new Button({
       id: 'nextButton',
       style: 'button__confirm',
       text: 'Get policy',
       handleClick: () => {
         stepForwards();
+        dropConfetti('canvas');
+        configCompeltedLayout();
       }
     })
-  ],
-  oninit: self => {
-    self.label = `Summary of ${getStatePropValue('coverageOption').replace('Coverage', '')} coverage`;
-  }
+  ]
+});
+
+export const nextSteps = new StepQuestion({
+  label: 'Congrats! You\'ve got insurance. Here\'s what happens next.',
+  explainer: 'Something to explain next steps',
+  id: 'nextSteps',
+  components: [
+  ]
 });

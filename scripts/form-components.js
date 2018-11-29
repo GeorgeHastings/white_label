@@ -21,11 +21,51 @@ class Input {
     this.style = args.style;
     this.conditional = args.conditional;
     this.hide = args.hide;
+    this.show = args.show;
     this.onchange = this.onchange && this.onchange.bind(this);
   }
 
   oninit() {
+    if(this.show) {
+      this.hide = true;
 
+      if(this.show()) {
+        this.hide = false;
+      }
+    }
+  }
+
+  render() {
+    this.oninit();
+    return this.template();
+  }
+}
+
+export class Checkbox extends Input {
+  constructor(args) {
+    super(args);
+  }
+
+  template() {
+    const html = toHTML(`
+      <div class="form-field form-field__checkbox ${this.style} ${this.hide ? `_hidden` : ''}">
+        <label>
+          <input id="${this.id}" type="checkbox">
+          ${this.label}
+        </label>
+      </div>
+    `);
+
+    const input = html.querySelector('input');
+    const selected = getStatePropValue(this.id);
+
+    if(input.parentElement.innerText === selected) {
+      input.checked = true;
+    } else {
+      input.checked = false;
+    }
+
+    return html.body.childNodes[0];
   }
 }
 
@@ -48,17 +88,9 @@ export class RadioGroup extends Input {
         stepForwards();
       }, 400);
     }
-
-    if(this.conditional) {
-      if(this.conditional.value === this.options[index]) {
-        $(this.conditional.target).parentElement.classList.remove('_hidden');
-      } else {
-        $(this.conditional.target).parentElement.classList.add('_hidden');
-      }
-    }
   }
 
-  render() {
+  template() {
     const html = toHTML(`
       <div class="form-field ${this.style} ${this.hide ? `_hidden` : ''}">
         ${this.label ? `<label>${this.label}</label>` : ''}
@@ -90,6 +122,49 @@ export class RadioGroup extends Input {
   }
 }
 
+export class Select extends Input {
+  constructor(args) {
+    super(args);
+    this.options = args.options;
+  }
+
+  onchange(index) {
+    updateState({
+      id: this.id,
+      value: this.options[index],
+      form: this.form
+    });
+  }
+
+  template() {
+    const entered = this.form && getStatePropValue(this.id);
+    const html = toHTML(`
+      <div class="form-field ${this.style} ${this.hide ? `_hidden` : ''}">
+        ${this.label ? `<label>${this.label}</label>` : ''}
+        <div class="select-container">
+          <select id="${this.id}">
+            <option disabled selected>Choose one</option>
+            ${this.options.map((option, index) => {
+              return `<option value="${option}">${option}</option>`;
+            }).join(' ')}
+          </select>
+        </div>
+      </div>`);
+
+    const input = html.querySelector('select');
+
+    input.onchange = () => {
+      this.onchange();
+    };
+
+    if(entered) {
+      input.value = entered;
+    }
+
+    return html.body.childNodes[0];
+  }
+}
+
 export class InputField extends Input {
   constructor(args) {
     super(args);
@@ -107,7 +182,7 @@ export class InputField extends Input {
     });
   }
 
-  render() {
+  template() {
     const entered = this.form && getStatePropValue(this.id);
     const html = toHTML(`
       <div class="form-field ${this.style} ${this.hide ? `_hidden` : ''}">
@@ -139,7 +214,7 @@ export class DateField extends Input {
     super(args);
   }
 
-  render() {
+  template() {
     const html = toHTML(`
       <div class="form-field date-picker-container">
         ${this.label ? `<label>${this.label}</label>` : ''}
@@ -151,19 +226,19 @@ export class DateField extends Input {
         id: 'effectiveDateMonth',
         type: 'number',
         placeholder: 'MM',
-        form: 'effectiveDate'
+        form: 'effectiveDate',
       }),
       new InputField({
         id: 'effectiveDateDay',
         type: 'number',
         placeholder: 'DD',
-        form: 'effectiveDate'
+        form: 'effectiveDate',
       }),
       new InputField({
         id: 'effectiveDateYear',
         type: 'number',
         placeholder: 'YYYY',
-        form: 'effectiveDate'
+        form: 'effectiveDate',
       }),
     ];
 
@@ -180,7 +255,7 @@ export class AddressField extends Input {
     super(args);
   }
 
-  render() {
+  template() {
     const html = toHTML(`
       <div class="form-field ${this.style} ${this.hide ? '_hidden' : ''}">
         <label>${this.label}</label>
