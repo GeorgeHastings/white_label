@@ -210,7 +210,7 @@ const buildQuote = count => {
   const width = 45;
   const height = 60;
   const y = random(0, canvasHeight);
-  const roll = Math.random()*10;
+  const roll = Math.random() * 10;
   let image;
   let points = 100;
   if(roll < 0.05) {

@@ -13,6 +13,10 @@ import {
   stepForwards,
 } from './app.js';
 
+import {
+  STATES,
+} from './constants.js';
+
 class Input {
   constructor(args) {
     this.id = args.id;
@@ -126,12 +130,13 @@ export class Select extends Input {
   constructor(args) {
     super(args);
     this.options = args.options;
+    this.placeholder = args.placeholder || 'Choose one';
   }
 
-  onchange(index) {
+  onchange(ev) {
     updateState({
       id: this.id,
-      value: this.options[index],
+      value: ev.target.value,
       form: this.form
     });
   }
@@ -142,10 +147,10 @@ export class Select extends Input {
       <div class="form-field ${this.style} ${this.hide ? `_hidden` : ''}">
         ${this.label ? `<label>${this.label}</label>` : ''}
         <div class="select-container">
-          <select id="${this.id}">
-            <option disabled selected>Choose one</option>
-            ${this.options.map((option, index) => {
-              return `<option value="${option}">${option}</option>`;
+          <select id="${this.id}" required>
+            <option disabled selected value="">${this.placeholder}</option>
+            ${Object.keys(this.options).map((option, index) => {
+              return `<option value="${option}">${this.options[option]}</option>`;
             }).join(' ')}
           </select>
         </div>
@@ -153,9 +158,7 @@ export class Select extends Input {
 
     const input = html.querySelector('select');
 
-    input.onchange = () => {
-      this.onchange();
-    };
+    input.onchange = this.onchange;
 
     if(entered) {
       input.value = entered;
@@ -218,6 +221,7 @@ export class DateField extends Input {
     const html = toHTML(`
       <div class="form-field date-picker-container">
         ${this.label ? `<label>${this.label}</label>` : ''}
+        <div class="date-field-wrapper"></div>
       </div>
     `);
 
@@ -243,7 +247,7 @@ export class DateField extends Input {
     ];
 
     fields.forEach(field => {
-      html.querySelector('.date-picker-container').appendChild(field.render());
+      html.querySelector('.date-field-wrapper').appendChild(field.render());
     });
 
     return html.body.childNodes[0];
@@ -278,11 +282,11 @@ export class AddressField extends Input {
         style: 'form-field__city',
         form: this.form
       }),
-      new InputField({
-        type: 'text',
+      new Select({
+        options: STATES,
         id: 'businessAddressState',
-        placeholder: 'State',
         style: 'form-field__state',
+        placeholder: 'State',
         form: this.form
       }),
       new InputField({

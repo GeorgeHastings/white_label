@@ -209,6 +209,16 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"/scripts/brickbreaker.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/scripts/brickbreaker-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/scripts/components-min.js": {
 		"ft": 64,
 		"ma": 0,

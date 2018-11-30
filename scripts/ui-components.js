@@ -164,11 +164,13 @@ export class CoverageOption {
     this.price = args.price;
     this.actionStyle = args.actionStyle;
     this.coverages = args.coverages;
+    this.flag = args.flag;
   }
 
   render() {
     const html = toHTML(`
       <div class="coverage-option">
+        ${this.flag ? `<div class="coverage-flag">${this.flag}</div>` : ''}
         <div class="coverage-name">${this.name}</div>
         <div class="coverage-price">
           <div class="coverage-dollars">${this.price}</div>

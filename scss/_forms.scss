@@ -20,11 +20,11 @@
   width: 100%;
 
   &__city {
-    width: calc(50% - 1.5rem);
+    width: calc(45% - 1.5rem);
   }
 
   &__state {
-    width: 20%;
+    width: 25%;
   }
 
   &__zip {
@@ -129,13 +129,13 @@ input[type="checkbox"] {
     position: absolute;
     z-index: 1;
     right: 3rem;
-    top: 2.6rem;
+    top: 2.8rem;
     width: 1.3rem;
     height: 1.3rem;
-    border-right: 0.3rem solid $gray;
-    border-bottom: 0.3rem solid $gray;
-    border-top-right-radius: 0.3rem;
-    border-bottom-left-radius: 0.3rem;
+    border-right: 0.2rem solid $gray;
+    border-bottom: 0.2rem solid $gray;
+    border-top-right-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
     transform: rotate(45deg);
     pointer-events: none;
   }
@@ -143,6 +143,15 @@ input[type="checkbox"] {
   select {
     -webkit-appearance: none;
     appearance: none;
+
+    &:invalid {
+      color: $gray;
+    }
+
+
+    option:not(:first-of-type) {
+      color: $black;
+    }
   }
 }
 
@@ -160,7 +169,7 @@ input[type="checkbox"] {
   }
 }
 
-.date-picker-container {
+.date-field-wrapper {
   display: flex;
 
   .form-field {

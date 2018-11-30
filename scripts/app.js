@@ -10,10 +10,6 @@ import {
   HelpCard
 } from './ui-components.js';
 import {
-  // welcome,
-  // currentSituation,
-  // reasonForShopping,
-  // insuranceLiteracy,
   contactInfo,
   ownOrRent,
   basicBizInfo,
@@ -21,7 +17,6 @@ import {
   propertyInfo,
   chooseCoverage,
   reviewCoverage,
-  effectiveDate,
   bindPolicy,
   nextSteps
 } from './steps.js';
@@ -30,6 +25,10 @@ import {
   HAS_INSURANCE,
   NO_INSURANCE,
 } from './constants.js';
+
+import {
+  initBlockBreaker
+} from './brickbreaker.js';
 
 const STATE = {
   currentStep: 0,
@@ -50,7 +49,7 @@ const STEPS = [
     reviewCoverage,
   ],
   [
-    effectiveDate,
+    // effectiveDate,
     bindPolicy,
     nextSteps
   ]
@@ -192,6 +191,7 @@ export const configCompeltedLayout = () => {
 
 const onInit = () => {
   navigateStep(STEPS[STATE.currentStep][STATE.currentSubstep]);
+  // initBlockBreaker();
 };
 
 onInit();

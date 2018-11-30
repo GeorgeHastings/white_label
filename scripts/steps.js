@@ -20,6 +20,10 @@ import {
 } from './confetti.js';
 
 import {
+  initBlockBreaker
+} from './brickbreaker.js';
+
+import {
   Button,
   CoverageOption,
   CoverageOptions,
@@ -27,10 +31,8 @@ import {
 } from './ui-components.js';
 
 import {
-  INSURANCE_SITUATION,
-  HAS_INSURANCE,
-  NO_INSURANCE,
-  ORGANIZATION_TYPES
+  ORGANIZATION_TYPES,
+  CONSTRUCTION_TYPES
 } from './constants.js';
 
 export const contactInfo = new StepQuestion({
@@ -66,7 +68,7 @@ export const contactInfo = new StepQuestion({
     }),
     new Select({
       options: ORGANIZATION_TYPES,
-      label: 'Legal entity type',
+      label: 'Organization type',
       id: 'legalEntityType',
       form: 'basicInfo'
     }),
@@ -107,6 +109,7 @@ export const contactInfo = new StepQuestion({
       text: 'Next',
       handleClick: () => {
         stepForwards();
+        // initBlockBreaker();
       }
     })
   ]
@@ -163,7 +166,7 @@ export const basicBizInfo = new StepQuestion({
       form: 'businessDetails'
     }),
     new InputField({
-      label: 'Square footage of your building',
+      label: 'Square footage of your work space',
       type: 'number',
       id: 'squareFootage',
       form: 'businessDetails'
@@ -215,29 +218,23 @@ export const constructionType = new StepQuestion({
     new RadioGroup({
       id: 'bestDescriptionOfBuilding',
       form: 'buildingClassification',
-      options: [
-        'Residential or small retail shop',
-        'Strip mall or small office building',
-        'High rise condo or office building',
-        'Warehouse or manufacturing facility',
-        'None of these'
-      ],
+      options: CONSTRUCTION_TYPES,
     }),
-    new RadioGroup({
-      options: [
-        'Concrete/masonry',
-        'Wood frame',
-        'Not sure'
-      ],
-      id: 'wallMaterial',
-      label: 'What are the structural walls made of?',
-      form: 'buildingClassification',
-      style: 'load-up',
-      show: () => {
-        return getStatePropValue('bestDescriptionOfBuilding') === 'Residential or small retail shop' ||
-          getStatePropValue('bestDescriptionOfBuilding') === 'None of these';
-      }
-    }),
+    // new RadioGroup({
+    //   options: [
+    //     'Concrete/masonry',
+    //     'Wood frame',
+    //     'Not sure'
+    //   ],
+    //   id: 'wallMaterial',
+    //   label: 'What are the structural walls made of?',
+    //   form: 'buildingClassification',
+    //   style: 'load-up',
+    //   show: () => {
+    //     return getStatePropValue('bestDescriptionOfBuilding') === 'Residential or small retail shop' ||
+    //       getStatePropValue('bestDescriptionOfBuilding') === 'None of these';
+    //   }
+    // }),
     new Button({
       id: 'nextButton',
       style: 'button__primary',
@@ -302,6 +299,7 @@ export const chooseCoverage = new StepQuestion({
           name: 'Standard',
           price: 55,
           actionStyle: 'button__primary',
+          flag: 'Most popular',
           coverages: [
             {
               name: 'General liability limit',
@@ -374,30 +372,34 @@ export const reviewCoverage = new StepQuestion({
   }
 });
 
-export const effectiveDate = new StepQuestion({
-  label: 'When would you like the policy to start?',
-  explainer: 'The "effective date" indicates when your coverage starts. It will renew every year on the same day and month.',
-  id: 'propertyInfo',
-  components: [
-    new DateField({
-      id: 'effectiveDate',
-    }),
-    new Button({
-      id: 'nextButton',
-      style: 'button__primary',
-      text: 'Next',
-      handleClick: () => {
-        stepForwards();
-      }
-    })
-  ]
-});
+// export const effectiveDate = new StepQuestion({
+//   label: 'When would you like the policy to start?',
+//   explainer: 'The "effective date" indicates when your coverage starts. It will renew every year on the same day and month.',
+//   id: 'propertyInfo',
+//   components: [
+//     new DateField({
+//       id: 'effectiveDate',
+//     }),
+//     new Button({
+//       id: 'nextButton',
+//       style: 'button__primary',
+//       text: 'Next',
+//       handleClick: () => {
+//         stepForwards();
+//       }
+//     })
+//   ]
+// });
 
 export const bindPolicy = new StepQuestion({
   label: 'Let\'s put a bow on this thing.',
   explainer: 'Read on up',
   id: 'bindPolicy',
   components: [
+    new DateField({
+      label: 'When would you like the policy to take effect?',
+      id: 'effectiveDate',
+    }),
     new Checkbox({
       id: 'agreeToTerms',
       label: 'By checking this box you agree to get coverage for your business'
@@ -416,9 +418,10 @@ export const bindPolicy = new StepQuestion({
 });
 
 export const nextSteps = new StepQuestion({
-  label: 'Congrats! You\'ve got insurance. Here\'s what happens next.',
-  explainer: 'Something to explain next steps',
+  label: 'Congrats! Your insurance is on the way.',
+  explainer: 'Here\'s what to expect next.',
   id: 'nextSteps',
+  // loadTime: 5000,
   components: [
   ]
 });

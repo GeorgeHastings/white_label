@@ -25,21 +25,22 @@ export const NAVIGATION_ITEMS = [
   'Summary'
 ];
 
-export const ORGANIZATION_TYPES = [
-  'Common Ownership',
-  'Corporation',
-  'Executor Trustee',
-  'Government',
-  'Individual',
-  'Joint Venture',
-  'Limited Partnership',
-  'LLC',
-  'LLP',
-  'Non-Profit',
-  'Partnership',
-  'Religious',
-  'Sole Proprietorship',
-  'Trust Estate',
+export const ORGANIZATION_TYPES = {
+  'corp': 'Corporation',
+  'llc': 'LLC',
+  'partnership': 'Limited Partnership',
+  'individual': 'Individual',
+  'executorTrustee': 'Executor or Trustee',
+  'soleProprietorship': 'Sole Proprietorship',
+  'nonProfit': 'Non-Profit',
+  'other': 'Other'
+};
+
+export const CONSTRUCTION_TYPES = [
+  'Residential or small retail shop',
+  'Strip mall or small office building',
+  'High rise condo or office building',
+  'Warehouse or manufacturing facility'
 ];
 
 export const MOCK_DATA = {
@@ -66,4 +67,67 @@ export const MOCK_DATA = {
     "bppValue": "$600,000"
   },
   "coverageOption": "standardCoverage"
-}
+};
+
+export const STATES =
+  {
+    'Alabama': 'AL',
+    'Alaska': 'AK',
+    'American Samoa': 'AS',
+    'Arizona': 'AZ',
+    'Arkansas': 'AR',
+    'California': 'CA',
+    'Colorado': 'CO',
+    'Connecticut': 'CT',
+    'Delaware': 'DE',
+    'District Of Columbia': 'DC',
+    'Federated States Of Micronesia': 'FM',
+    'Florida': 'FL',
+    'Georgia': 'GA',
+    'Guam': 'GU',
+    'Hawaii': 'HI',
+    'Idaho': 'ID',
+    'Illinois': 'IL',
+    'Indiana': 'IN',
+    'Iowa': 'IA',
+    'Kansas': 'KS',
+    'Kentucky': 'KY',
+    'Louisiana': 'LA',
+    'Maine': 'ME',
+    'Marshall Islands': 'MH',
+    'Maryland': 'MD',
+    'Massachusetts': 'MA',
+    'Michigan': 'MI',
+    'Minnesota': 'MN',
+    'Mississippi': 'MS',
+    'Missouri': 'MO',
+    'Montana': 'MT',
+    'Nebraska': 'NE',
+    'Nevada': 'NV',
+    'New Hampshire': 'NH',
+    'New Jersey': 'NJ',
+    'New Mexico': 'NM',
+    'New York': 'NY',
+    'North Carolina': 'NC',
+    'North Dakota': 'ND',
+    'Northern Mariana Islands': 'MP',
+    'Ohio': 'OH',
+    'Oklahoma': 'OK',
+    'Oregon': 'OR',
+    'Palau': 'PW',
+    'Pennsylvania': 'PA',
+    'Puerto Rico': 'PR',
+    'Rhode Island': 'RI',
+    'South Carolina': 'SC',
+    'South Dakota': 'SD',
+    'Tennessee': 'TN',
+    'Texas': 'TX',
+    'Utah': 'UT',
+    'Vermont': 'VT',
+    'Virgin Islands': 'VI',
+    'Virginia': 'VA',
+    'Washington': 'WA',
+    'West Virginia': 'WV',
+    'Wisconsin': 'WI',
+    'Wyoming': 'WY'
+  }
