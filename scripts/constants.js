@@ -36,6 +36,13 @@ export const ORGANIZATION_TYPES = {
   'other': 'Other'
 };
 
+export const LRO_OPTIONS = [
+  'I work from home',
+  'I lease my space',
+  'I own an office or building that I rent to a tenant',
+  'I own a building that I fully occupy',
+];
+
 export const CONSTRUCTION_TYPES = [
   'Residential or small retail shop',
   'Strip mall or small office building',

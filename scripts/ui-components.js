@@ -34,7 +34,7 @@ export class BreadCrumb {
 
     html.querySelector('.back-button').onclick = stepBackwards;
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -56,7 +56,7 @@ export class NavigationItem {
       </div>
     `);
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -87,7 +87,6 @@ export class Navigation {
     const html = toHTML(`
       <div id="navigation" class="navigation"></div>
     `);
-    const parent = html.querySelector('.navigation');
 
     this.items.forEach((item, index) => {
       let state;
@@ -96,10 +95,10 @@ export class Navigation {
       } else if (index < this.index) {
         state = 'nav-item__complete';
       }
-      parent.appendChild(new NavigationItem(item, state).render());
+      html.appendChild(new NavigationItem(item, state).render());
     });
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -116,9 +115,9 @@ export class Button {
       <a class="button ${this.style}" href="javascript:void(0)">${this.text}</a>
     `);
 
-    html.querySelector('.button').onclick = this.handleClick;
+    html.onclick = this.handleClick;
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -153,7 +152,55 @@ export class StepQuestion {
       parent.appendChild(component.render());
     });
 
-    return html.body.childNodes[0];
+    return html;
+  }
+}
+
+export class Coverage {
+  constructor(args) {
+    this.id = args.id;
+    this.name = args.name;
+    this.limit = args.limit;
+    this.icon = args.icon;
+    this.description = args.description;
+  }
+
+  render() {
+    const html = toHTML(`
+      <div id="${this.id}" class="coverage">
+        <div class="coverage-info">
+          <div class="coverage-title">
+            <img src="${this.icon}">
+            <h3>${this.name}</h3>
+          </div>
+          <p>${this.description}</p>
+        </div>
+        <div class="coverage-limit">${this.limit}</div>
+      </div>
+    `);
+    return html;
+  }
+}
+
+export class CoverageGroup {
+  constructor(args) {
+    this.id = args.id;
+    this.name = args.name;
+    this.coverages = args.coverages;
+  }
+
+  render() {
+    const html = toHTML(`
+      <div id="${this.id}" class="coverage-group">
+        <h5>${this.name}</h5>
+      </div>
+    `);
+
+    this.coverages.forEach(coverage => {
+      html.appendChild(coverage.render());
+    });
+
+    return html;
   }
 }
 
@@ -170,20 +217,20 @@ export class CoverageOption {
   render() {
     const html = toHTML(`
       <div class="coverage-option">
-        ${this.flag ? `<div class="coverage-flag">${this.flag}</div>` : ''}
-        <div class="coverage-name">${this.name}</div>
-        <div class="coverage-price">
-          <div class="coverage-dollars">${this.price}</div>
+        ${this.flag ? `<div class="coverage-option-flag">${this.flag}</div>` : ''}
+        <div class="coverage-option-name">${this.name}</div>
+        <div class="coverage-option-price">
+          <div class="coverage-option-dollars">${this.price}</div>
           / month
         </div>
         <div class="price-annual">or $${this.price*12 - 60}/year</div>
         <a class="button button__small ${this.actionStyle}" href="javascript:void(0)">Learn more</a>
-        <div class="coverage-limits">
+        <div class="coverage-option-limits">
           ${this.coverages.map(coverage => {
             return `
-              <div class="coverage">
-                <div class="coverage-label">${coverage.name}</div>
-                <div class="coverage-limit">${coverage.limit}</div>
+              <div class="coverage-option-specific">
+                <div class="coverage-option-label">${coverage.name}</div>
+                <div class="coverage-option-limit">${coverage.limit}</div>
               </div>
             `;
           }).join(' ')}
@@ -199,7 +246,7 @@ export class CoverageOption {
       stepForwards();
     };
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -215,10 +262,10 @@ export class CoverageOptions {
     `);
 
     this.options.forEach(option => {
-      html.querySelector('.coverage-container').appendChild(option.render());
+      html.appendChild(option.render());
     });
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -234,10 +281,10 @@ export class DetailsSummary {
     `);
 
     this.options.forEach(option => {
-      html.querySelector('.coverage-container').appendChild(option.render());
+      html.appendChild(option.render());
     });
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -255,13 +302,13 @@ export class HelpCard {
       <div class="help-card">
         <img src="${this.icon}">
         <div>
-          <h3>${this.label}</h3>
+          <h4>${this.label}</h4>
           <p class="small-text">${this.body}</p>
         </div>
         <div class="button button__small button__secondary">${this.cta}</div>
       </div>
     `);
 
-    return html.body.childNodes[0];
+    return html;
   }
 }

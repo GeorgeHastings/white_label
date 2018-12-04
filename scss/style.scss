@@ -88,7 +88,7 @@ body {
 	left: 0rem;
 	padding: 3rem;
 	font-size: 1.6rem;
-	color: $gray;
+	color: $gray50;
 }
 
 .breadcrumb,
@@ -107,8 +107,9 @@ body {
 .nav-item {
 	display: flex;
 	line-height: 4rem;
-	color: $gray;
+	color: $gray50;
 	align-items: center;
+	font-size: 1.8rem;
 
 	& + & {
 		margin-top: 2rem;
@@ -248,7 +249,7 @@ body {
 
 .explainer {
 	position: relative;
-	color: $gray;
+	color: $gray50;
 	padding-left: 2.5rem;
 
 	&:before {
@@ -292,7 +293,7 @@ body {
 		white-space: pre;
 		font-size: 1.2rem;
 		margin-left: 3rem;
-		color: $gray;
+		color: $gray50;
 	}
 }
 
@@ -317,6 +318,49 @@ body {
 }
 
 //coverage
+
+.coverage-group {
+	padding: 5rem;
+	background-color: $white;
+	margin-bottom: 3rem;
+}
+
+.coverage {
+	display: flex;
+	justify-content: space-between;
+
+	&:not(:last-child) {
+		padding-bottom: 3rem;
+	}
+
+	& + .coverage {
+		padding-top: 5rem;
+		border-top: 1px solid $teal10;
+	}
+}
+
+.coverage-info p {
+	color: $gray50;
+	max-width: 60rem;
+	// font-size: 1.7rem;
+}
+
+.coverage-title {
+	display: flex;
+	align-items: center;
+	margin-bottom: 2rem;
+
+	h3 {
+		margin-left: 2rem;
+		margin-bottom: 0;
+	}
+}
+
+.coverage-limit {
+	font-size: 2.4rem;
+	font-weight: 600;
+	margin-top: 0.6rem;
+}
 
 .coverage-container {
 	display: flex;
@@ -345,21 +389,21 @@ body {
 	}
 }
 
-.coverage-flag {
+.coverage-option-flag {
 	position: absolute;
 	top: -1.5rem;
 	left: 50%;
 	display: inline-table;
 	background-color: $white;
 	color: $teal;
-	// border: 2px solid $teal;
+	border: 2px solid $teal;
 	padding: 0.5rem 1.5rem;
 	font-size: 1.2rem;
 	font-weight: 700;
 	transform: translateX(-50%);
 }
 
-.coverage-name {
+.coverage-option-name {
 	font-size: 1.4rem;
 	letter-spacing: 0.2rem;
 	text-transform: uppercase;
@@ -367,7 +411,7 @@ body {
 	color: $blue;
 }
 
-.coverage-price {
+.coverage-option-price {
 	display: flex;
 	margin-top: 3rem;
 	margin-bottom: 1rem;
@@ -381,7 +425,7 @@ body {
 	// color: $gray;
 }
 
-.coverage-dollars {
+.coverage-option-dollars {
 	font-size: 4.4rem;
 	font-weight: bold;
 
@@ -391,17 +435,17 @@ body {
 	}
 }
 
-.coverage-limits {
+.coverage-option-limits {
 	margin-top: 5rem;
 }
 
-.coverage + .coverage {
+.coverage-option-specific + .coverage-option-specific {
 	margin-top: 3rem;
 }
 
-.coverage-label {
+.coverage-option-label {
 	font-size: 1.6rem;
-	color: $gray;
+	color: $gray50;
 	margin-bottom: 1rem;
 }
 
@@ -424,16 +468,28 @@ body {
 }
 
 canvas {
-	// @include load-in;
+	@include load-in;
 	position: fixed;
-	top: 50%;
+	// top: 50%;
+	top: 0;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
-	// width: 100%;
-	// height: 100%;
+	width: 100%;
+	height: 100%;
 	z-index: -2;
 	animation-delay: 1s;
-	transform: translateY(-50%);
+	// transform: translateY(-50%);
 	overflow: hidden;
+}
+
+.canvas__game {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto 0;
+	width: 75%;
+	height: 75%;
+	background-color: $white;
 }

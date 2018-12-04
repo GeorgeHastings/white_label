@@ -312,17 +312,27 @@ h2 {
 h3 {
   display: inline-block;
   margin-bottom: 1rem;
-  font-size: 2.1rem;
-  font-weight: 700;
+  font-size: 2.4rem;
+  font-weight: 600;
   color: inherit; }
 
 h4 {
   margin-top: 1rem;
-  font-size: 2rem; }
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700; }
+
+h5 {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: #0D00FF;
+  font-weight: 600;
+  margin-bottom: 5rem; }
 
 p.small-text {
   font-size: 1.6rem;
-  color: #7392B0; }
+  color: #6980A5; }
 
 strong {
   font-weight: 700; }
@@ -399,7 +409,7 @@ body {
   left: 0rem;
   padding: 3rem;
   font-size: 1.6rem;
-  color: #7392B0; }
+  color: #6980A5; }
 
 .breadcrumb,
 .back-button {
@@ -415,8 +425,9 @@ body {
 .nav-item {
   display: flex;
   line-height: 4rem;
-  color: #7392B0;
-  align-items: center; }
+  color: #6980A5;
+  align-items: center;
+  font-size: 1.8rem; }
   .nav-item + .nav-item {
     margin-top: 2rem; }
   .nav-item__active {
@@ -508,7 +519,7 @@ body {
 
 .explainer {
   position: relative;
-  color: #7392B0;
+  color: #6980A5;
   padding-left: 2.5rem; }
   .explainer:before {
     position: absolute;
@@ -543,7 +554,7 @@ body {
     white-space: pre;
     font-size: 1.2rem;
     margin-left: 3rem;
-    color: #7392B0; }
+    color: #6980A5; }
 
 .load-in {
   transform: translate3d(0, 1em, 0);
@@ -586,6 +597,37 @@ body {
     display: block;
     margin-bottom: 3rem; }
 
+.coverage-group {
+  padding: 5rem;
+  background-color: #ffffff;
+  margin-bottom: 3rem; }
+
+.coverage {
+  display: flex;
+  justify-content: space-between; }
+  .coverage:not(:last-child) {
+    padding-bottom: 3rem; }
+  .coverage + .coverage {
+    padding-top: 5rem;
+    border-top: 1px solid #E6FAFA; }
+
+.coverage-info p {
+  color: #6980A5;
+  max-width: 60rem; }
+
+.coverage-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem; }
+  .coverage-title h3 {
+    margin-left: 2rem;
+    margin-bottom: 0; }
+
+.coverage-limit {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-top: 0.6rem; }
+
 .coverage-container {
   display: flex;
   margin-top: 7rem;
@@ -607,26 +649,27 @@ body {
     .coverage-option {
       width: 100%; } }
 
-.coverage-flag {
+.coverage-option-flag {
   position: absolute;
   top: -1.5rem;
   left: 50%;
   display: inline-table;
   background-color: #ffffff;
   color: #00E5E6;
+  border: 2px solid #00E5E6;
   padding: 0.5rem 1.5rem;
   font-size: 1.2rem;
   font-weight: 700;
   transform: translateX(-50%); }
 
-.coverage-name {
+.coverage-option-name {
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-weight: 600;
   color: #0D00FF; }
 
-.coverage-price {
+.coverage-option-price {
   display: flex;
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -637,22 +680,22 @@ body {
 .price-annual {
   font-size: 1.6rem; }
 
-.coverage-dollars {
+.coverage-option-dollars {
   font-size: 4.4rem;
   font-weight: bold; }
-  .coverage-dollars:before {
+  .coverage-option-dollars:before {
     content: "$";
     font-size: 2.4rem; }
 
-.coverage-limits {
+.coverage-option-limits {
   margin-top: 5rem; }
 
-.coverage + .coverage {
+.coverage-option-specific + .coverage-option-specific {
   margin-top: 3rem; }
 
-.coverage-label {
+.coverage-option-label {
   font-size: 1.6rem;
-  color: #7392B0;
+  color: #6980A5;
   margin-bottom: 1rem; }
 
 .full-screen-loader {
@@ -681,12 +724,35 @@ body {
     z-index: 2; }
 
 canvas {
+  transform: translate3d(0, 1em, 0);
+  opacity: 0;
+  animation: loadin 0.25s cubic-bezier(0.74, 0.24, 0.21, 0.77);
+  animation-fill-mode: forwards;
   position: fixed;
-  top: 50%;
+  top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
+  width: 100%;
+  height: 100%;
   z-index: -2;
   animation-delay: 1s;
-  transform: translateY(-50%);
   overflow: hidden; }
+
+@keyframes loadin {
+  0% {
+    transform: translate3d(0, 1em, 0);
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0rem, 0); } }
+
+.canvas__game {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto 0;
+  width: 75%;
+  height: 75%;
+  background-color: #ffffff; }

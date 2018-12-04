@@ -52,8 +52,7 @@ class Block {
 
 class Ball {
   constructor(args) {
-    this.height = args.height;
-    this.width = args.width;
+    this.radius = args.radius;
     this.x = args.x;
     this.y = args.y;
     this.color = args.color;
@@ -62,16 +61,18 @@ class Ball {
       y: -args.speed
     };
     this.speed = args.speed;
+    this.speedX = args.speed;
+    this.speedY = -args.speed;
   }
 
   update() {
     const x = this.x;
     const y = this.y;
 
-    ctx.clearRect(x - this.width/2 - this.speed, y - this.width/2 - this.speed, this.width + this.speed*2, this.height + this.speed*2);
+    ctx.clearRect(x - this.radius - this.speedX - 1, y - this.radius - this.speedY - 1, this.radius*2 + this.speed*2 + 1, this.radius*2 + this.speed*2 + 1);
     ctx.fillStyle = this.color;
     ctx.beginPath();
-    ctx.arc(x,y,this.width/2,0,2*Math.PI);
+    ctx.arc(x,y,this.radius,0,2*Math.PI);
     ctx.fill();
   }
 }
@@ -89,8 +90,18 @@ class Paddle {
   update() {
     const x = this.x;
     const y = this.y;
+    const againstLeftWall = mouseX - this.width/2 < 0;
+    const againstRightWall = mouseX >= canvasWidth - this.width/2;
 
-    ctx.clearRect(0, canvasHeight - this.height, canvasWidth, 50);
+    if(againstLeftWall) {
+      // this.x = 0;
+      mouseX = this.width/2;
+    } else if (againstRightWall) {
+      mouseX = canvasWidth - this.width/2;
+    }
+    this.x = this.x + (mouseX - this.x - this.width/2)/this.speed;
+
+    ctx.clearRect(0, canvasHeight - this.height-2, canvasWidth, this.height+2);
     ctx.fillStyle = this.color;
     ctx.fillRect(
       x,
@@ -103,8 +114,8 @@ class Paddle {
 
 const createPaddle = () => {
   return new Paddle({
-    height: 50,
-    width: 200,
+    height: canvasHeight/18,
+    width: canvasWidth/8,
     x: randomInt(0, canvasWidth),
     color: '#FD337D',
     speed: 10
@@ -113,9 +124,9 @@ const createPaddle = () => {
 
 const createBlocks = (rows, columns) => {
   const blocks = [];
-  const width = (canvasWidth/columns);
-  const height = 50;
-  let yPos = 0;
+  const width = (canvasWidth - 200)/columns;
+  const height = canvasHeight/18;
+  let yPos = 1;
   let xPos = 0;
   for(let i = 0; i < (columns * rows); i++) {
     xPos = i % columns;
@@ -125,9 +136,9 @@ const createBlocks = (rows, columns) => {
     blocks.push(new Block({
       height: height - 10,
       width: width - 10,
-      x: xPos * width,
+      x: xPos * width + 100,
       y: (yPos * height),
-      color: '#0D00FF'
+      color: COLORS[randomInt(0, COLORS.length - 1)]
     }));
   }
   return blocks;
@@ -135,12 +146,11 @@ const createBlocks = (rows, columns) => {
 
 const createBall = () => {
   return new Ball({
-    height: 50,
-    width: 50,
+    radius: canvasHeight/36,
     x: randomInt(0, canvasWidth),
-    y: randomInt(300, canvasHeight),
+    y: canvasHeight-75,
     color: '#FD337D',
-    speed: 8
+    speed: canvasHeight/80
   });
 };
 
@@ -149,7 +159,6 @@ const blocks = createBlocks(3, 8);
 const paddle = createPaddle();
 
 const renderBlocks = () => {
-  ctx.clearRect(0, 0, canvasWidth, 4 * 50 + 15);
   for (var i = 0; i < blocks.length; i++) {
     const b = blocks[i];
     ctx.fillStyle = b.color;
@@ -170,15 +179,49 @@ export const initBlockBreaker = () => {
   tick();
 };
 
+const isHittingBlock = block => {
+  const ballX = ball.x;
+  const ballY = ball.y;
+  const distX = Math.abs(ballX - block.x-block.width/2);
+  const distY = Math.abs(ballY - block.y-block.height/2);
+
+  if (distX > (block.width/2 + ball.radius)) { return false; }
+  if (distY > (block.height/2 + ball.radius)) { return false; }
+
+  if (distX <= (block.width/2)) {
+    if(ballY - ball.radius < block.y + block.height) {
+      ball.speedY = -ball.speedY;
+    } else {
+      ball.speedY = ball.speedY;
+    }
+    return true;
+  }
+  if (distY <= (block.height/2)) {
+    if(ballX + ball.radius < block.x) {
+      ball.speedX = -ball.speedX;
+    } else {
+      ball.speedX = ball.speedX;
+    }
+    return true;
+  }
+
+  const dx=distX-block.width/2;
+  const dy=distY-block.height/2;
+
+  if((dx*dx+dy*dy<=(ball.radius*ball.radius))) {
+    ball.speedX = -ball.speedX;
+    ball.speedY = -ball.speedY;
+  }
+
+  return (dx*dx+dy*dy<=(ball.radius*ball.radius));
+};
+
 const checkForBlockHit = () => {
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i];
-    const hitY = ball.y - ball.height/2 - 2 <= block.y + block.height;
-    const hitX = ball.x >= block.x && ball.x + ball.width/2 <= block.x + block.width;
-    if(hitY && hitX) {
+    if(isHittingBlock(block)) {
+      ctx.clearRect(block.x-5, block.y-5, block.width+5, block.height+5);
       blocks.splice(i, 1);
-      ball.direction.y = ball.speed;
-      renderBlocks();
       return;
     }
   }
@@ -191,26 +234,28 @@ const bindMouseEvents = () => {
 };
 
 const tick = () => {
-  const hitsPaddleY = ball.y + ball.height/2 >= canvasHeight - paddle.height;
-  const hitsPaddleX = ball.x >= paddle.x && ball.x < paddle.x + paddle.width;
-  const missesPaddle = ball.y + ball.height/2 > canvasHeight;
-  const hitsRightWall = ball.x + ball.width/2 >= canvasWidth;
-  const hitsLeftWall = ball.x < canvasX;
-  const hitsCeiling = ball.y - ball.height/2 < canvasY;
+  const missesPaddle = ball.y > canvasHeight;
+  const hitsRightWall = ball.x + ball.radius > canvasWidth;
+  const hitsLeftWall = ball.x - ball.radius < canvasX;
+  const hitsCeiling = ball.y - ball.radius < canvasY;
 
   if(hitsLeftWall) {
-    ball.direction.x = ball.speed;
+    ball.speedX = -ball.speedX;
   }
   if(hitsRightWall) {
-    ball.direction.x = -ball.speed;
+    ball.speedX = -ball.speedX;
   }
 
   if(hitsCeiling) {
-    ball.direction.y = ball.speed;
+    ball.speedY = -ball.speedY;
   }
-  if(hitsPaddleY && hitsPaddleX) {
-    // ball.speed = paddle.width/(ball.x + ball.width/2 - paddle.x) * 2;
-    ball.direction.y = -ball.speed;
+  if(isHittingBlock(paddle)) {
+    const coefficient = (ball.x - paddle.x)/(paddle.width + ball.radius);
+    const newSpeedY = 1;
+    const newSpeedX = (-1 + coefficient*2);
+    const newSpeed = (Math.abs(newSpeedX) + 1) * ball.speed;
+    ball.speedX = newSpeed * newSpeedX;
+    ball.speedY = -newSpeed * newSpeedY;
   }
   if(missesPaddle) {
     ball.y = 300;
@@ -219,10 +264,11 @@ const tick = () => {
     ball.direction.y = ball.speed;
   }
 
+  ball.direction.x = ball.speedX;
+  ball.direction.y = ball.speedY;
+
   ball.x = ball.x + ball.direction.x;
   ball.y = ball.y + ball.direction.y;
-
-  paddle.x = paddle.x + (mouseX - paddle.x - paddle.width/2)/paddle.speed;
 
   ball.update();
   paddle.update();
@@ -231,5 +277,24 @@ const tick = () => {
 
   if(blocks.length > 0) {
     requestAnimationFrame(tick);
+  } else {
+    ctx.clearRect(canvasX, canvasY, canvasWidth, canvasHeight);
   }
 };
+
+export class Game {
+  constructor() {
+
+  }
+
+  init() {
+    initCanvas('canvas');
+    renderBlocks();
+    bindMouseEvents();
+    tick();
+  }
+
+  kill() {
+    blocks.length = 0;
+  }
+}

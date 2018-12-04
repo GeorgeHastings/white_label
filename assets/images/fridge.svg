@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="36px" viewBox="0 0 24 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>fridge</title>
+    <desc>Created with Sketch.</desc>
+    <g id="App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="quotes_BOP-Copy-54" transform="translate(-398.000000, -1866.000000)" fill="#00E5E6">
+            <g id="fridge" transform="translate(398.000000, 1866.000000)">
+                <path d="M19.5,36 L4.5,36 C2.019,36 0,33.981 0,31.5 L0,4.5 C0,2.019 2.019,0 4.5,0 L19.5,0 C21.981,0 24,2.019 24,4.5 L24,31.5 C24,33.981 21.981,36 19.5,36 Z M21,4.5 C21,3.672 20.328,3 19.5,3 L4.5,3 C3.672,3 3,3.672 3,4.5 L3,15 L21,15 L21,4.5 Z M21,18 L3,18 L3,31.5 C3,32.328 3.672,33 4.5,33 L19.5,33 C20.328,33 21,32.328 21,31.5 L21,18 Z M6,28.5 C5.1705,28.5 4.5,27.8295 4.5,27 L4.5,21 C4.5,20.1705 5.1705,19.5 6,19.5 C6.8295,19.5 7.5,20.1705 7.5,21 L7.5,27 C7.5,27.8295 6.8295,28.5 6,28.5 Z M6,6 C6.8295,6 7.5,6.6705 7.5,7.5 L7.5,10.5 C7.5,11.3295 6.8295,12 6,12 C5.1705,12 4.5,11.3295 4.5,10.5 L4.5,7.5 C4.5,6.6705 5.1705,6 6,6 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

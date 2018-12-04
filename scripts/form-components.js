@@ -69,7 +69,7 @@ export class Checkbox extends Input {
       input.checked = false;
     }
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -122,7 +122,7 @@ export class RadioGroup extends Input {
       }
     });
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -164,7 +164,7 @@ export class Select extends Input {
       input.value = entered;
     }
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -208,7 +208,7 @@ export class InputField extends Input {
       input.value = entered;
     }
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -250,7 +250,7 @@ export class DateField extends Input {
       html.querySelector('.date-field-wrapper').appendChild(field.render());
     });
 
-    return html.body.childNodes[0];
+    return html;
   }
 }
 
@@ -302,6 +302,6 @@ export class AddressField extends Input {
       parent.appendChild(field.render());
     });
 
-    return html.body.childNodes[0];
+    return html;
   }
 }

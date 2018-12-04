@@ -8,7 +8,8 @@ export const $ = id =>
   document.getElementById(id);
 
 export const toHTML = template => {
-  return new DOMParser().parseFromString(template, 'text/html');
+  const fragment = new DOMParser().parseFromString(template, 'text/html');
+  return fragment.body.childNodes[0];
 };
 
 export const intToMoney = (value) => {

@@ -20,7 +20,7 @@ import {
 } from './confetti.js';
 
 import {
-  initBlockBreaker
+  Game
 } from './brickbreaker.js';
 
 import {
@@ -28,12 +28,17 @@ import {
   CoverageOption,
   CoverageOptions,
   StepQuestion,
+  Coverage,
+  CoverageGroup
 } from './ui-components.js';
 
 import {
   ORGANIZATION_TYPES,
-  CONSTRUCTION_TYPES
+  CONSTRUCTION_TYPES,
+  LRO_OPTIONS
 } from './constants.js';
+
+const brickBreaker = new Game();
 
 export const contactInfo = new StepQuestion({
   label: 'Let\'s cover some basics.',
@@ -109,7 +114,6 @@ export const contactInfo = new StepQuestion({
       text: 'Next',
       handleClick: () => {
         stepForwards();
-        // initBlockBreaker();
       }
     })
   ]
@@ -119,15 +123,10 @@ export const ownOrRent = new StepQuestion({
   label: 'How would you describe where you operate your business?',
   explainer: 'This tells us whether or not we need to insure a building.',
   id: 'ownOrRent',
-  loadTime: 3000,
+  loadTime: 2000,
   components: [
     new RadioGroup({
-      options: [
-        'I work from home',
-        'I rent my workspace',
-        'I own an office or building that I rent to a tenant',
-        'I own a building that I fully occupy',
-      ],
+      options: LRO_OPTIONS,
       id: 'ownOrRent',
       form: 'businessDetails'
     }),
@@ -263,6 +262,7 @@ export const propertyInfo = new StepQuestion({
       text: 'Calculate my rate',
       handleClick: () => {
         stepForwards();
+        brickBreaker.init();
       }
     })
   ]
@@ -273,7 +273,10 @@ export const chooseCoverage = new StepQuestion({
   explainer: 'Based on what you\'ve told us we are presenting the following coverage options.',
   id: 'chooseCoverage',
   style: 'main-container__full-width',
-  loadTime: 5000,
+  loadTime: 7500,
+  oninit: () => {
+    brickBreaker.kill();
+  },
   components: [
     new CoverageOptions({
       id: 'coverageOption',
@@ -354,9 +357,84 @@ export const chooseCoverage = new StepQuestion({
 
 export const reviewCoverage = new StepQuestion({
   label: 'Here is the coverage',
-  explainer: 'Read on up',
+  explainer: '$55/month or $600/year',
+  style: 'main-container__full-width',
   id: 'propertyInfo',
   components: [
+    new CoverageGroup({
+      id: 'generalLiability',
+      name: 'Your liability coverage',
+      coverages: [
+        new Coverage({
+          id: 'generalLiabilityLimit',
+          name: 'General Liability',
+          limit: '$2,000,000',
+          icon: 'assets/images/auction.svg',
+          description: 'This is your "slip and fall" insurance. It covers your legal stuff.'
+        }),
+        new Coverage({
+          id: 'medicalExpenses',
+          name: 'Medical Expenses',
+          limit: '$5,000',
+          icon: 'assets/images/bandage-2.svg',
+          description: 'Coverage does not require a finding of legal liability and is available to cover medical expenses incurred within a specified period by a claimant for a covered injury, regardless of whether the insured was at fault.'
+        })
+      ]
+    }),
+    new CoverageGroup({
+      id: 'propertyCoverage',
+      name: 'Your property coverage',
+      coverages: [
+        new Coverage({
+          id: 'buildingValue',
+          name: 'Building value',
+          limit: '$560,000',
+          icon: 'assets/images/shop-1.svg',
+          description: 'This covers vehicles you or your employees use for business operations but are not owned by the busiess. Does not include delivery.'
+        }),
+        new Coverage({
+          id: 'personalProperty',
+          name: 'Personal property',
+          limit: '$250,000',
+          icon: 'assets/images/smartphone-laptop.svg',
+          description: 'This covers vehicles you or your employees use for business operations but are not owned by the busiess. Does not include delivery.'
+        }),
+        new Coverage({
+          id: 'deductible',
+          name: 'Deductible',
+          limit: '$2,500',
+          icon: 'assets/images/banknote-1.svg',
+          description: 'This covers vehicles you or your employees use for business operations but are not owned by the busiess. Does not include delivery.'
+        }),
+      ]
+    }),
+    new CoverageGroup({
+      id: 'additionalCoverages',
+      name: 'Additional coverages',
+      coverages: [
+        new Coverage({
+          id: 'hiredNonOwnedAuto',
+          name: 'Hired and Non-owned Auto',
+          limit: '',
+          icon: 'assets/images/car.svg',
+          description: 'This covers vehicles you or your employees use for business operations but are not owned by the busiess. Does not include delivery.'
+        }),
+        new Coverage({
+          id: 'spoilage',
+          name: 'Spoilage',
+          limit: '$50,000',
+          icon: 'assets/images/fridge.svg',
+          description: 'Coverage pays for loss of “perishable stock” when a change in temperature or humidity from a mechanical breakdown or failure of refrigeration, cooling or humidity control apparatus or equipment, as well as when loss happens from contamination by a refrigerant.'
+        }),
+        new Coverage({
+          id: 'cyberAndData',
+          name: 'Cyber and Data Liability',
+          limit: '$100,000',
+          icon: 'assets/images/cloud-locked.svg',
+          description: 'The Data Response and Cyber Liability Coverage Endorsement insures the policyholder for certain common liability costs, expenses, fines and penalties which they may face in the event of an incident such as a data breach.'
+        }),
+      ]
+    }),
     new Button({
       id: 'nextButton',
       style: 'button__primary',
@@ -371,25 +449,6 @@ export const reviewCoverage = new StepQuestion({
     self.label = `Summary of ${selectedCoverage || ''} coverage`;
   }
 });
-
-// export const effectiveDate = new StepQuestion({
-//   label: 'When would you like the policy to start?',
-//   explainer: 'The "effective date" indicates when your coverage starts. It will renew every year on the same day and month.',
-//   id: 'propertyInfo',
-//   components: [
-//     new DateField({
-//       id: 'effectiveDate',
-//     }),
-//     new Button({
-//       id: 'nextButton',
-//       style: 'button__primary',
-//       text: 'Next',
-//       handleClick: () => {
-//         stepForwards();
-//       }
-//     })
-//   ]
-// });
 
 export const bindPolicy = new StepQuestion({
   label: 'Let\'s put a bow on this thing.',

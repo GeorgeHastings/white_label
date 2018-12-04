@@ -34,21 +34,32 @@ h2 {
 h3 {
 	display: inline-block;
 	margin-bottom: 1rem;
-	font-size: 2.1rem;
-	font-weight: 700;
+	font-size: 2.4rem;
+	font-weight: 600;
 	color: inherit;
 }
 
 h4 {
 	margin-top: 1rem;
+	margin-bottom: 1rem;
 	font-size: 2rem;
+	font-weight: 700;
+}
+
+h5 {
+	font-size: 1.4rem;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+	color: $blue;
+	font-weight: 600;
+	margin-bottom: 5rem;
 }
 
 p {
 
 	&.small-text {
 		font-size: 1.6rem;
-		color: $gray;
+		color: $gray50;
 	}
 }
 
