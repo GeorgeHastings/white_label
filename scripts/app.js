@@ -31,7 +31,7 @@ import {
 } from './brickbreaker.js';
 
 const STATE = {
-  currentStep: 0,
+  currentStep: 1,
   currentSubstep: 0,
   data: {}
 };
