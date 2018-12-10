@@ -224,10 +224,9 @@ input[type="radio"] {
     .radio-group .radio-button + .radio-button {
       margin-top: 1.5rem; }
     .radio-group .radio-button label {
-      height: 7.5rem;
       position: relative;
       display: inline-table;
-      padding: 3rem 5rem;
+      padding: 2.5rem 5rem;
       margin-bottom: 0;
       width: inherit;
       overflow: hidden;
@@ -236,6 +235,20 @@ input[type="radio"] {
       border-radius: 0.3rem;
       background-color: #ffffff;
       transition: box-shadow 0.15s ease; }
+    .radio-group .radio-button label .coverage-option-price {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      color: #7392B0;
+      margin-left: -1rem;
+      justify-content: flex-start; }
+    .radio-group .radio-button label .coverage-option-dollars {
+      font-size: 3.6rem;
+      font-weight: bold;
+      color: #0A1031; }
+      .radio-group .radio-button label .coverage-option-dollars:before {
+        content: "$";
+        font-size: 2rem;
+        font-weight: 500; }
 
 .radio-group__split .radio-group {
   display: flex;
@@ -292,7 +305,7 @@ h1, h2, h3, h4, p {
 h1 {
   display: inline-block;
   margin-top: 3rem;
-  font-size: 3.6rem;
+  font-size: 3.4rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
   line-height: 1.4;
@@ -477,7 +490,7 @@ body {
   background-color: #E6FAFA;
   margin-right: 1.5rem;
   transition: background-color 0.3s ease;
-  box-shadow: 0 0 0 0 #ffffff, 0 0 0 0 #0D00FF; }
+  box-shadow: inset 0 0 0 2rem #ffffff, 0 0 0 0 #0D00FF; }
   .nav-circle svg {
     position: absolute;
     transform: rotateZ(-85deg); }
@@ -730,7 +743,6 @@ body {
   display: inline-table;
   color: #ffffff;
   background-color: #00E5E6;
-  border: 2px solid #00E5E6;
   padding: 0.2rem 1.2rem;
   font-size: 0.9rem;
   font-weight: 700;
@@ -780,6 +792,18 @@ body {
   font-size: 1.6rem;
   color: #6980A5;
   margin-bottom: 1rem; }
+
+.tag {
+  color: #ffffff;
+  background-color: #0D00FF;
+  margin-left: 1rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  vertical-align: text-bottom; }
 
 canvas {
   transform: translate3d(0, 1em, 0);

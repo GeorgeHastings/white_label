@@ -155,7 +155,7 @@ export class PricingPage {
                   Coverage does not require a finding of legal liability and is available to cover
                   medical expenses incurred within a specified period by a claimant for a covered injury,
                   regardless of whether the insured was at fault.">
-                  Personal property limit <img src="assets/images/tooltip.svg"></span>
+                  Business property limit <img src="assets/images/tooltip.svg"></span>
                 </td>
                 <td>$250,000</td>
                 <td>$250,000</td>
@@ -330,12 +330,11 @@ export class CoverageOption {
         ${this.flag ? `<div class="coverage-option-flag">${this.flag}</div>` : ''}
         <div class="coverage-option-name">${this.name}</div>
         <div class="coverage-option-price">
-          <div class="coverage-option-dollars">${this.price}</div>
-          / mo
+          <div class="coverage-option-dollars">${this.price}</div> / mo
         </div>
         <div class="price-annual">or $${this.price*12 - 60}/year</div>
         <div class="coverage-option-description">${this.description}</div>
-        <a class="button button__small ${this.actionStyle}" href="javascript:void(0)">Learn more</a>
+        <a class="button button__small ${this.actionStyle}" href="javascript:void(0)">Choose this</a>
       </div>
     `);
 

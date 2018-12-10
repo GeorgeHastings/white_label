@@ -235,10 +235,10 @@ input[type="radio"] {
     }
 
     label {
-      @include form-height;
+      // @include form-height;
       position: relative;
       display: inline-table;
-      padding: 3rem 5rem;
+      padding: 2.5rem 5rem;
       margin-bottom: 0;
       width: inherit;
       overflow: hidden;
@@ -247,6 +247,26 @@ input[type="radio"] {
       border-radius: 0.3rem;
       background-color: $white;
       transition: box-shadow 0.15s ease;
+    }
+
+    label .coverage-option-price {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      color: $gray;
+      margin-left: -1rem;
+    	justify-content: flex-start;
+    }
+
+    label .coverage-option-dollars {
+    	font-size: 3.6rem;
+    	font-weight: bold;
+      color: $black;
+
+    	&:before {
+    		content: "$";
+    		font-size: 2rem;
+    		font-weight: 500;
+    	}
     }
   }
 }

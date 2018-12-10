@@ -129,7 +129,7 @@ export const ownOrRent = new StepQuestion({
   label: 'How would you describe where you operate your business?',
   explainer: 'This tells us whether or not we need to insure a building.',
   id: 'ownOrRent',
-  loadTime: 1000,
+  // loadTime: 1000,
   components: [
     new RadioGroup({
       options: LRO_OPTIONS,
@@ -411,12 +411,27 @@ export const reviewCoverage = new StepQuestion({
 
 export const bindPolicy = new StepQuestion({
   label: 'Let\'s put a bow on this thing.',
-  explainer: 'Read on up',
+  explainer: 'Just a few more details and we\'ll tell you what happens next.',
   id: 'bindPolicy',
   oninit: () => {
     $('wrapper').classList.remove('wrapper__price-options');
   },
   components: [
+    new RadioGroup({
+      label: 'How would you like to be billed?',
+      id: 'paymentPlan',
+      style: 'radio-group__split',
+      options: [
+        `<div class="coverage-option-price">
+          <div class="coverage-option-dollars">55</div>/ mo
+        </div>
+        <span>Pay monthly</span>`,
+        `<div class="coverage-option-price">
+          <div class="coverage-option-dollars">50</div>/ mo
+        </div>
+        <span>Pay annually</span><span class="tag">Save $55</span>`,
+      ],
+    }),
     new DateField({
       label: 'When would you like the policy to take effect?',
       id: 'effectiveDate',

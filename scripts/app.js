@@ -31,7 +31,7 @@ import {
 } from './brickbreaker.js';
 
 const STATE = {
-  currentStep: 0,
+  currentStep: 2,
   currentSubstep: 0,
   data: {}
 };
@@ -203,7 +203,6 @@ export const configCompeltedLayout = () => {
 
 const onInit = () => {
   navigateStep(STEPS[STATE.currentStep][STATE.currentSubstep]);
-  // initBlockBreaker();
 };
 
 onInit();
