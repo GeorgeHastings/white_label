@@ -129,7 +129,7 @@ export const ownOrRent = new StepQuestion({
   label: 'How would you describe where you operate your business?',
   explainer: 'This tells us whether or not we need to insure a building.',
   id: 'ownOrRent',
-  loadTime: 2500,
+  loadTime: 1000,
   components: [
     new RadioGroup({
       options: LRO_OPTIONS,
@@ -278,7 +278,7 @@ export const chooseCoverage = new PricingPage({
   label: 'Choose your coverage.',
   explainer: 'Based on what you\'ve told us we are presenting the following coverage options.',
   id: 'chooseCoverage',
-  loadTime: 10000,
+  loadTime: 12000,
   oninit: () => {
     configPricingLayout();
     brickBreaker.kill();
