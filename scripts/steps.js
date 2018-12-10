@@ -10,9 +10,14 @@ import {
 } from './form-components.js';
 
 import {
+  $,
+} from './helpers.js';
+
+import {
   stepForwards,
   getStatePropValue,
-  configCompeltedLayout
+  configCompeltedLayout,
+  configPricingLayout
 } from './app.js';
 
 import {
@@ -28,6 +33,7 @@ import {
   CoverageOption,
   CoverageOptions,
   StepQuestion,
+  PricingPage,
   Coverage,
   CoverageGroup
 } from './ui-components.js';
@@ -123,7 +129,7 @@ export const ownOrRent = new StepQuestion({
   label: 'How would you describe where you operate your business?',
   explainer: 'This tells us whether or not we need to insure a building.',
   id: 'ownOrRent',
-  loadTime: 2000,
+  loadTime: 2500,
   components: [
     new RadioGroup({
       options: LRO_OPTIONS,
@@ -268,13 +274,13 @@ export const propertyInfo = new StepQuestion({
   ]
 });
 
-export const chooseCoverage = new StepQuestion({
+export const chooseCoverage = new PricingPage({
   label: 'Choose your coverage.',
   explainer: 'Based on what you\'ve told us we are presenting the following coverage options.',
   id: 'chooseCoverage',
-  style: 'main-container__full-width',
-  loadTime: 7500,
+  loadTime: 10000,
   oninit: () => {
+    configPricingLayout();
     brickBreaker.kill();
   },
   components: [
@@ -285,70 +291,23 @@ export const chooseCoverage = new StepQuestion({
           id: 'basicCoverage',
           name: 'Basic',
           price: 39,
+          description: 'Light coverage for those who just need to check the box',
           actionStyle: 'button__secondary-alt',
-          coverages: [
-            {
-              name: 'General liability limit',
-              limit: '$500,000'
-            },
-            {
-              name: 'Deductible',
-              limit: '$10,000'
-            }
-          ]
         }),
         new CoverageOption({
           id: 'standardCoverage',
           name: 'Standard',
           price: 55,
+          description: 'The most popular option for the average business',
           actionStyle: 'button__primary',
           flag: 'Most popular',
-          coverages: [
-            {
-              name: 'General liability limit',
-              limit: '$1,000,000'
-            },
-            {
-              name: 'Deductible',
-              limit: '$5,000'
-            },
-            {
-              name: '',
-              limit: 'Hired auto'
-            },
-            {
-              name: '',
-              limit: 'Cyber liability'
-            }
-          ]
         }),
         new CoverageOption({
           id: 'premiumCoverage',
           name: 'Premium',
           price: 78,
+          description: 'Extra for those who want a little more cushion',
           actionStyle: 'button__secondary-alt',
-          coverages: [
-            {
-              name: 'General liability limit',
-              limit: '$2,000,000'
-            },
-            {
-              name: 'Deductible',
-              limit: '$1,000'
-            },
-            {
-              name: '',
-              limit: 'Hired auto'
-            },
-            {
-              name: '',
-              limit: 'Cyber liability'
-            },
-            {
-              name: '',
-              limit: 'Professional Liability'
-            }
-          ]
         })
       ]
     })
@@ -454,6 +413,9 @@ export const bindPolicy = new StepQuestion({
   label: 'Let\'s put a bow on this thing.',
   explainer: 'Read on up',
   id: 'bindPolicy',
+  oninit: () => {
+    $('wrapper').classList.remove('wrapper__price-options');
+  },
   components: [
     new DateField({
       label: 'When would you like the policy to take effect?',

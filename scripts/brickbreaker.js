@@ -15,9 +15,15 @@ let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d').scale(2,2);
 let canvasX = 0;
 let canvasY = 0;
-let canvasWidth = window.innerWidth - canvasX;
-let canvasHeight = window.innerHeight - canvasY;
+let canvasWidth = window.innerWidth - canvasX*2;
+let canvasHeight = window.innerHeight - canvasY*2;
 let mouseX = 500;
+let blockWidth = 500;
+let blockHeight = canvasHeight/18;
+let ballRadius = canvasHeight/36;
+let ballSpeed = canvasHeight/80;
+let paddleHeight = canvasHeight/18;
+let paddleWidth = canvasWidth/8;
 
 const random = (min, max) => {
   return Math.random() * (max - min) + min;
@@ -114,8 +120,8 @@ class Paddle {
 
 const createPaddle = () => {
   return new Paddle({
-    height: canvasHeight/18,
-    width: canvasWidth/8,
+    height: paddleHeight,
+    width: paddleWidth,
     x: randomInt(0, canvasWidth),
     color: '#FD337D',
     speed: 10
@@ -125,7 +131,7 @@ const createPaddle = () => {
 const createBlocks = (rows, columns) => {
   const blocks = [];
   const width = (canvasWidth - 200)/columns;
-  const height = canvasHeight/18;
+  const height = blockHeight;
   let yPos = 1;
   let xPos = 0;
   for(let i = 0; i < (columns * rows); i++) {
@@ -146,11 +152,11 @@ const createBlocks = (rows, columns) => {
 
 const createBall = () => {
   return new Ball({
-    radius: canvasHeight/36,
-    x: randomInt(0, canvasWidth),
-    y: canvasHeight-75,
+    radius: ballRadius,
+    x: 300,
+    y: 500,
     color: '#FD337D',
-    speed: canvasHeight/80
+    speed: ballSpeed
   });
 };
 
@@ -220,7 +226,7 @@ const checkForBlockHit = () => {
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i];
     if(isHittingBlock(block)) {
-      ctx.clearRect(block.x-5, block.y-5, block.width+5, block.height+5);
+      ctx.clearRect(block.x-1, block.y-1, block.width+2, block.height+2);
       blocks.splice(i, 1);
       return;
     }
@@ -228,7 +234,7 @@ const checkForBlockHit = () => {
 };
 
 const bindMouseEvents = () => {
-  window.onmousemove = ev => {
+  canvas.onmousemove = ev => {
     mouseX = ev.pageX;
   };
 };
@@ -260,8 +266,9 @@ const tick = () => {
   if(missesPaddle) {
     ball.y = 300;
     ball.x = 500;
-    ball.direction.x = ball.speed;
-    ball.direction.y = ball.speed;
+    // ball.speed = ballSpeed;
+    ball.speedX = ballSpeed;
+    ball.speedY = ballSpeed;
   }
 
   ball.direction.x = ball.speedX;

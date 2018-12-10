@@ -121,6 +121,115 @@ export class Button {
   }
 }
 
+export class PricingPage {
+  constructor(args) {
+    this.id = args.id;
+    this.label = args.label;
+    this.explainer = args.explainer;
+    this.components = args.components;
+    this.style = args.style;
+    this.loadTime = args.loadTime;
+    this.oninit = args.oninit && args.oninit.bind(this);
+  }
+
+  render() {
+    if(this.oninit) {
+      this.oninit(this);
+    }
+
+    const html = toHTML(`
+      <div class="pricing-page-container load-in">
+        <div class="pricing-page-top">
+          <div class="pricing-page-details">
+            <h1>${this.label}</h1>
+            <p class="explainer">${this.explainer}</p>
+          </div>
+          <div class="pricing-page-options"></div>
+        </div>
+        <div class="coverage-table">
+          <table>
+              <tr><td class="coverage-label">Property coverage</td></tr>
+              <tr>
+                <td>
+                  <span class="tool-tip tool-tip__large" data-tooltip="
+                  Coverage does not require a finding of legal liability and is available to cover
+                  medical expenses incurred within a specified period by a claimant for a covered injury,
+                  regardless of whether the insured was at fault.">
+                  Personal property limit <img src="assets/images/tooltip.svg"></span>
+                </td>
+                <td>$250,000</td>
+                <td>$250,000</td>
+                <td>$250,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="tool-tip tool-tip__large" data-tooltip="
+                  Coverage does not require a finding of legal liability and is available to cover
+                  medical expenses incurred within a specified period by a claimant for a covered injury,
+                  regardless of whether the insured was at fault.">
+                  Deductible <img src="assets/images/tooltip.svg"></span>
+                </td>
+                <td>$5,000</td>
+                <td>$2,500</td>
+                <td>$1,000</td>
+              </tr>
+              <tr><td class="coverage-label">Liability coverage</td></tr>
+              <tr>
+                <td>General Liability limit</td>
+                <td>$500,000</td>
+                <td>$1,000,000</td>
+                <td>$2,000,000</td>
+              </tr>
+              <tr>
+                <td>Medical expenses</td>
+                <td>$5,000</td>
+                <td>$5,000</td>
+                <td>$10,000</td>
+              </tr>
+              <tr><td class="coverage-label">Additional coverages</td></tr>
+              <tr>
+                <td>Hired & Non-owned Auto</td>
+                <td></td>
+                <td><img src="assets/images/check_blue.svg"></td>
+                <td><img src="assets/images/check_blue.svg"></td>
+              </tr>
+              <tr>
+                <td>Spoilage</td>
+                <td></td>
+                <td>$50,000</td>
+                <td>$50,000</td>
+              </tr>
+              <tr>
+                <td>Cyber and Data Liability</td>
+                <td></td>
+                <td>$100,000</td>
+                <td>$100,000</td>
+              </tr>
+              <tr>
+                <td>Employee Practices Liability</td>
+                <td></td>
+                <td></td>
+                <td>$100,000</td>
+              </tr>
+          </table>
+        </div>
+      </div>
+    `);
+
+    const optionContainer = html.querySelector('.pricing-page-options');
+
+    this.components.forEach(component => {
+      optionContainer.appendChild(component.render());
+    });
+
+    // this.labels.forEach(label => {
+    //   types.appendChild(label.render());
+    // });
+
+    return html;
+  }
+}
+
 export class StepQuestion {
   constructor(args) {
     this.id = args.id;
@@ -209,6 +318,7 @@ export class CoverageOption {
     this.id = args.id;
     this.name = args.name;
     this.price = args.price;
+    this.description = args.description;
     this.actionStyle = args.actionStyle;
     this.coverages = args.coverages;
     this.flag = args.flag;
@@ -221,20 +331,11 @@ export class CoverageOption {
         <div class="coverage-option-name">${this.name}</div>
         <div class="coverage-option-price">
           <div class="coverage-option-dollars">${this.price}</div>
-          / month
+          / mo
         </div>
         <div class="price-annual">or $${this.price*12 - 60}/year</div>
+        <div class="coverage-option-description">${this.description}</div>
         <a class="button button__small ${this.actionStyle}" href="javascript:void(0)">Learn more</a>
-        <div class="coverage-option-limits">
-          ${this.coverages.map(coverage => {
-            return `
-              <div class="coverage-option-specific">
-                <div class="coverage-option-label">${coverage.name}</div>
-                <div class="coverage-option-limit">${coverage.limit}</div>
-              </div>
-            `;
-          }).join(' ')}
-        </div>
       </div>
     `);
 

@@ -31,7 +31,7 @@ import {
 } from './brickbreaker.js';
 
 const STATE = {
-  currentStep: 1,
+  currentStep: 0,
   currentSubstep: 0,
   data: {}
 };
@@ -46,10 +46,9 @@ const STEPS = [
   ],
   [
     chooseCoverage,
-    reviewCoverage,
+    // reviewCoverage,
   ],
   [
-    // effectiveDate,
     bindPolicy,
     nextSteps
   ]
@@ -80,7 +79,9 @@ export const updateState = args => {
      }
   });
 
-  $('adminz-only').innerHTML = `<code>${JSON.stringify(STATE.data, undefined, 2)}</code>`;
+  if($('adminz-only')) {
+    $('adminz-only').innerHTML = `<code>${JSON.stringify(STATE.data, undefined, 2)}</code>`;
+  }
 };
 
 export const getStatePropValue = id => {
@@ -176,6 +177,17 @@ export const stepBackwards = () => {
   }
 
   navigateStep(step);
+};
+
+export const configPricingLayout = () => {
+  $('wrapper').classList.add('wrapper__price-options');
+  render('rightRail', new HelpCard({
+    id: 'questionsHelp',
+    icon: 'assets/images/question.svg',
+    label: 'Questions?',
+    body: 'Our licensed agents are standing by ready to assist you.',
+    cta: 'Chat with an agent'
+  }));
 };
 
 export const configCompeltedLayout = () => {
