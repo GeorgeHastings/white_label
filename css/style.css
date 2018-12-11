@@ -963,3 +963,6 @@ canvas {
     transform: translateX(-32%); }
   100% {
     transform: translateX(-10%); } }
+
+#adminz-only {
+  display: none; }

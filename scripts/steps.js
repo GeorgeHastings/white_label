@@ -48,14 +48,15 @@ const brickBreaker = new Game();
 
 export const contactInfo = new StepQuestion({
   label: 'Let\'s cover some basics.',
-  explainer: 'We can use this to pull some data automatically to speed up the process.',
+  explainer: 'This will tell us whether you\'re eligible and how to get in touch.',
   id: 'contactInfo',
   components: [
     new InputField({
       label: 'Legal business name',
       type: 'text',
       id: 'legalBusinessName',
-      form: 'basicInfo'
+      form: 'basicInfo',
+      default: 'New Hope Flower Shop'
     }),
     new RadioGroup({
       options: [
@@ -93,6 +94,12 @@ export const contactInfo = new StepQuestion({
     new AddressField({
       label: 'Business address',
       id: 'businessAddress',
+      default: {
+        street: '9 West Mechanic Street',
+        city: 'New Hope',
+        state: 'Pennsylvania',
+        zip: '18938'
+      },
       form: 'businessAddress'
     }),
     new RadioGroup({
@@ -174,6 +181,7 @@ export const basicBizInfo = new StepQuestion({
       label: 'Square footage of your work space',
       type: 'number',
       id: 'squareFootage',
+      default: 1491,
       form: 'businessDetails'
     }),
     new RadioGroup({
@@ -186,6 +194,7 @@ export const basicBizInfo = new StepQuestion({
       id: 'numberOfFloors',
       label: 'Number of stories in the building',
       form: 'businessDetails',
+      default: 1,
       style: 'radio-group__split'
     }),
     new InputField({

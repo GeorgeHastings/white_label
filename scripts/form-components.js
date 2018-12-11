@@ -26,6 +26,7 @@ class Input {
     this.conditional = args.conditional;
     this.hide = args.hide;
     this.show = args.show;
+    this.default =  args.default;
     this.onchange = this.onchange && this.onchange.bind(this);
   }
 
@@ -161,6 +162,10 @@ export class Select extends Input {
 
     input.onchange = this.onchange;
 
+    if(this.default) {
+      input.value = this.default;
+    }
+
     if(entered) {
       input.value = entered;
     }
@@ -198,6 +203,10 @@ export class InputField extends Input {
     const input = html.querySelector('input');
 
     input.onchange = this.onchange;
+
+    if(this.default) {
+      input.value = this.default;
+    }
 
     if(this.money) {
       input.oninput = () => {
@@ -274,6 +283,7 @@ export class AddressField extends Input {
         type: 'text',
         id: 'businessStreetAddress',
         placeholder: 'Street address',
+        default: this.default && this.default.street,
         form: this.form
       }),
       new InputField({
@@ -281,6 +291,7 @@ export class AddressField extends Input {
         id: 'businessAddressCity',
         placeholder: 'City',
         style: 'form-field__city',
+        default: this.default && this.default.city,
         form: this.form
       }),
       new Select({
@@ -288,6 +299,7 @@ export class AddressField extends Input {
         id: 'businessAddressState',
         style: 'form-field__state',
         placeholder: 'State',
+        default: this.default && this.default.state,
         form: this.form
       }),
       new InputField({
@@ -295,6 +307,7 @@ export class AddressField extends Input {
         id: 'businessAddressZip',
         placeholder: 'Zip',
         style: 'form-field__zip',
+        default: this.default && this.default.zip,
         form: this.form
       })
     ];
