@@ -56,6 +56,15 @@ class Block {
   }
 }
 
+function clearCircle(context,x,y,radius) {
+	context.save();
+	context.beginPath();
+	context.arc(x, y, radius, 0, 2*Math.PI, true);
+	context.clip();
+	context.clearRect(x-radius,y-radius,radius*2,radius*2);
+	context.restore();
+}
+
 class Ball {
   constructor(args) {
     this.radius = args.radius;

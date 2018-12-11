@@ -64,6 +64,7 @@ export const contactInfo = new StepQuestion({
         'No'
       ],
       id: 'hasBizDba',
+      default: 1,
       label: 'Does your business operate under a different name?',
       form: 'basicInfo',
       style: 'radio-group__split',
@@ -107,6 +108,7 @@ export const contactInfo = new StepQuestion({
         'Yes',
         'No'
       ],
+      default: 0,
       id: 'sameAsMailing',
       label: 'Is this the same as your mailing address?',
       form: 'basicInfo',
