@@ -62,6 +62,13 @@ p {
 		font-size: 1.6rem;
 		color: $gray50;
 	}
+
+	&.tiny-text {
+		display: block;
+		margin-top: 1rem;
+		font-size: 1.4rem;
+		color: $gray50;
+	}
 }
 
 strong {

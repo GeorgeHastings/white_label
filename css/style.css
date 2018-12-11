@@ -236,8 +236,8 @@ input[type="radio"] {
       background-color: #ffffff;
       transition: box-shadow 0.15s ease; }
     .radio-group .radio-button label .coverage-option-price {
-      margin-top: 0;
-      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
       color: #7392B0;
       margin-left: -1rem;
       justify-content: flex-start; }
@@ -346,6 +346,12 @@ h5 {
 
 p.small-text {
   font-size: 1.6rem;
+  color: #6980A5; }
+
+p.tiny-text {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.4rem;
   color: #6980A5; }
 
 strong {

@@ -425,11 +425,13 @@ export const bindPolicy = new StepQuestion({
         `<div class="coverage-option-price">
           <div class="coverage-option-dollars">55</div>/ mo
         </div>
-        <span>Pay monthly</span>`,
+        <span>Pay monthly</span>
+        <p class="tiny-text">20% down</p>`,
         `<div class="coverage-option-price">
           <div class="coverage-option-dollars">50</div>/ mo
         </div>
-        <span>Pay annually</span><span class="tag">Save $55</span>`,
+        <span>Pay annually</span><span class="tag">Save $55</span>
+        <p class="tiny-text">$600/year</p>`,
       ],
     }),
     new DateField({
