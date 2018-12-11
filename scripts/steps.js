@@ -217,7 +217,7 @@ export const basicBizInfo = new StepQuestion({
 
 export const constructionType = new StepQuestion({
   label: 'Which of these best describes your building?',
-  explainer: 'This helps us determine risk',
+  explainer: 'This information helps us better understand your risk.',
   id: 'propertyInfo',
   components: [
     new RadioGroup({
@@ -253,7 +253,7 @@ export const constructionType = new StepQuestion({
 
 export const propertyInfo = new StepQuestion({
   label: 'What is the total value of your business’s personal property?',
-  explainer: 'Your policy must include the cost of replacing all of the belongings owned by your business. This includes things like furniture and equipment. It does not include vehicles.',
+  explainer: 'This should be the cost of replacing all of your business’s belongings. Examples include furniture, computers, and equipment but not vehicles (those need separate coverage).',
   id: 'propertyInfo',
   components: [
     new InputField({
@@ -421,6 +421,7 @@ export const bindPolicy = new StepQuestion({
       label: 'How would you like to be billed?',
       id: 'paymentPlan',
       style: 'radio-group__split',
+      default: 0,
       options: [
         `<div class="coverage-option-price">
           <div class="coverage-option-dollars">55</div>/ mo

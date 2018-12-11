@@ -175,38 +175,74 @@ export class PricingPage {
               </tr>
               <tr><td class="coverage-label">Liability coverage</td></tr>
               <tr>
-                <td>General Liability limit</td>
+                <td>
+                  <span class="tool-tip tool-tip__large" data-tooltip="
+                  Coverage does not require a finding of legal liability and is available to cover
+                  medical expenses incurred within a specified period by a claimant for a covered injury,
+                  regardless of whether the insured was at fault.">
+                  General Liability limit <img src="assets/images/tooltip.svg"></span>
+                </td>
                 <td>$500,000</td>
                 <td>$1,000,000</td>
                 <td>$2,000,000</td>
               </tr>
               <tr>
-                <td>Medical expenses</td>
+                <td>
+                  <span class="tool-tip tool-tip__large" data-tooltip="
+                  Coverage does not require a finding of legal liability and is available to cover
+                  medical expenses incurred within a specified period by a claimant for a covered injury,
+                  regardless of whether the insured was at fault.">
+                  Medical expenses<img src="assets/images/tooltip.svg"></span>
+                </td>
                 <td>$5,000</td>
                 <td>$5,000</td>
                 <td>$10,000</td>
               </tr>
               <tr><td class="coverage-label">Additional coverages</td></tr>
               <tr>
-                <td>Hired & Non-owned Auto</td>
+                <td>
+                  <span class="tool-tip tool-tip__large" data-tooltip="
+                  Coverage does not require a finding of legal liability and is available to cover
+                  medical expenses incurred within a specified period by a claimant for a covered injury,
+                  regardless of whether the insured was at fault.">
+                  Hired & Non-owned Auto<img src="assets/images/tooltip.svg"></span>
+                </td>
                 <td></td>
                 <td><img src="assets/images/check_blue.svg"></td>
                 <td><img src="assets/images/check_blue.svg"></td>
               </tr>
               <tr>
-                <td>Spoilage</td>
+                <td>
+                  <span class="tool-tip tool-tip__large" data-tooltip="
+                  Coverage does not require a finding of legal liability and is available to cover
+                  medical expenses incurred within a specified period by a claimant for a covered injury,
+                  regardless of whether the insured was at fault.">
+                  Spoilage<img src="assets/images/tooltip.svg"></span>
+                </td>
                 <td></td>
                 <td>$50,000</td>
                 <td>$50,000</td>
               </tr>
               <tr>
-                <td>Cyber and Data Liability</td>
+                <td>
+                  <span class="tool-tip tool-tip__large" data-tooltip="
+                  Coverage does not require a finding of legal liability and is available to cover
+                  medical expenses incurred within a specified period by a claimant for a covered injury,
+                  regardless of whether the insured was at fault.">
+                  Cyber and Data Liability<img src="assets/images/tooltip.svg"></span>
+                </td>
                 <td></td>
                 <td>$100,000</td>
                 <td>$100,000</td>
               </tr>
               <tr>
-                <td>Employee Practices Liability</td>
+                <td>
+                  <span class="tool-tip tool-tip__large" data-tooltip="
+                  Coverage does not require a finding of legal liability and is available to cover
+                  medical expenses incurred within a specified period by a claimant for a covered injury,
+                  regardless of whether the insured was at fault.">
+                  Employee Practices Liability<img src="assets/images/tooltip.svg"></span>
+                </td>
                 <td></td>
                 <td></td>
                 <td>$100,000</td>

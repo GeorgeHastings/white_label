@@ -78,6 +78,7 @@ export class RadioGroup extends Input {
     super(args);
     this.options = args.options;
     this.advance = args.advance || false;
+    this.default = args.default;
   }
 
   onchange(index) {
@@ -115,7 +116,7 @@ export class RadioGroup extends Input {
         this.onchange(index);
       };
 
-      if(input.nextElementSibling.innerText === selected) {
+      if(input.nextElementSibling.innerText === selected || index === this.default) {
         input.checked = true;
       } else {
         input.checked = false;
