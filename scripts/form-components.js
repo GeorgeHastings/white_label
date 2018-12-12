@@ -56,7 +56,7 @@ export class Checkbox extends Input {
       <div class="form-field form-field__checkbox ${this.style} ${this.hide ? `_hidden` : ''}">
         <label>
           <input id="${this.id}" type="checkbox">
-          ${this.label}
+          <div class="checkbox-label">${this.label}</div>
         </label>
       </div>
     `);
@@ -118,6 +118,11 @@ export class RadioGroup extends Input {
       };
 
       if(input.nextElementSibling.innerText === selected || index === this.default) {
+        updateState({
+          id: this.id,
+          value: this.options[index],
+          form: this.form
+        });
         input.checked = true;
       } else {
         input.checked = false;
@@ -164,6 +169,11 @@ export class Select extends Input {
 
     if(this.default) {
       input.value = this.default;
+      updateState({
+        id: this.id,
+        value: this.default,
+        form: this.form
+      });
     }
 
     if(entered) {
@@ -206,6 +216,11 @@ export class InputField extends Input {
 
     if(this.default) {
       input.value = this.default;
+      updateState({
+        id: this.id,
+        value: this.default,
+        form: this.form
+      });
     }
 
     if(this.money) {

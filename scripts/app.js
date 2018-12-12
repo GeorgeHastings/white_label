@@ -31,7 +31,7 @@ import {
 } from './brickbreaker.js';
 
 const STATE = {
-  currentStep: 0,
+  currentStep: 2,
   currentSubstep: 0,
   data: {}
 };
@@ -70,7 +70,7 @@ export const updateState = args => {
   }
 
   step.components.forEach(component => {
-    if(component.show) {
+    if(component.show && $(component.id)) {
       if(component.show()) {
         $(component.id).parentElement.classList.remove('_hidden');
       } else {
@@ -103,6 +103,37 @@ const render = (id, component) => {
   $(id).appendChild(component.render());
 };
 
+const validateStep = enabled => {
+  const step = STEPS[STATE.currentStep][STATE.currentSubstep];
+  let valid = true;
+  step.components.forEach(component => {
+    if(component.form) {
+      if(STATE.data[component.form]) {
+        for(let prop in STATE.data[component.form]) {
+          if(!STATE.data[component.form][prop]) {
+            valid = false;
+          }
+        }
+      }
+      if(!STATE.data[component.form] || !STATE.data[component.form][component.id]) {
+        console.log(component)
+        $(component.id).setAttribute('style', 'border: 2px solid red');
+        valid = false;
+      }
+    } else {
+      if(!STATE.data[component.id]) {
+        $(component.id).setAttribute('style', 'border: 2px solid red');
+        valid = false;
+      }
+    }
+  });
+  if(valid) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 const navigateStep = step => {
   const showBack = STATE.currentSubstep > 0 || STATE.currentStep > 0 ? true : false;
   breadcrumb.showBackButton = showBack;
@@ -130,32 +161,34 @@ const navigateStep = step => {
 };
 
 export const stepForwards = () => {
-  STATE.currentSubstep++;
-  navigation.subIndex++;
-  let step = STEPS[STATE.currentStep][STATE.currentSubstep];
+  // if(validateStep()) {
+    STATE.currentSubstep++;
+    navigation.subIndex++;
+    let step = STEPS[STATE.currentStep][STATE.currentSubstep];
 
-  if(!step) {
-    STATE.currentStep++;
-    navigation.index++;
-    STATE.currentSubstep = 0;
-    navigation.subIndex = 0;
+    if(!step) {
+      STATE.currentStep++;
+      navigation.index++;
+      STATE.currentSubstep = 0;
+      navigation.subIndex = 0;
 
-    if(STEPS[STATE.currentStep]) {
-      step = STEPS[STATE.currentStep][STATE.currentSubstep];
-    } else {
-      return;
+      if(STEPS[STATE.currentStep]) {
+        step = STEPS[STATE.currentStep][STATE.currentSubstep];
+      } else {
+        return;
+      }
     }
-  }
 
-  if(step.loadTime) {
-    $('fullScreenLoader').classList.remove('_hidden');
-    setTimeout(() => {
-      $('fullScreenLoader').classList.add('_hidden');
+    if(step.loadTime) {
+      $('fullScreenLoader').classList.remove('_hidden');
+      setTimeout(() => {
+        $('fullScreenLoader').classList.add('_hidden');
+        navigateStep(step);
+      }, step.loadTime);
+    } else {
       navigateStep(step);
-    }, step.loadTime);
-  } else {
-    navigateStep(step);
-  }
+    }
+  // }
 };
 
 export const stepBackwards = () => {
@@ -202,7 +235,7 @@ export const configCompeltedLayout = () => {
 };
 
 const onInit = () => {
-  navigateStep(STEPS[STATE.currentStep][STATE.currentSubstep]);
+  navigateStep(STEPS[STATE.currentStep][STATE.currentSubstep], false);
 };
 
 onInit();

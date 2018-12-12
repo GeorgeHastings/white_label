@@ -48,7 +48,18 @@
   &__checkbox {
 
     label {
+      display: flex;
+      justify-content: flex-start;
+      flex-shrink: 1;
       font-weight: normal;
+    }
+
+    .checkbox-label {
+      margin-top: 0.5em;
+    }
+
+    input {
+      flex-shrink: 0;
     }
   }
 }
