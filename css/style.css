@@ -153,6 +153,26 @@ input[type="checkbox"] {
     outline: none;
     box-shadow: 0 0 0 0.4rem #E6FAFA, 0 0 0 0.7rem #00E5E6; }
 
+input[type="text"].field_invalid,
+input[type="number"].field_invalid,
+input[type="checkbox"].field_invalid,
+select.field_invalid {
+  box-shadow: 0 0 0 0.4rem #E6FAFA, 0 0 0 0.7rem #FD337D; }
+
+input[type="text"].field_invalid:focus,
+input[type="number"].field_invalid:focus,
+input[type="checkbox"].field_invalid:focus,
+select.field_invalid:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem #E6FAFA, 0 0 0 0.7rem #00E5E6; }
+
+input[type="radio"].field_invalid + label {
+  box-shadow: 0 0 0 0.4rem #E6FAFA, 0 0 0 0.7rem #FD337D; }
+
+input[type="radio"].field_invalid:focus + label {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem #E6FAFA, 0 0 0 0.7rem #00E5E6; }
+
 .select-container {
   position: relative; }
   .select-container::after {
@@ -264,6 +284,21 @@ input[type="radio"] {
 .radio-group__split .radio-button + .radio-button {
   margin-left: 1.5rem;
   margin-top: 0; }
+
+.auto-suggest-results {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem; }
+  .auto-suggest-results li {
+    padding: 2rem 3rem;
+    list-style: none; }
+    .auto-suggest-results li:hover {
+      background-color: #0D00FF;
+      color: #ffffff; }
+      .auto-suggest-results li:hover em {
+        background-color: inherit; }
+    .auto-suggest-results li em {
+      background-color: #E6FAFA; }
 
 .button {
   display: inline-block;
@@ -416,8 +451,11 @@ body {
   .wrapper.wrapper__last-step .sidebar {
     display: none; }
   .wrapper.wrapper__last-step .main-container {
-    max-width: 102.4rem;
+    max-width: 117rem;
+    padding: 5rem 0;
     margin: 0 auto; }
+  .wrapper.wrapper__last-step .step-container {
+    width: 100%; }
   .wrapper.wrapper__last-step .breadcrumb-container {
     display: none; }
 
@@ -805,6 +843,33 @@ body {
   font-size: 1.6rem;
   color: #6980A5;
   margin-bottom: 1rem; }
+
+.next-step {
+  display: flex;
+  padding: 3rem 0;
+  font-size: 2rem;
+  line-height: 1.5;
+  border-radius: 0.3rem; }
+  .next-step + .next-step {
+    margin-top: 1.5rem; }
+  .next-step .next-step-icon {
+    margin-right: 3rem; }
+
+.policy-pdf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  border: 0.3rem solid #E6FAFA;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  transition: border 0.15s ease;
+  cursor: pointer; }
+  .policy-pdf:hover {
+    border: 0.3rem solid #00E5E6; }
+  .policy-pdf img {
+    width: 2.2rem; }
 
 .tag {
   color: #ffffff;

@@ -33,6 +33,7 @@ class Input {
   oninit() {
     if(this.show) {
       this.hide = true;
+      this.style = 'load-up';
 
       if(this.show()) {
         this.hide = false;
@@ -330,6 +331,68 @@ export class AddressField extends Input {
     fields.forEach(field => {
       parent.appendChild(field.render());
     });
+
+    return html;
+  }
+}
+
+export class AskKodiakSearch extends Input {
+  constructor(args) {
+    super(args);
+    this.resultsLimit = args.resultsLimit;
+  }
+
+  /* jshint ignore:start */
+  async search(string) {
+    const URL = `https://api.askkodiak.com/v1/suggest/naics-codes/${string}`;
+    if(string.length > 2) {
+      let resp = await fetch(URL, {
+          method: 'GET',
+          mode: 'cors',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Basic LUwxU01MYzFkS2Y0UE9fcGU4dGs6NDFmNmEwMmNmMmEwNjBhM2Y0ZDFjNGUzYmJkMTkzYjc5MjUxYzhhMjBhODY2ZmFl'
+          }
+      })
+      .then(response => response.json())
+      .catch(error => console.error(`Fetch Error =\n`, error));
+      return resp;
+    } else if (string.length === 0) {
+      return false;
+    }
+  }
+  /* jshint ignore:end */
+
+  template() {
+    const html = toHTML(`
+      <div class="form-field ${this.style} ${this.hide ? `_hidden` : ''}">
+        <input id="${this.id}" type="text" placeholder="Search industries e.g. “Florist”">
+        <div id="searchResults" class="auto-suggest-results"></div>
+      </div>
+    `);
+    const input = html.querySelector('input');
+    const results = html.querySelector('.auto-suggest-results');
+    const select = ev => {
+      const value = ev.target.innerText;
+      $(this.id).value = value;
+      results.innerHTML = '';
+    };
+
+    input.oninput = (ev) => {
+      this.search(ev.target.value).then(hits => {
+        results.innerHTML = '';
+        if(hits && hits.hits.length > 0) {
+          for(let i = 0; i < this.resultsLimit; i++) {
+            console.log(hits.hits[i])
+            const hit = toHTML(`<li data-code="${hits.hits[i].hash}">${hits.hits[i]._highlightResult.description.value}</li>`);
+            hit.onclick = select;
+            results.appendChild(hit);
+          }
+        } else {
+          results.innerHTML = '';
+        }
+      });
+    };
 
     return html;
   }

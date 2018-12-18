@@ -424,6 +424,44 @@ export class DetailsSummary {
   }
 }
 
+export class NextStep {
+  constructor(args) {
+    this.id = args.id;
+    this.icon = args.icon;
+    this.body = args.body;
+  }
+
+  render() {
+    const html = toHTML(`
+      <div class="next-step">
+        <div class="next-step-icon"><img src="${this.icon}"></div>
+        <div>${this.body}</div>
+      </div>
+    `);
+
+    return html;
+  }
+}
+
+export class NextSteps {
+  constructor(args) {
+    this.id = args.id;
+    this.steps = args.steps;
+  }
+
+  render() {
+    const html = toHTML(`
+      <div class="next-steps-container"></div>
+    `);
+
+    this.steps.forEach(step => {
+      html.appendChild(step.render());
+    });
+
+    return html;
+  }
+}
+
 export class HelpCard {
   constructor(args) {
     this.id = args.id;

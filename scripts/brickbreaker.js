@@ -84,9 +84,14 @@ class Ball {
     const x = this.x;
     const y = this.y;
 
-    ctx.clearRect(x - this.radius - this.speedX - 1, y - this.radius - this.speedY - 1, this.radius*2 + this.speed*2 + 1, this.radius*2 + this.speed*2 + 1);
+    ctx.beginPath();
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.arc(x - this.speedX,y - this.speedY, this.radius+1,0,2*Math.PI);
+    ctx.fill();
+
     ctx.fillStyle = this.color;
     ctx.beginPath();
+    ctx.globalCompositeOperation = 'source-over';
     ctx.arc(x,y,this.radius,0,2*Math.PI);
     ctx.fill();
   }

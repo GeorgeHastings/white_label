@@ -131,6 +131,29 @@ input[type="checkbox"] {
   }
 }
 
+input[type="text"],
+input[type="number"],
+input[type="checkbox"],
+select {
+  &.field_invalid {
+    box-shadow: 0 0 0 0.4rem $teal10, 0 0 0 0.7rem $pink;
+  }
+  &.field_invalid:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.4rem $teal10, 0 0 0 0.7rem $teal;
+  }
+}
+
+input[type="radio"] {
+  &.field_invalid + label {
+    box-shadow: 0 0 0 0.4rem $teal10, 0 0 0 0.7rem $pink;
+  }
+  &.field_invalid:focus + label {
+    outline: none;
+    box-shadow: 0 0 0 0.4rem $teal10, 0 0 0 0.7rem $teal;
+  }
+}
+
 .select-container {
   position: relative;
 
@@ -292,6 +315,30 @@ input[type="radio"] {
   .radio-button + .radio-button {
     margin-left: 1.5rem;
     margin-top: 0;
+  }
+}
+
+.auto-suggest-results {
+  background-color: $white;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+
+  li {
+    padding: 2rem 3rem;
+    list-style: none;
+
+    &:hover {
+       background-color: $blue;
+       color: $white;
+
+       em {
+         background-color: inherit;
+       }
+    }
+
+    em {
+      background-color: $teal10;
+    }
   }
 }
 

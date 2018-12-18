@@ -2,6 +2,7 @@
 
 import {
   $,
+  getFormField
 } from './helpers.js';
 
 import {
@@ -15,6 +16,7 @@ import {
   basicBizInfo,
   constructionType,
   propertyInfo,
+  businessClassification,
   chooseCoverage,
   reviewCoverage,
   bindPolicy,
@@ -32,7 +34,7 @@ import {
 
 const STATE = {
   currentStep: 0,
-  currentSubstep: 0,
+  currentSubstep: 2,
   data: {}
 };
 
@@ -40,8 +42,9 @@ const STEPS = [
   [
     contactInfo,
     ownOrRent,
+    businessClassification,
     basicBizInfo,
-    constructionType,
+    // constructionType,
     propertyInfo
   ],
   [
@@ -107,23 +110,10 @@ const validateStep = enabled => {
   const step = STEPS[STATE.currentStep][STATE.currentSubstep];
   let valid = true;
   step.components.forEach(component => {
-    if(component.form) {
-      if(STATE.data[component.form]) {
-        for(let prop in STATE.data[component.form]) {
-          if(!STATE.data[component.form][prop]) {
-            valid = false;
-          }
-        }
-      }
-      if(!STATE.data[component.form] || !STATE.data[component.form][component.id]) {
-        console.log(component)
-        $(component.id).setAttribute('style', 'border: 2px solid red');
-        valid = false;
-      }
-    } else {
-      if(!STATE.data[component.id]) {
-        $(component.id).setAttribute('style', 'border: 2px solid red');
-        valid = false;
+    if(!getStatePropValue(component.id)) {
+      valid = false;
+      if($(component.id)) {
+        $(component.id).classList.add('field_invalid')
       }
     }
   });

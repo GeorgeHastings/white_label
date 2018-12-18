@@ -6,8 +6,21 @@ import {
   AddressField,
   DateField,
   Checkbox,
-  Select
+  Select,
+  AskKodiakSearch
 } from './form-components.js';
+
+import {
+  Button,
+  CoverageOption,
+  CoverageOptions,
+  StepQuestion,
+  PricingPage,
+  Coverage,
+  CoverageGroup,
+  NextStep,
+  NextSteps
+} from './ui-components.js';
 
 import {
   $,
@@ -27,16 +40,6 @@ import {
 import {
   Game
 } from './brickbreaker.js';
-
-import {
-  Button,
-  CoverageOption,
-  CoverageOptions,
-  StepQuestion,
-  PricingPage,
-  Coverage,
-  CoverageGroup
-} from './ui-components.js';
 
 import {
   ORGANIZATION_TYPES,
@@ -74,7 +77,6 @@ export const contactInfo = new StepQuestion({
       type: 'text',
       id: 'doingBizAs',
       form: 'basicInfo',
-      style: 'load-up',
       show: () => {
         return getStatePropValue('hasBizDba') === 'Yes';
       }
@@ -118,7 +120,6 @@ export const contactInfo = new StepQuestion({
       label: 'Business mailing address',
       id: 'businessMailingAddress',
       form: 'businessMailingAddress',
-      style: 'load-up',
       show: () => {
         return getStatePropValue('sameAsMailing') === 'No';
       }
@@ -144,6 +145,27 @@ export const ownOrRent = new StepQuestion({
       options: LRO_OPTIONS,
       id: 'ownOrRent',
       form: 'businessDetails'
+    }),
+    new Button({
+      id: 'nextButton',
+      style: 'button__primary',
+      text: 'Next',
+      handleClick: () => {
+        stepForwards();
+      }
+    })
+  ]
+});
+
+export const businessClassification = new StepQuestion({
+  label: 'What industry are you in?',
+  explainer: 'By classifying your business as accurately as possible, we\'ll be able to better tailor your coverage.',
+  id: 'propertyInfo',
+  components: [
+    new AskKodiakSearch({
+      type: 'text',
+      id: 'classificationCode',
+      resultsLimit: 50
     }),
     new Button({
       id: 'nextButton',
@@ -267,11 +289,31 @@ export const propertyInfo = new StepQuestion({
   explainer: 'This should be the cost of replacing all of your business’s belongings. Examples include furniture, computers, and equipment but not vehicles (those need separate coverage).',
   id: 'propertyInfo',
   components: [
+    // new InputField({
+    //   type: 'text',
+    //   id: 'bppValue',
+    //   form: 'businessDetails',
+    //   money: true
+    // }),
+    new RadioGroup({
+      id: 'bppValue',
+      options: [
+        '$55,000',
+        '$80,000 <span class="tag">industry average</span>',
+        '$105,000',
+        'Other'
+      ],
+    }),
     new InputField({
       type: 'text',
-      id: 'bppValue',
+      label: 'Enter an exact amount',
+      id: 'bppValueExact',
       form: 'businessDetails',
-      money: true
+      money: true,
+      focusTip: 'Value must be greater than $20,000',
+      show: () => {
+        return getStatePropValue('bppValue') === 'Other';
+      }
     }),
     new Button({
       id: 'nextButton',
@@ -473,5 +515,28 @@ export const nextSteps = new StepQuestion({
   id: 'nextSteps',
   // loadTime: 5000,
   components: [
+    new NextSteps({
+      id: 'nextSteps',
+      steps: [
+        new NextStep({
+          id: 'policyStep',
+          icon: 'assets/images/check_blue.svg',
+          body: `Below is your policy document.
+          Download it and look it over. Feel free to each out to us if you have any questions.
+          <div class="policy-pdf"><span>businessowners-policy.pdf</span><img src="assets/images/download-2.svg"></div>
+          `
+        }),
+        new NextStep({
+          id: 'emailStep',
+          icon: 'assets/images/check_blue.svg',
+          body: 'You\'ll receive an invoice in your email within the next 4 hours. From there you can enter your billing information and pay.'
+        }),
+        new NextStep({
+          id: 'coveredStep',
+          icon: 'assets/images/check_blue.svg',
+          body: 'Your coverage will start on the policies effective date.'
+        }),
+      ]
+    })
   ]
 });

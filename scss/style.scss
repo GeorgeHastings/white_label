@@ -68,8 +68,13 @@ body {
 	}
 
 	.main-container {
-		max-width: 102.4rem;
+		max-width: 117rem;
+		padding: 5rem 0;
 		margin: 0 auto;
+	}
+
+	.step-container {
+		width: 100%;
 	}
 
 	.breadcrumb-container {
@@ -560,6 +565,44 @@ body {
 	font-size: 1.6rem;
 	color: $gray50;
 	margin-bottom: 1rem;
+}
+
+.next-step {
+	display: flex;
+	padding: 3rem 0;
+	font-size: 2rem;
+	line-height: 1.5;
+	// background-color: $white;
+	border-radius: 0.3rem;
+
+	& + & {
+		margin-top: 1.5rem;
+	}
+
+	.next-step-icon {
+		margin-right: 3rem;
+	}
+}
+
+.policy-pdf {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+	margin-top: 3rem;
+	border: 0.3rem solid $teal10;
+	background-color: $white;
+	border-radius: 0.5rem;
+	transition: border 0.15s ease;
+	cursor: pointer;
+
+	&:hover {
+		border: 0.3rem solid $teal;
+	}
+
+	img {
+		width: 2.2rem;
+	}
 }
 
 .tag {
