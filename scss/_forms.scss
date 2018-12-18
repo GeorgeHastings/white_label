@@ -319,9 +319,17 @@ input[type="radio"] {
 }
 
 .auto-suggest-results {
+  @include load-up;
   background-color: $white;
   border-radius: 0.5rem;
-  margin-top: 1.5rem;
+
+  &:empty {
+    display: none;
+  }
+
+  li:first-child {
+    margin-top: -2rem;
+  }
 
   li {
     padding: 2rem 3rem;
@@ -338,6 +346,10 @@ input[type="radio"] {
 
     em {
       background-color: $teal10;
+    }
+
+    &.gray-text {
+      pointer-events: none;
     }
   }
 }

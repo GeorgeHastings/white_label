@@ -34,7 +34,7 @@ import {
 
 const STATE = {
   currentStep: 0,
-  currentSubstep: 2,
+  currentSubstep: 0,
   data: {}
 };
 
@@ -113,7 +113,7 @@ const validateStep = enabled => {
     if(!getStatePropValue(component.id)) {
       valid = false;
       if($(component.id)) {
-        $(component.id).classList.add('field_invalid')
+        $(component.id).classList.add('field_invalid');
       }
     }
   });

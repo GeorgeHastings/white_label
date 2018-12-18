@@ -289,32 +289,34 @@ export const propertyInfo = new StepQuestion({
   explainer: 'This should be the cost of replacing all of your business’s belongings. Examples include furniture, computers, and equipment but not vehicles (those need separate coverage).',
   id: 'propertyInfo',
   components: [
-    // new InputField({
-    //   type: 'text',
-    //   id: 'bppValue',
-    //   form: 'businessDetails',
-    //   money: true
-    // }),
-    new RadioGroup({
-      id: 'bppValue',
-      options: [
-        '$55,000',
-        '$80,000 <span class="tag">industry average</span>',
-        '$105,000',
-        'Other'
-      ],
-    }),
     new InputField({
       type: 'text',
-      label: 'Enter an exact amount',
-      id: 'bppValueExact',
+      id: 'bppValue',
       form: 'businessDetails',
-      money: true,
       focusTip: 'Value must be greater than $20,000',
-      show: () => {
-        return getStatePropValue('bppValue') === 'Other';
-      }
+      placeholder: '$',
+      money: true
     }),
+    // new RadioGroup({
+    //   id: 'bppValue',
+    //   options: [
+    //     '$55,000',
+    //     '$80,000 <span class="tag">industry average</span>',
+    //     '$105,000',
+    //     'Other'
+    //   ],
+    // }),
+    // new InputField({
+    //   type: 'text',
+    //   label: 'Enter an exact amount',
+    //   id: 'bppValueExact',
+    //   form: 'businessDetails',
+    //   money: true,
+    //   focusTip: 'Value must be greater than $20,000',
+    //   show: () => {
+    //     return getStatePropValue('bppValue') === 'Other';
+    //   }
+    // }),
     new Button({
       id: 'nextButton',
       style: 'button__primary',

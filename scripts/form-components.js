@@ -376,18 +376,23 @@ export class AskKodiakSearch extends Input {
       const value = ev.target.innerText;
       $(this.id).value = value;
       results.innerHTML = '';
+      updateState({
+        id: this.id,
+        value: value
+      });
     };
 
     input.oninput = (ev) => {
       this.search(ev.target.value).then(hits => {
         results.innerHTML = '';
         if(hits && hits.hits.length > 0) {
-          for(let i = 0; i < this.resultsLimit; i++) {
-            console.log(hits.hits[i])
+          for(let i = 0; i < hits.hits.length; i++) {
             const hit = toHTML(`<li data-code="${hits.hits[i].hash}">${hits.hits[i]._highlightResult.description.value}</li>`);
             hit.onclick = select;
             results.appendChild(hit);
           }
+        } else if(hits && hits.hits.length === 0) {
+          results.innerHTML = `<li class="gray-text">No results for that term</li>`;
         } else {
           results.innerHTML = '';
         }
