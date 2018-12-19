@@ -225,7 +225,18 @@ export const configCompeltedLayout = () => {
 };
 
 const onInit = () => {
-  navigateStep(STEPS[STATE.currentStep][STATE.currentSubstep], false);
+  const step = STEPS[STATE.currentStep][STATE.currentSubstep];
+  if(step.loadTime) {
+    $('fullScreenLoader').classList.remove('_hidden');
+    setTimeout(() => {
+      $('fullScreenLoader').classList.add('_hidden');
+      navigateStep(step);
+    }, step.loadTime);
+  } else {
+    navigateStep(step);
+  }
+  navigateStep(step, false);
+
 };
 
 onInit();
