@@ -170,6 +170,9 @@ export const stepForwards = () => {
     }
 
     if(step.loadTime) {
+      if(step.loadTime > 10000) {
+        $('squareLoader').setAttribute('style', 'display: none');
+      }
       $('fullScreenLoader').classList.remove('_hidden');
       setTimeout(() => {
         $('fullScreenLoader').classList.add('_hidden');

@@ -1058,38 +1058,39 @@ canvas {
     transform: translateX(-10%); } }
 
 .square-wrapper {
+  font-size: 5px;
   position: relative;
-  height: 130px;
-  width: 70px;
+  height: 13rem;
+  width: 7rem;
   margin: 0 auto;
-  margin-top: -30px; }
+  margin-top: -3rem; }
   .square-wrapper:before {
     position: absolute;
     content: "";
-    top: 44px;
-    left: 0px;
-    width: 50px;
-    height: 50px;
+    top: 4.2rem;
+    left: 0;
+    width: 5rem;
+    height: 5rem;
     background-color: #ffffff;
     transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
-    box-shadow: 0 50px 0 0 #ffffff;
+    box-shadow: 0 5rem 0 0 #ffffff;
     animation: scroll 2s cubic-bezier(0.9, 0.1, 0.1, 0.9) infinite; }
 
 @keyframes scroll {
   0% {
-    box-shadow: 0 50px 0 0 #00E5E6, 0 0px 0 0 #ffffff, 0 -50px 0 0 #ffffff, 0 -100px 0 0 transparent; }
+    box-shadow: 0 5rem 0 0 #00E5E6, 0 0 0 0 #ffffff, 0 -5rem 0 0 #ffffff, 0 -10rem 0 0 transparent; }
   50% {
-    box-shadow: 0 100px 0 0 transparent, 0 50px 0 0 #00E5E6, 0 0px 0 0 #ffffff, 0 -50px 0 0 #ffffff; }
+    box-shadow: 0 10rem 0 0 transparent, 0 5rem 0 0 #00E5E6, 0 0 0 0 #ffffff, 0 -5rem 0 0 #ffffff; }
   100% {
-    box-shadow: 0 100px 0 0 transparent, 0 50px 0 0 #00E5E6, 0 0px 0 0 #ffffff, 0 -50px 0 0 #ffffff; } }
+    box-shadow: 0 10rem 0 0 transparent, 0 5rem 0 0 #00E5E6, 0 0 0 0 #ffffff, 0 -5rem 0 0 #ffffff; } }
 
 .square {
   position: relative;
   z-index: 0; }
   .square div {
     position: absolute;
-    height: 50px;
-    width: 50px; }
+    height: 5rem;
+    width: 5rem; }
   .square svg {
     transform: rotateX(180deg) scale(0.7) translateX(-7px) translateY(-12px); }
 
@@ -1099,14 +1100,14 @@ canvas {
   background-color: #00E5E6; }
 
 .square-left {
-  left: -18px;
-  top: 31px;
+  left: -1.75rem;
+  top: 3.05rem;
   background-color: #1afeff;
   transform: rotateX(150deg) rotateY(45deg) rotateZ(0deg); }
 
 .square-right {
-  left: 18px;
-  top: 31px;
+  left: 1.75rem;
+  top: 3.05rem;
   background-color: #00b2b3;
   transform: rotateX(210deg) rotateY(45deg) rotateZ(0deg); }
 
@@ -1125,13 +1126,13 @@ canvas {
   12.5% {
     z-index: 2; }
   25% {
-    transform: translate3d(36px, 17px, 0);
+    transform: translate3d(3.6rem, 1.7rem, 0);
     z-index: 2; }
   50% {
-    transform: translate3d(36px, -27px, 0);
+    transform: translate3d(3.6rem, -2.7rem, 0);
     z-index: 2; }
   75% {
-    transform: translate3d(0px, -44px, 0);
+    transform: translate3d(0px, -4.4rem, 0);
     z-index: 2; }
   75.1% {
     z-index: 0; }
@@ -1146,15 +1147,15 @@ canvas {
   24.99% {
     z-index: 0; }
   25% {
-    transform: translate3d(36px, 17px, 0);
+    transform: translate3d(3.6rem, 1.7rem, 0);
     z-index: 2; }
   37.5% {
     z-index: 2; }
   50% {
-    transform: translate3d(36px, -27px, 0);
+    transform: translate3d(3.6rem, -2.7rem, 0);
     z-index: 2; }
   75% {
-    transform: translate3d(0px, -44px, 0);
+    transform: translate3d(0px, -4.4rem, 0);
     z-index: 2; }
   75.1% {
     z-index: 0; }
