@@ -31,3 +31,20 @@ export const getFormField = function ( elem, selector ) {
   }
   return elem;
 };
+
+export const getEligibilityGuidelines = code => {
+  const URL = `https://api.askkodiak.com/v1/products/class-code/naics/${code}?productCodes=BOP+WORK`;
+  fetch(URL, {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic LUwxU01MYzFkS2Y0UE9fcGU4dGs6NDFmNmEwMmNmMmEwNjBhM2Y0ZDFjNGUzYmJkMTkzYjc5MjUxYzhhMjBhODY2ZmFl'
+      }
+  })
+  .then(response => response.json())
+  .then(results => {
+    return results;
+  })
+  .catch(error => console.error(`Fetch Error =\n`, error));
+};

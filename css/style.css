@@ -702,6 +702,13 @@ body {
     display: block;
     margin-bottom: 3rem; }
 
+.guidelines-container {
+  list-style: decimal;
+  margin-left: 3rem;
+  margin-bottom: 5rem; }
+  .guidelines-container li + li {
+    margin-top: 3rem; }
+
 .pricing-page-top {
   display: flex; }
 
@@ -1074,7 +1081,7 @@ canvas {
     background-color: #ffffff;
     transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
     box-shadow: 0 5rem 0 0 #ffffff;
-    animation: scroll 2s cubic-bezier(0.9, 0.1, 0.1, 0.9) infinite; }
+    animation: scroll 1.5s cubic-bezier(0.9, 0.1, 0.1, 0.9) infinite; }
 
 @keyframes scroll {
   0% {
@@ -1112,10 +1119,10 @@ canvas {
   transform: rotateX(210deg) rotateY(45deg) rotateZ(0deg); }
 
 .square-wrapper .square:first-child {
-  animation: animateA 4s cubic-bezier(0.9, 0.1, 0.1, 0.9) infinite; }
+  animation: animateA 3s cubic-bezier(0.9, 0.1, 0.1, 0.9) infinite; }
 
 .square-wrapper .square:last-child {
-  animation: animateB 4s cubic-bezier(0.9, 0.1, 0.1, 0.9) infinite -2s; }
+  animation: animateB 3s cubic-bezier(0.9, 0.1, 0.1, 0.9) infinite -1.5s; }
 
 @keyframes animateA {
   0% {

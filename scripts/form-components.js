@@ -4,7 +4,8 @@ import {
   $,
   toHTML,
   intToMoney,
-  getFormField
+  getFormField,
+  getEligibilityGuidelines
 } from './helpers.js';
 
 import {
@@ -363,6 +364,23 @@ export class AskKodiakSearch extends Input {
   }
   /* jshint ignore:end */
 
+  /* jshint ignore:start */
+  async getGuidelines(code) {
+    const URL = `https://api.askkodiak.com/v1/products/class-code/naics/${code}?productCodes=BOP+WORK`;
+    let resp = await fetch(URL, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic LUwxU01MYzFkS2Y0UE9fcGU4dGs6NDFmNmEwMmNmMmEwNjBhM2Y0ZDFjNGUzYmJkMTkzYjc5MjUxYzhhMjBhODY2ZmFl'
+        }
+    })
+    .then(response => response.json())
+    .catch(error => console.error(`Fetch Error =\n`, error));
+    return resp;
+  }
+  /* jshint ignore:end */
+
   template() {
     const html = toHTML(`
       <div class="form-field ${this.style} ${this.hide ? `_hidden` : ''}">
@@ -374,12 +392,24 @@ export class AskKodiakSearch extends Input {
     const results = html.querySelector('.auto-suggest-results');
     const select = ev => {
       const value = ev.target.innerText;
-      $(this.id).value = value;
-      results.innerHTML = '';
-      updateState({
-        id: this.id,
-        value: value
+      const code = ev.target.getAttribute('data-code');
+      this.getGuidelines(code).then(carriers => {
+        const hashInfo = carriers.results.filter(item => {
+          return item.ownerId === '-L1SMLc1dKf4PO_pe8tk';
+        })[0];
+        const guidelines = hashInfo.conditionalContent.naics.codes[code].include.guidelines;
+        $(this.id).value = value;
+        results.innerHTML = '';
+        updateState({
+          id: this.id,
+          value: value
+        });
+        updateState({
+          id: 'classGuidelines',
+          value: guidelines
+        });
       });
+
     };
 
     input.oninput = (ev) => {

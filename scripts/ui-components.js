@@ -6,10 +6,15 @@ import {
 } from './helpers.js';
 
 import {
+  getStatePropValue,
   stepBackwards,
   stepForwards,
   updateState
 } from './app.js';
+
+import {
+  STATES,
+} from './constants.js';
 
 import {
   NAVIGATION_ITEMS
@@ -424,7 +429,7 @@ export class DetailsSummary {
   }
 }
 
-export class NextStep {
+export class ListItem {
   constructor(args) {
     this.id = args.id;
     this.icon = args.icon;
@@ -443,7 +448,7 @@ export class NextStep {
   }
 }
 
-export class NextSteps {
+export class List {
   constructor(args) {
     this.id = args.id;
     this.steps = args.steps;
@@ -482,6 +487,31 @@ export class HelpCard {
         <div class="button button__small button__secondary">${this.cta}</div>
       </div>
     `);
+
+    return html;
+  }
+}
+
+export class Guidelines {
+  constructor(args) {
+    this.id = args.id;
+    this.guidelines = args.guidelines;
+  }
+
+  render() {
+    const html = toHTML(`
+      <ul class="guidelines-container"></ul>
+    `);
+    const guidelines = getStatePropValue('classGuidelines');
+
+    if(guidelines) {
+      guidelines.forEach(step => {
+        html.appendChild(toHTML(`<li>${step}</li>`));
+      });
+    } else {
+      stepForwards();
+      return false;
+    }
 
     return html;
   }

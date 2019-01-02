@@ -17,6 +17,7 @@ import {
   constructionType,
   propertyInfo,
   businessClassification,
+  guideLines,
   chooseCoverage,
   reviewCoverage,
   bindPolicy,
@@ -45,7 +46,8 @@ const STEPS = [
     businessClassification,
     basicBizInfo,
     // constructionType,
-    propertyInfo
+    propertyInfo,
+    guideLines
   ],
   [
     chooseCoverage,
@@ -89,7 +91,7 @@ export const updateState = args => {
 
 export const getStatePropValue = id => {
   for(let prop in STATE.data) {
-    if (typeof STATE.data[prop] === 'object') {
+    if (typeof STATE.data[prop] === 'object' && !STATE.data[prop].length) {
       for(let subprop in STATE.data[prop]) {
         if(subprop === id) {
           return STATE.data[prop][subprop];
@@ -170,9 +172,9 @@ export const stepForwards = () => {
     }
 
     if(step.loadTime) {
-      if(step.loadTime > 10000) {
-        $('squareLoader').setAttribute('style', 'display: none');
-      }
+      // if(step.loadTime > 10000) {
+      //   $('squareLoader').setAttribute('style', 'display: none');
+      // }
       $('fullScreenLoader').classList.remove('_hidden');
       setTimeout(() => {
         $('fullScreenLoader').classList.add('_hidden');

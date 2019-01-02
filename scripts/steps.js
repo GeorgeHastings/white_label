@@ -15,11 +15,12 @@ import {
   CoverageOption,
   CoverageOptions,
   StepQuestion,
+  Guidelines,
   PricingPage,
   Coverage,
   CoverageGroup,
-  NextStep,
-  NextSteps
+  ListItem,
+  List
 } from './ui-components.js';
 
 import {
@@ -53,7 +54,7 @@ export const contactInfo = new StepQuestion({
   label: 'Let\'s cover some basics.',
   explainer: 'This will tell us whether you\'re eligible and how to get in touch.',
   id: 'contactInfo',
-  loadTime: 6000,
+  loadTime: 4000,
   components: [
     new InputField({
       label: 'Legal business name',
@@ -298,33 +299,36 @@ export const propertyInfo = new StepQuestion({
       placeholder: '$',
       money: true
     }),
-    // new RadioGroup({
-    //   id: 'bppValue',
-    //   options: [
-    //     '$55,000',
-    //     '$80,000 <span class="tag">industry average</span>',
-    //     '$105,000',
-    //     'Other'
-    //   ],
-    // }),
-    // new InputField({
-    //   type: 'text',
-    //   label: 'Enter an exact amount',
-    //   id: 'bppValueExact',
-    //   form: 'businessDetails',
-    //   money: true,
-    //   focusTip: 'Value must be greater than $20,000',
-    //   show: () => {
-    //     return getStatePropValue('bppValue') === 'Other';
-    //   }
-    // }),
     new Button({
       id: 'nextButton',
       style: 'button__primary',
-      text: 'Calculate my rate',
+      text: 'Next',
       handleClick: () => {
         stepForwards();
-        brickBreaker.init();
+      }
+    })
+  ]
+});
+
+export const guideLines = new StepQuestion({
+  label: 'Lastly, please confirm you meet these eligibility criterea.',
+  explainer: 'Meeting these criterea means that your policy can pay out a claim.',
+  id: 'propertyInfo',
+  components: [
+    new Guidelines({
+      id: 'guideLines',
+    }),
+    new Checkbox({
+      id: 'agreeToGuidelines',
+      label: 'I confirm that my business meets these guidelines'
+    }),
+    new Button({
+      id: 'nextButton',
+      style: 'button__primary',
+      text: 'Get my quote',
+      handleClick: () => {
+        stepForwards();
+        // brickBreaker.init();
       }
     })
   ]
@@ -337,7 +341,7 @@ export const chooseCoverage = new PricingPage({
   loadTime: 12000,
   oninit: () => {
     configPricingLayout();
-    brickBreaker.kill();
+    // brickBreaker.kill();
   },
   components: [
     new CoverageOptions({
@@ -518,10 +522,10 @@ export const nextSteps = new StepQuestion({
   id: 'nextSteps',
   // loadTime: 5000,
   components: [
-    new NextSteps({
+    new List({
       id: 'nextSteps',
       steps: [
-        new NextStep({
+        new ListItem({
           id: 'policyStep',
           icon: 'assets/images/check_blue.svg',
           body: `Below is your policy document.
@@ -529,12 +533,12 @@ export const nextSteps = new StepQuestion({
           <div class="policy-pdf"><span>businessowners-policy.pdf</span><img src="assets/images/download-2.svg"></div>
           `
         }),
-        new NextStep({
+        new ListItem({
           id: 'emailStep',
           icon: 'assets/images/check_blue.svg',
           body: 'You\'ll receive an invoice in your email within the next 4 hours. From there you can enter your billing information and pay.'
         }),
-        new NextStep({
+        new ListItem({
           id: 'coveredStep',
           icon: 'assets/images/check_blue.svg',
           body: 'Your coverage will start on the policies effective date.'

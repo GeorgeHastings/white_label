@@ -346,6 +346,16 @@ body {
 	}
 }
 
+.guidelines-container {
+	list-style: decimal;
+	margin-left: 3rem;
+	margin-bottom: 5rem;
+
+	li + li {
+		margin-top: 3rem;
+	}
+}
+
 //coverage
 
 .pricing-page-top {
@@ -813,7 +823,7 @@ canvas {
     background-color: $white;
     transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
     box-shadow: 0 5rem 0 0 $white;
-    animation: scroll 2s cubic-bezier(.9,.1,.1,.9) infinite;
+    animation: scroll 1.5s cubic-bezier(.9,.1,.1,.9) infinite;
   }
 }
 
@@ -866,10 +876,10 @@ canvas {
 
 .square-wrapper {
   .square:first-child {
-    animation: animateA 4s cubic-bezier(.9,.1,.1,.9) infinite;
+    animation: animateA 3s cubic-bezier(.9,.1,.1,.9) infinite;
   }
   .square:last-child {
-    animation: animateB 4s cubic-bezier(.9,.1,.1,.9) infinite -2s;
+    animation: animateB 3s cubic-bezier(.9,.1,.1,.9) infinite -1.5s;
   }
 }
 
