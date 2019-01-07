@@ -157,9 +157,7 @@ export class PricingPage {
               <tr>
                 <td>
                   <span class="tool-tip tool-tip__large" data-tooltip="
-                  Coverage does not require a finding of legal liability and is available to cover
-                  medical expenses incurred within a specified period by a claimant for a covered injury,
-                  regardless of whether the insured was at fault.">
+                  Anything you own or are responsible for insuring. Generally speaking if you can move it (except for vehicles), it is Business Personal Property.">
                   Business property limit <img src="assets/images/tooltip.svg"></span>
                 </td>
                 <td>$250,000</td>
@@ -169,9 +167,7 @@ export class PricingPage {
               <tr>
                 <td>
                   <span class="tool-tip tool-tip__large" data-tooltip="
-                  Coverage does not require a finding of legal liability and is available to cover
-                  medical expenses incurred within a specified period by a claimant for a covered injury,
-                  regardless of whether the insured was at fault.">
+                  The All Other Perils deductible is the amount of money you would have to pay yourself prior to the insurance company taking over claims payment in the event of a property loss.">
                   Deductible <img src="assets/images/tooltip.svg"></span>
                 </td>
                 <td>$5,000</td>
@@ -182,9 +178,7 @@ export class PricingPage {
               <tr>
                 <td>
                   <span class="tool-tip tool-tip__large" data-tooltip="
-                  Coverage does not require a finding of legal liability and is available to cover
-                  medical expenses incurred within a specified period by a claimant for a covered injury,
-                  regardless of whether the insured was at fault.">
+                  This is the amount of coverage your policy will provide in the event you are found liable to another party.">
                   General Liability limit <img src="assets/images/tooltip.svg"></span>
                 </td>
                 <td>$500,000</td>
@@ -194,9 +188,7 @@ export class PricingPage {
               <tr>
                 <td>
                   <span class="tool-tip tool-tip__large" data-tooltip="
-                  Coverage does not require a finding of legal liability and is available to cover
-                  medical expenses incurred within a specified period by a claimant for a covered injury,
-                  regardless of whether the insured was at fault.">
+                  This is the amount of coverage your policy will provide for medical expenses borne by another party whether or not you are found liabile.">
                   Medical expenses<img src="assets/images/tooltip.svg"></span>
                 </td>
                 <td>$5,000</td>
@@ -207,9 +199,7 @@ export class PricingPage {
               <tr>
                 <td>
                   <span class="tool-tip tool-tip__large" data-tooltip="
-                  Coverage does not require a finding of legal liability and is available to cover
-                  medical expenses incurred within a specified period by a claimant for a covered injury,
-                  regardless of whether the insured was at fault.">
+                  Coverage for vehicles you do not own or lease but are used for business purposes. An example would be the vehicle of an employee.">
                   Hired & Non-owned Auto<img src="assets/images/tooltip.svg"></span>
                 </td>
                 <td></td>
@@ -219,9 +209,7 @@ export class PricingPage {
               <tr>
                 <td>
                   <span class="tool-tip tool-tip__large" data-tooltip="
-                  Coverage does not require a finding of legal liability and is available to cover
-                  medical expenses incurred within a specified period by a claimant for a covered injury,
-                  regardless of whether the insured was at fault.">
+                  This covers loss to perishable contents.">
                   Spoilage<img src="assets/images/tooltip.svg"></span>
                 </td>
                 <td></td>
@@ -231,9 +219,7 @@ export class PricingPage {
               <tr>
                 <td>
                   <span class="tool-tip tool-tip__large" data-tooltip="
-                  Coverage does not require a finding of legal liability and is available to cover
-                  medical expenses incurred within a specified period by a claimant for a covered injury,
-                  regardless of whether the insured was at fault.">
+                  This covers a variety of risks faced by businesses with a web presence such as data breach.">
                   Cyber and Data Liability<img src="assets/images/tooltip.svg"></span>
                 </td>
                 <td></td>
@@ -243,9 +229,7 @@ export class PricingPage {
               <tr>
                 <td>
                   <span class="tool-tip tool-tip__large" data-tooltip="
-                  Coverage does not require a finding of legal liability and is available to cover
-                  medical expenses incurred within a specified period by a claimant for a covered injury,
-                  regardless of whether the insured was at fault.">
+                  This provides coverage for the liability posed by employment related activities such as hiring and interviewing.">
                   Employee Practices Liability<img src="assets/images/tooltip.svg"></span>
                 </td>
                 <td></td>

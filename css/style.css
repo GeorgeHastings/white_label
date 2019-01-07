@@ -706,6 +706,8 @@ body {
   list-style: decimal;
   margin-left: 3rem;
   margin-bottom: 5rem; }
+  .guidelines-container li {
+    font-size: 1.4rem; }
   .guidelines-container li + li {
     margin-top: 3rem; }
 
