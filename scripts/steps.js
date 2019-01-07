@@ -61,7 +61,7 @@ export const contactInfo = new StepQuestion({
       type: 'text',
       id: 'legalBusinessName',
       form: 'basicInfo',
-      default: 'New Hope Flower Shop'
+      // default: 'New Hope Flower Shop'
     }),
     new RadioGroup({
       options: [
@@ -69,7 +69,7 @@ export const contactInfo = new StepQuestion({
         'No'
       ],
       id: 'hasBizDba',
-      default: 1,
+      // default: 1,
       label: 'Does your business operate under a different name?',
       form: 'basicInfo',
       style: 'radio-group__split',
@@ -99,12 +99,12 @@ export const contactInfo = new StepQuestion({
     new AddressField({
       label: 'Business address',
       id: 'businessAddress',
-      default: {
-        street: '9 West Mechanic Street',
-        city: 'New Hope',
-        state: 'Pennsylvania',
-        zip: '18938'
-      },
+      // default: {
+      //   street: '9 West Mechanic Street',
+      //   city: 'New Hope',
+      //   state: 'Pennsylvania',
+      //   zip: '18938'
+      // },
       form: 'businessAddress'
     }),
     new RadioGroup({
@@ -112,7 +112,7 @@ export const contactInfo = new StepQuestion({
         'Yes',
         'No'
       ],
-      default: 0,
+      // default: 0,
       id: 'sameAsMailing',
       label: 'Is this the same as your mailing address?',
       form: 'basicInfo',
@@ -125,6 +125,16 @@ export const contactInfo = new StepQuestion({
       show: () => {
         return getStatePropValue('sameAsMailing') === 'No';
       }
+    }),
+    new RadioGroup({
+      options: [
+        'Yes',
+        'No'
+      ],
+      id: 'moreThanOneLocation',
+      label: 'Do you operate more than one location?',
+      form: 'businessDetails',
+      style: 'radio-group__split'
     }),
     new Button({
       id: 'nextButton',
@@ -187,16 +197,6 @@ export const basicBizInfo = new StepQuestion({
   explainer: 'This information helps us better understand your risk.',
   id: 'operationsInfo',
   components: [
-    new RadioGroup({
-      options: [
-        'Yes',
-        'No'
-      ],
-      id: 'moreThanOneLocation',
-      label: 'Do you operate more than one location?',
-      form: 'businessDetails',
-      style: 'radio-group__split'
-    }),
     new InputField({
       label: 'Number of employees',
       type: 'number',
@@ -207,7 +207,7 @@ export const basicBizInfo = new StepQuestion({
       label: 'Square footage of your work space',
       type: 'number',
       id: 'squareFootage',
-      default: 1491,
+      // default: 1491,
       form: 'businessDetails'
     }),
     new RadioGroup({
@@ -220,7 +220,7 @@ export const basicBizInfo = new StepQuestion({
       id: 'numberOfFloors',
       label: 'Number of stories in the building',
       form: 'businessDetails',
-      default: 1,
+      // default: 1,
       style: 'radio-group__split'
     }),
     new InputField({
@@ -260,21 +260,6 @@ export const constructionType = new StepQuestion({
       form: 'buildingClassification',
       options: CONSTRUCTION_TYPES,
     }),
-    // new RadioGroup({
-    //   options: [
-    //     'Concrete/masonry',
-    //     'Wood frame',
-    //     'Not sure'
-    //   ],
-    //   id: 'wallMaterial',
-    //   label: 'What are the structural walls made of?',
-    //   form: 'buildingClassification',
-    //   style: 'load-up',
-    //   show: () => {
-    //     return getStatePropValue('bestDescriptionOfBuilding') === 'Residential or small retail shop' ||
-    //       getStatePropValue('bestDescriptionOfBuilding') === 'None of these';
-    //   }
-    // }),
     new Button({
       id: 'nextButton',
       style: 'button__primary',
@@ -311,8 +296,8 @@ export const propertyInfo = new StepQuestion({
 });
 
 export const guideLines = new StepQuestion({
-  label: 'Lastly, please confirm you meet these eligibility criterea.',
-  explainer: 'Meeting these criterea means that your policy can pay out a claim.',
+  label: 'Lastly, please confirm you meet these eligibility criteria.',
+  explainer: 'Meeting these criteria means that your policy can pay out a claim.',
   id: 'propertyInfo',
   components: [
     new Guidelines({

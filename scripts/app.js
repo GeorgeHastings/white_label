@@ -153,37 +153,32 @@ const navigateStep = step => {
 };
 
 export const stepForwards = () => {
-  // if(validateStep()) {
-    STATE.currentSubstep++;
-    navigation.subIndex++;
-    let step = STEPS[STATE.currentStep][STATE.currentSubstep];
+  STATE.currentSubstep++;
+  navigation.subIndex++;
+  let step = STEPS[STATE.currentStep][STATE.currentSubstep];
 
-    if(!step) {
-      STATE.currentStep++;
-      navigation.index++;
-      STATE.currentSubstep = 0;
-      navigation.subIndex = 0;
+  if(!step) {
+    STATE.currentStep++;
+    navigation.index++;
+    STATE.currentSubstep = 0;
+    navigation.subIndex = 0;
 
-      if(STEPS[STATE.currentStep]) {
-        step = STEPS[STATE.currentStep][STATE.currentSubstep];
-      } else {
-        return;
-      }
-    }
-
-    if(step.loadTime) {
-      // if(step.loadTime > 10000) {
-      //   $('squareLoader').setAttribute('style', 'display: none');
-      // }
-      $('fullScreenLoader').classList.remove('_hidden');
-      setTimeout(() => {
-        $('fullScreenLoader').classList.add('_hidden');
-        navigateStep(step);
-      }, step.loadTime);
+    if(STEPS[STATE.currentStep]) {
+      step = STEPS[STATE.currentStep][STATE.currentSubstep];
     } else {
-      navigateStep(step);
+      return;
     }
-  // }
+  }
+
+  if(step.loadTime) {
+    $('fullScreenLoader').classList.remove('_hidden');
+    setTimeout(() => {
+      $('fullScreenLoader').classList.add('_hidden');
+      navigateStep(step);
+    }, step.loadTime);
+  } else {
+    navigateStep(step);
+  }
 };
 
 export const stepBackwards = () => {

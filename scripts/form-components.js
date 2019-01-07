@@ -366,7 +366,7 @@ export class AskKodiakSearch extends Input {
 
   /* jshint ignore:start */
   async getGuidelines(code) {
-    const URL = `https://api.askkodiak.com/v1/products/class-code/naics/${code}?productCodes=BOP+WORK`;
+    const URL = `https://api.askkodiak.com/v1/product/-LVK2cvze1l9iNRoz875?naicsCodes=${code}&mergeConditionalContent=true`;
     let resp = await fetch(URL, {
         method: 'GET',
         mode: 'cors',
@@ -393,11 +393,8 @@ export class AskKodiakSearch extends Input {
     const select = ev => {
       const value = ev.target.innerText;
       const code = ev.target.getAttribute('data-code');
-      this.getGuidelines(code).then(carriers => {
-        const hashInfo = carriers.results.filter(item => {
-          return item.ownerId === '-L1SMLc1dKf4PO_pe8tk';
-        })[0];
-        const guidelines = hashInfo.conditionalContent.naics.codes[code].include.guidelines;
+      this.getGuidelines(code).then(hashresp => {
+        const guidelines = hashresp.conditionalContent.naics.codes[code].include.guidelines;
         $(this.id).value = value;
         results.innerHTML = '';
         updateState({
