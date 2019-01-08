@@ -214,7 +214,6 @@ export const configPricingLayout = () => {
 
 export const configCompeltedLayout = () => {
   $('wrapper').classList.add('wrapper__last-step');
-  $('helpButtonSticky').classList.add('_hidden');
   render('rightRail', new AgentCard(AGENT_ANDREW));
 };
 

@@ -369,6 +369,7 @@ export class CoverageOption {
         id: 'coverageOption',
         value: this.id,
       });
+      $('helpButtonSticky').classList.add('_hidden');
       stepForwards();
     };
 
