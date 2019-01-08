@@ -1,5 +1,33 @@
 /*jshint esversion: 6 */
 
+export const AGENT_ANDREW = {
+  id: 'agentHelp',
+  avatar: 'assets/images/andrew.jpeg',
+  name: 'Andrew Clark',
+  agency: 'Partner at Clark & Clark',
+  location: 'Eerie, PA',
+  body: 'Andrew has over 15 years of experience writing commercial and personal lines in the east Text market. Passionate about xyz…',
+  cta: 'Ask Andrew a question'
+};
+
+export const AGENT_ENDLER = {
+  id: 'agentHelp',
+  avatar: 'assets/images/endler.png',
+  name: 'Thomas Endler',
+  agency: 'Partner at Brown, Moore & Endler',
+  location: 'Murrells Inlet, SC',
+  body: 'A former Commercial Underwriter with one of the top insurance wholesalers in the nation, Thomas successfully gained national underwriting experience from South Carolina all the way to Texas.',
+  cta: 'Ask Thomas a question'
+};
+
+export const QUESTIONS_CARD = {
+  id: 'questionsHelp',
+  icon: 'assets/images/question.svg',
+  label: 'Questions?',
+  body: 'Our licensed agents are standing by ready to assist you.',
+  cta: 'Chat with an agent'
+};
+
 export const INSURANCE_SITUATION = [
   'I don\'t have any',
   'I have an existing policy',

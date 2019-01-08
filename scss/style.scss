@@ -38,6 +38,7 @@ body {
 
 .wrapper.wrapper__price-options {
 	height: 100%;
+	padding: 0 3rem;
 
 	.sidebar,
 	.right-rail {
@@ -335,7 +336,6 @@ body {
 }
 
 .help-card {
-	// position: fixed;
 	padding: 0 0 3rem 3rem;
 	width: 100%;
 	border-radius: 0.3rem;
@@ -344,19 +344,56 @@ body {
 		display: block;
 		margin-bottom: 3rem;
 	}
+
+	&__fixed {
+		position: fixed;
+		max-width: 40rem;
+	}
+}
+
+.agent-photo {
+	border-radius: 50%;
+	width: 8rem;
+	height: 8rem;
+}
+
+.agent-location {
+	margin-bottom: 2rem;
+}
+
+.rating {
+	display: flex;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+
+	p {
+		line-height: 1;
+	}
+
+	.stars {
+		display: inherit;
+		margin-right: 1rem;
+	}
+
+	.stars img {
+		margin-bottom: 0;
+	}
 }
 
 .guidelines-container {
-	list-style: decimal;
-	margin-left: 3rem;
+	// list-style: unset;
+	// margin-left: 3rem;
 	margin-bottom: 5rem;
 
 	li {
-		font-size: 1.4rem;
+		font-size: 1.8rem;
+		background-color: $white;
+		padding: 3rem;
+		border-radius: 0.3rem;
 	}
 
 	li + li {
-		margin-top: 3rem;
+		margin-top: 1.5rem;
 	}
 }
 

@@ -408,6 +408,13 @@ h5 {
   font-weight: 600;
   margin-bottom: 5rem; }
 
+h6 {
+  font-size: 1.4rem;
+  margin-top: -0.5rem;
+  color: #7392B0;
+  font-weight: 600;
+  margin-bottom: 1.5rem; }
+
 p.small-text {
   font-size: 1.6rem;
   color: #6980A5; }
@@ -457,7 +464,8 @@ body {
   overflow-x: hidden; }
 
 .wrapper.wrapper__price-options {
-  height: 100%; }
+  height: 100%;
+  padding: 0 3rem; }
   .wrapper.wrapper__price-options .sidebar,
   .wrapper.wrapper__price-options .right-rail {
     display: none; }
@@ -701,15 +709,39 @@ body {
   .help-card img {
     display: block;
     margin-bottom: 3rem; }
+  .help-card__fixed {
+    position: fixed;
+    max-width: 40rem; }
+
+.agent-photo {
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem; }
+
+.agent-location {
+  margin-bottom: 2rem; }
+
+.rating {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem; }
+  .rating p {
+    line-height: 1; }
+  .rating .stars {
+    display: inherit;
+    margin-right: 1rem; }
+  .rating .stars img {
+    margin-bottom: 0; }
 
 .guidelines-container {
-  list-style: decimal;
-  margin-left: 3rem;
   margin-bottom: 5rem; }
   .guidelines-container li {
-    font-size: 1.4rem; }
+    font-size: 1.8rem;
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 0.3rem; }
   .guidelines-container li + li {
-    margin-top: 3rem; }
+    margin-top: 1.5rem; }
 
 .pricing-page-top {
   display: flex; }

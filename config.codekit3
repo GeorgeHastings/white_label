@@ -114,6 +114,17 @@
 		"oAP": "/assets/fonts/GT-America-Standard-Regular.woff2",
 		"oF": 0
 		},
+	"/assets/images/andrew.jpeg": {
+		"ft": 16384,
+		"iS": 4728,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/andrew.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/assets/images/arrow.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -204,6 +215,17 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"/assets/images/endler.png": {
+		"ft": 32768,
+		"iS": 34835,
+		"oA": 0,
+		"oAP": "/assets/images/endler.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/assets/images/fridge.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -254,6 +276,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"/assets/images/star.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/assets/images/star.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"/assets/images/tooltip.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -263,6 +295,16 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
+		},
+	"/css/style-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/style-min-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"/css/style.css": {
 		"aP": 1,
@@ -480,16 +522,6 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"/scss/style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/scss/style-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"/scss/style.scss": {
 		"aP": 0,

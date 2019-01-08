@@ -8,7 +8,8 @@ import {
 import {
   BreadCrumb,
   Navigation,
-  HelpCard
+  HelpCard,
+  AgentCard
 } from './ui-components.js';
 import {
   contactInfo,
@@ -27,6 +28,9 @@ import {
 import {
   HAS_INSURANCE,
   NO_INSURANCE,
+  AGENT_ANDREW,
+  AGENT_ENDLER,
+  QUESTIONS_CARD
 } from './constants.js';
 
 import {
@@ -204,24 +208,12 @@ export const stepBackwards = () => {
 
 export const configPricingLayout = () => {
   $('wrapper').classList.add('wrapper__price-options');
-  render('rightRail', new HelpCard({
-    id: 'questionsHelp',
-    icon: 'assets/images/question.svg',
-    label: 'Questions?',
-    body: 'Our licensed agents are standing by ready to assist you.',
-    cta: 'Chat with an agent'
-  }));
+  render('rightRail', new HelpCard(QUESTIONS_CARD));
 };
 
 export const configCompeltedLayout = () => {
   $('wrapper').classList.add('wrapper__last-step');
-  render('rightRail', new HelpCard({
-    id: 'questionsHelp',
-    icon: 'assets/images/question.svg',
-    label: 'Questions?',
-    body: 'Our licensed agents are standing by ready to assist you.',
-    cta: 'Chat with an agent'
-  }));
+  render('rightRail', new HelpCard(QUESTIONS_CARD));
 };
 
 const onInit = () => {
@@ -236,6 +228,8 @@ const onInit = () => {
     navigateStep(step);
   }
   navigateStep(step, false);
+
+  render('rightRail', new AgentCard(AGENT_ANDREW));
 
 };
 

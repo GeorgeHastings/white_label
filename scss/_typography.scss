@@ -56,6 +56,15 @@ h5 {
 	margin-bottom: 5rem;
 }
 
+h6 {
+	font-size: 1.4rem;
+	margin-top: -0.5rem;
+	// text-transform: uppercase;
+	color: $gray;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+}
+
 p {
 
 	&.small-text {

@@ -476,6 +476,45 @@ export class HelpCard {
   }
 }
 
+export class AgentCard {
+  constructor(args) {
+    this.id = args.id;
+    this.avatar = args.avatar;
+    this.name = args.name;
+    this.agency = args.agency;
+    this.location = args.location;
+    this.body = args.body;
+    this.cta = args.cta;
+  }
+
+  render() {
+    const html = toHTML(`
+      <div class="help-card help-card__fixed">
+        <img class="agent-photo" src="${this.avatar}">
+        <div>
+          <h4>${this.name}</h4>
+          <h6>${this.agency}</h6>
+          <p class="agent-location">${this.location}</p>
+          <div class="rating">
+            <div class="stars">
+              <img src="assets/images/star.svg">
+              <img src="assets/images/star.svg">
+              <img src="assets/images/star.svg">
+              <img src="assets/images/star.svg">
+              <img src="assets/images/star.svg">
+            </div>
+            <p class="small-text">28 reviews</p>
+          </div>
+          <p class="small-text">${this.body}</p>
+        </div>
+        <div class="button button__small button__secondary">${this.cta}</div>
+      </div>
+    `);
+
+    return html;
+  }
+}
+
 export class Guidelines {
   constructor(args) {
     this.id = args.id;

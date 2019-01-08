@@ -54,7 +54,7 @@ export const contactInfo = new StepQuestion({
   label: 'Let\'s cover some basics.',
   explainer: 'This will tell us whether you\'re eligible and how to get in touch.',
   id: 'contactInfo',
-  loadTime: 4000,
+  // loadTime: 4000,
   components: [
     new InputField({
       label: 'Legal business name',
