@@ -216,6 +216,18 @@ export const configCompeltedLayout = () => {
   render('rightRail', new HelpCard(QUESTIONS_CARD));
 };
 
+const getAgentFromtQuery = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const agent = urlParams.get('agent');
+  if(agent === 'andrew') {
+    return AGENT_ANDREW;
+  } else if(agent === 'endler') {
+    return AGENT_ENDLER;
+  } else {
+    return AGENT_ANDREW;
+  }
+};
+
 const onInit = () => {
   const step = STEPS[STATE.currentStep][STATE.currentSubstep];
   if(step.loadTime) {
@@ -229,7 +241,7 @@ const onInit = () => {
   }
   navigateStep(step, false);
 
-  render('rightRail', new AgentCard(AGENT_ANDREW));
+  render('rightRail', new AgentCard(getAgentFromtQuery()));
 
 };
 
