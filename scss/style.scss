@@ -36,6 +36,30 @@ body {
 	overflow-x: hidden;
 }
 
+.theme__white-label {
+	background-color: $white;
+
+	input {
+		box-shadow: 0 0 0 0.2rem $gray10;
+
+		&:focus {
+			// box-shadow: 0 0 0 0.2rem $blue;
+		}
+	}
+
+	.radio-button label {
+		box-shadow: 0 0 0 0.2rem $gray10;
+	}
+
+	.radio-button input:checked + label{
+		box-shadow: 0 0 0 0.2rem $blue;
+	}
+
+	.sidebar {
+		background-color: lighten($gray10, 7%);
+	}
+}
+
 .wrapper.wrapper__price-options {
 	height: 100%;
 	padding: 0 3rem;
@@ -150,7 +174,7 @@ body {
 
 		.nav-circle {
 			border: 0.3rem solid $blue;
-			background-color: $white;
+			background-color: inherit;
 		}
 
 		svg {
@@ -164,7 +188,7 @@ body {
 			position: relative;
 			background-color: $blue;
 			transition: background-color 0.3s ease, box-shadow 0.5s ease;
-			box-shadow: 0 0 0 1.2rem $white, 0 0 0 1.5rem transparent;
+			box-shadow: 0 0 0 1.2rem inherit, 0 0 0 1.5rem transparent;
 
 			&:before {
 				content: url('../assets/images/check.svg');
@@ -580,12 +604,22 @@ body {
 }
 
 .coverage-option-price {
+	position: relative;
 	display: flex;
 	margin-top: 3rem;
 	margin-bottom: 1rem;
 	font-size: 1.8rem;
 	justify-content: center;
 	align-items: flex-end;
+}
+
+.price-loading {
+	// position: absolute;
+	// background-color: $gray;
+	// top: 0;
+	// left: 8rem;
+	// width: 50%;
+	// height: 100%;
 }
 
 .price-annual {
@@ -667,6 +701,16 @@ body {
 	text-transform: uppercase;
 	letter-spacing: 0.15em;
 	vertical-align: text-bottom;
+}
+
+.sticky-help-button {
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+
+	.button {
+		background-color: $white;
+	}
 }
 
 canvas {

@@ -208,12 +208,14 @@ export const stepBackwards = () => {
 
 export const configPricingLayout = () => {
   $('wrapper').classList.add('wrapper__price-options');
-  render('rightRail', new HelpCard(QUESTIONS_CARD));
+  $('helpButtonSticky').classList.remove('_hidden');
+  render('rightRail', new AgentCard(AGENT_ANDREW));
 };
 
 export const configCompeltedLayout = () => {
   $('wrapper').classList.add('wrapper__last-step');
-  render('rightRail', new HelpCard(QUESTIONS_CARD));
+  $('helpButtonSticky').classList.add('_hidden');
+  render('rightRail', new AgentCard(AGENT_ANDREW));
 };
 
 const getAgentFromtQuery = () => {

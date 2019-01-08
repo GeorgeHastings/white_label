@@ -463,6 +463,17 @@ body {
   color: #0A1031;
   overflow-x: hidden; }
 
+.theme__white-label {
+  background-color: #ffffff; }
+  .theme__white-label input {
+    box-shadow: 0 0 0 0.2rem #E2EAF0; }
+  .theme__white-label .radio-button label {
+    box-shadow: 0 0 0 0.2rem #E2EAF0; }
+  .theme__white-label .radio-button input:checked + label {
+    box-shadow: 0 0 0 0.2rem #0D00FF; }
+  .theme__white-label .sidebar {
+    background-color: #fafbfc; }
+
 .wrapper.wrapper__price-options {
   height: 100%;
   padding: 0 3rem; }
@@ -547,7 +558,7 @@ body {
     color: #0D00FF; }
     .nav-item__active .nav-circle {
       border: 0.3rem solid #0D00FF;
-      background-color: #ffffff; }
+      background-color: inherit; }
     .nav-item__active svg {
       top: -0.3rem;
       left: -0.3rem; }
@@ -555,7 +566,7 @@ body {
     position: relative;
     background-color: #0D00FF;
     transition: background-color 0.3s ease, box-shadow 0.5s ease;
-    box-shadow: 0 0 0 1.2rem #ffffff, 0 0 0 1.5rem transparent; }
+    box-shadow: 0 0 0 1.2rem inherit, 0 0 0 1.5rem transparent; }
     .nav-item__complete .nav-circle:before {
       content: url("../assets/images/check.svg");
       width: 2rem;
@@ -880,6 +891,7 @@ body {
   color: #0D00FF; }
 
 .coverage-option-price {
+  position: relative;
   display: flex;
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -948,6 +960,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   vertical-align: text-bottom; }
+
+.sticky-help-button {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem; }
+  .sticky-help-button .button {
+    background-color: #ffffff; }
 
 canvas {
   transform: translate3d(0, 1em, 0);

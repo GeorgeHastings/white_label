@@ -83,6 +83,16 @@ export const contactInfo = new StepQuestion({
         return getStatePropValue('hasBizDba') === 'Yes';
       }
     }),
+    // new RadioGroup({
+    //   options: [
+    //     'Yes',
+    //     'No'
+    //   ],
+    //   id: 'isFranchise',
+    //   label: 'Is your business a franchise?',
+    //   form: 'basicInfo',
+    //   style: 'radio-group__split',
+    // }),
     new Select({
       options: ORGANIZATION_TYPES,
       label: 'Organization type',
@@ -170,8 +180,8 @@ export const ownOrRent = new StepQuestion({
 });
 
 export const businessClassification = new StepQuestion({
-  label: 'What industry are you in?',
-  explainer: 'By classifying your business as accurately as possible, we\'ll be able to better tailor your coverage.',
+  label: 'What type of business are you?',
+  explainer: 'It\'s important to classify your business as accurately as possible. This way we\'ll be able to better tailor your coverage.',
   id: 'propertyInfo',
   components: [
     new AskKodiakSearch({
@@ -296,17 +306,53 @@ export const propertyInfo = new StepQuestion({
 });
 
 export const guideLines = new StepQuestion({
-  label: 'Lastly, please confirm you meet these eligibility criteria.',
+  label: 'Lastly, please check the box for each of the following criteria which apply.',
   explainer: 'Meeting these criteria means that your policy can pay out a claim.',
   id: 'propertyInfo',
   components: [
-    new Guidelines({
-      id: 'guideLines',
+    // new Guidelines({
+    //   id: 'guideLines',
+    // }),
+    new Checkbox({
+      id: 'annualSalesTotal',
+      label: 'Annual sales are less than $10M.'
     }),
     new Checkbox({
-      id: 'agreeToGuidelines',
-      label: 'I confirm that my business meets these guidelines'
+      id: 'onlineSalesLessRevenue',
+      label: 'Online sales are less than 75% of revenue.'
     }),
+    new Checkbox({
+      id: 'bizIsVacant',
+      label: 'My business is not vacant for more than 60 days of the year.'
+    }),
+    new Checkbox({
+      id: 'bizNotFranchise',
+      label: 'My business is not a franchise.'
+    }),
+    new Checkbox({
+      id: 'clsoesBeforeOne',
+      label: 'My business closes before 1:00 AM.'
+    }),
+    new Checkbox({
+      id: 'bizDoesntManufacture',
+      label: 'My business does not sell products under my businesses name, manufacture, import goods directly, repackage and/or relabel products.'
+    }),
+    new Checkbox({
+      id: 'bizDoesntRent',
+      label: 'My business does not rent to others tools, machinery, or equipment of any kind.'
+    }),
+    new Checkbox({
+      id: 'bizNotAdultThemed',
+      label: 'My business is not adult themed, including an adult book store.'
+    }),
+    new Checkbox({
+      id: 'bizDoesntSellAutoParts',
+      label: 'My business does not sell rebuilt or used auto parts, building materials, or hardware.'
+    }),
+    // new Checkbox({
+    //   id: 'agreeToGuidelines',
+    //   label: 'I confirm that my business meets these guidelines'
+    // }),
     new Button({
       id: 'nextButton',
       style: 'button__primary',
@@ -323,7 +369,7 @@ export const chooseCoverage = new PricingPage({
   label: 'Choose your coverage.',
   explainer: 'Based on what you\'ve told us we are presenting the following coverage options.',
   id: 'chooseCoverage',
-  loadTime: 12000,
+  loadTime: 4000,
   oninit: () => {
     configPricingLayout();
     // brickBreaker.kill();
@@ -486,7 +532,7 @@ export const bindPolicy = new StepQuestion({
     }),
     new Checkbox({
       id: 'agreeToTerms',
-      label: 'By checking this box you agree to get coverage for your business'
+      label: '<strong>I agree to the following statements</strong> <br><br> My business has had no claims in the past 5 years. <br><br> My business has had continuous insurance coverage for the past 3 years (unless a new/newer venture) <br><br> My business has received no cancellations or non-renewals by the insurer(s).'
     }),
     new Button({
       id: 'nextButton',

@@ -355,6 +355,7 @@ export class CoverageOption {
         ${this.flag ? `<div class="coverage-option-flag">${this.flag}</div>` : ''}
         <div class="coverage-option-name">${this.name}</div>
         <div class="coverage-option-price">
+          <div class=price-loading></div>
           <div class="coverage-option-dollars">${this.price}</div> / mo
         </div>
         <div class="price-annual">or $${this.price*12 - 60}/year</div>

@@ -4,9 +4,9 @@ export const AGENT_ANDREW = {
   id: 'agentHelp',
   avatar: 'assets/images/andrew.jpeg',
   name: 'Andrew Clark',
-  agency: 'Partner at Clark & Clark',
+  agency: 'Your agent',
   location: 'Eerie, PA',
-  body: 'Andrew has over 15 years of experience writing commercial and personal lines in the east Text market. Passionate about xyz…',
+  body: 'Andrew has over 10 years of experience writing commercial and personal lines in the east cost market, most recently focusing on small businesses.',
   cta: 'Ask Andrew a question'
 };
 

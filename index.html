@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	  <meta name="apple-mobile-web-app-capable" content="yes" />
   </head>
-  <body>
+  <body class="">
     <div class="wrapper" id="wrapper">
       <div class="sidebar">
         <div class="header">
@@ -70,11 +70,14 @@
             <div class="square-right"></div>
           </div>
         </div>
-        <h4>Loading... one moment please</h4>
+        <h4>Preparing your quotes...</h4>
         <!-- <div class="progress-bar"></div> -->
       </div>
     </div>
     <canvas id="canvas"></canvas>
+    <div class="sticky-help-button _hidden" id="helpButtonSticky">
+      <div class="button button__small button__secondary">Chat with your agent</div>
+    </div>
   </body>
   <script type="module" src="scripts/app.js"></script>
 </html>

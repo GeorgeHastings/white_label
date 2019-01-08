@@ -384,7 +384,7 @@ export class AskKodiakSearch extends Input {
   template() {
     const html = toHTML(`
       <div class="form-field ${this.style} ${this.hide ? `_hidden` : ''}">
-        <input id="${this.id}" type="text" placeholder="Search industries e.g. “Florist”">
+        <input id="${this.id}" type="text" placeholder="Search business types e.g. “Florist”">
         <div id="searchResults" class="auto-suggest-results"></div>
       </div>
     `);
