@@ -58,9 +58,8 @@ const renderClasscodeElements = classcode => {
   render('checkList', createChecklist(classcode.checklist));
   render('reviewerBusiness', classcode.reviewerBusiness);
   render('bodyBusinessType', classcode.plural);
-  $('introBg').setAttribute('style', `background-image: url(../${classcode.backgroundCover})`);
+  $('introBg').setAttribute('style', `background-image: url(${classcode.backgroundCover})`);
   $('flavorImage').setAttribute('src', classcode.flavorImg);
-  $('bgImage').setAttribute('src', classcode.backgroundCover);
 };
 
 const configParams = () => {
