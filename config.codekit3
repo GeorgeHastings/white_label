@@ -248,7 +248,7 @@
 		},
 	"/assets/images/office_bg.jpg": {
 		"ft": 16384,
-		"iS": 183986,
+		"iS": 165951,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/assets/images/office_bg.jpg",
@@ -259,7 +259,7 @@
 		},
 	"/assets/images/office_flavor.jpg": {
 		"ft": 16384,
-		"iS": 133863,
+		"iS": 33914,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/assets/images/office_flavor.jpg",
@@ -347,6 +347,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/index.html",
+		"oF": 0
+		},
+	"/README.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/README.html",
 		"oF": 0
 		},
 	"/README.md": {
