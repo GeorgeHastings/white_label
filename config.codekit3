@@ -319,7 +319,7 @@
 		"oAP": "/assets/images/wine_flavor.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/css/style-min.css": {
