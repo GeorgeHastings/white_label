@@ -2,248 +2,80 @@
 
 import {
   $,
+  toHTML,
   getFormField
 } from './helpers.js';
 
 import {
-  BreadCrumb,
-  Navigation,
-  HelpCard,
-  AgentCard
-} from './ui-components.js';
-import {
-  contactInfo,
-  ownOrRent,
-  basicBizInfo,
-  constructionType,
-  propertyInfo,
-  businessClassification,
-  guideLines,
-  chooseCoverage,
-  reviewCoverage,
-  bindPolicy,
-  nextSteps
-} from './steps.js';
-
-import {
-  HAS_INSURANCE,
-  NO_INSURANCE,
-  AGENT_ANDREW,
-  AGENT_ENDLER,
-  QUESTIONS_CARD
+  BEAUTY_SALON,
+  OFFICE,
+  WINE_SHOP,
+  BROWN_MOORE_ENDLER,
+  ATTUNE
 } from './constants.js';
 
-import {
-  initBlockBreaker
-} from './brickbreaker.js';
-
-const STATE = {
-  currentStep: 0,
-  currentSubstep: 0,
-  data: {}
+const classcodes = {
+  office: OFFICE,
+  salon: BEAUTY_SALON,
+  wine: WINE_SHOP
 };
 
-const STEPS = [
-  [
-    contactInfo,
-    ownOrRent,
-    businessClassification,
-    basicBizInfo,
-    // constructionType,
-    propertyInfo,
-    guideLines
-  ],
-  [
-    chooseCoverage,
-    // reviewCoverage,
-  ],
-  [
-    bindPolicy,
-    nextSteps
-  ]
-];
-
-const navigation = new Navigation(STATE.currentStep, STATE.currentSubstep);
-const breadcrumb = new BreadCrumb(false, STATE.currentSubstep + 1, STEPS[STATE.currentStep].length);
-
-export const updateState = args => {
-  const step = STEPS[STATE.currentStep][STATE.currentSubstep];
-
-  if(args.form) {
-    if(!STATE.data[args.form]) {
-      STATE.data[args.form] = {};
-    }
-    STATE.data[args.form][args.id] = args.value;
-  } else {
-    STATE.data[args.id] = args.value;
-  }
-
-  step.components.forEach(component => {
-    if(component.show && $(component.id)) {
-      if(component.show()) {
-        $(component.id).parentElement.classList.remove('_hidden');
-      } else {
-        $(component.id).parentElement.classList.add('_hidden');
-      }
-     }
-  });
-
-  if($('adminz-only')) {
-    $('adminz-only').innerHTML = `<code>${JSON.stringify(STATE.data, undefined, 2)}</code>`;
-  }
+const agencies = {
+  bme: BROWN_MOORE_ENDLER,
+  attune: ATTUNE
 };
 
-export const getStatePropValue = id => {
-  for(let prop in STATE.data) {
-    if (typeof STATE.data[prop] === 'object' && !STATE.data[prop].length) {
-      for(let subprop in STATE.data[prop]) {
-        if(subprop === id) {
-          return STATE.data[prop][subprop];
-        }
-      }
-    } else if(id === prop) {
-      return STATE.data[prop];
-    }
-  }
-};
-
-const render = (id, component) => {
+const render = (id, content) => {
   $(id).innerHTML = null;
-  $(id).appendChild(component.render());
+  $(id).appendChild(toHTML(content));
 };
 
-const validateStep = enabled => {
-  const step = STEPS[STATE.currentStep][STATE.currentSubstep];
-  let valid = true;
-  step.components.forEach(component => {
-    if(!getStatePropValue(component.id)) {
-      valid = false;
-      if($(component.id)) {
-        $(component.id).classList.add('field_invalid');
-      }
-    }
+const createChecklist = items => {
+  let list = ``;
+
+  items.forEach(item => {
+    list += `<div class="check-point">${item}</div>`;
   });
-  if(valid) {
-    return true;
-  } else {
-    return false;
-  }
+
+  return `<div>${list}</div>`;
 };
 
-const navigateStep = step => {
-  const showBack = STATE.currentSubstep > 0 || STATE.currentStep > 0 ? true : false;
-  breadcrumb.showBackButton = showBack;
-  breadcrumb.currentStep = STATE.currentSubstep + 1;
-  breadcrumb.totalSteps = STEPS[STATE.currentStep].length;
-  navigation.index = STATE.currentStep;
-
-  if(step.style) {
-    $('mainContainer').classList.add(step.style);
-  } else {
-    $('mainContainer').classList = 'main-container';
-  }
-
-  window.scrollTo(0, 0);
-
-  render('breadCrumb', breadcrumb);
-  render('questionContainer', step);
-
-  if($('navigation')) {
-    navigation.update(breadcrumb.currentStep/breadcrumb.totalSteps);
-  } else {
-    render('navigationContainer', navigation);
-    navigation.update(breadcrumb.currentStep/breadcrumb.totalSteps);
-  }
+const renderAgencyElements = agency => {
+  render('agencyName', agency.name);
+  render('agencyName', agency.name);
+  render('aboutAgencyTitle', `We\'re ${agency.name}`);
+  render('agencyPhone', agency.phone);
+  render('agencyEmail', agency.email);
+  render('reviewerLocation', agency.location);
+  render('copyRight', `© 2019 ${agency.name}`);
+  $('agencyLink').setAttribute('href', agency.about);
 };
 
-export const stepForwards = () => {
-  STATE.currentSubstep++;
-  navigation.subIndex++;
-  let step = STEPS[STATE.currentStep][STATE.currentSubstep];
-
-  if(!step) {
-    STATE.currentStep++;
-    navigation.index++;
-    STATE.currentSubstep = 0;
-    navigation.subIndex = 0;
-
-    if(STEPS[STATE.currentStep]) {
-      step = STEPS[STATE.currentStep][STATE.currentSubstep];
-    } else {
-      return;
-    }
-  }
-
-  if(step.loadTime) {
-    $('fullScreenLoader').classList.remove('_hidden');
-    setTimeout(() => {
-      $('fullScreenLoader').classList.add('_hidden');
-      navigateStep(step);
-    }, step.loadTime);
-  } else {
-    navigateStep(step);
-  }
+const renderClasscodeElements = classcode => {
+  render('siteName', classcode.logo);
+  render('siteUsp', classcode.displayName);
+  render('classCodePlural', classcode.plural);
+  render('checkList', createChecklist(classcode.checklist));
+  render('reviewerBusiness', classcode.reviewerBusiness);
+  render('bodyBusinessType', classcode.plural);
+  $('introBg').setAttribute('style', `background-image: url(../${classcode.backgroundCover})`);
+  $('flavorImage').setAttribute('src', classcode.flavorImg);
 };
 
-export const stepBackwards = () => {
-  STATE.currentSubstep--;
-  navigation.subIndex--;
-  let step = STEPS[STATE.currentStep][STATE.currentSubstep];
-
-  if(!step) {
-    STATE.currentStep--;
-    navigation.index--;
-    STATE.currentSubstep = STEPS[STATE.currentStep].length - 1;
-    navigation.subIndex = STEPS[STATE.currentStep].length - 1;
-
-    if(STEPS[STATE.currentStep]) {
-      step = STEPS[STATE.currentStep][STATE.currentSubstep];
-    } else {
-      return;
-    }
-  }
-
-  navigateStep(step);
-};
-
-export const configPricingLayout = () => {
-  $('wrapper').classList.add('wrapper__price-options');
-  $('helpButtonSticky').classList.remove('_hidden');
-  render('rightRail', new AgentCard(AGENT_ANDREW));
-};
-
-export const configCompeltedLayout = () => {
-  $('wrapper').classList.add('wrapper__last-step');
-  render('rightRail', new AgentCard(AGENT_ANDREW));
-};
-
-const getAgentFromtQuery = () => {
+const configParams = () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const agent = urlParams.get('agent');
-  if(agent === 'andrew') {
-    return AGENT_ANDREW;
-  } else if(agent === 'endler') {
-    return AGENT_ENDLER;
-  } else {
-    return AGENT_ANDREW;
+  const classcode = urlParams.get('classcode');
+  const agency = urlParams.get('agency');
+  if(classcode) {
+    renderClasscodeElements(classcodes[classcode]);
+  }
+  if(agency) {
+    renderAgencyElements(agencies[agency]);
   }
 };
 
 const onInit = () => {
-  const step = STEPS[STATE.currentStep][STATE.currentSubstep];
-  if(step.loadTime) {
-    $('fullScreenLoader').classList.remove('_hidden');
-    setTimeout(() => {
-      $('fullScreenLoader').classList.add('_hidden');
-      navigateStep(step);
-    }, step.loadTime);
-  } else {
-    navigateStep(step);
-  }
-  navigateStep(step, false);
-
-  render('rightRail', new AgentCard(getAgentFromtQuery()));
-
+  configParams();
 };
 
 onInit();

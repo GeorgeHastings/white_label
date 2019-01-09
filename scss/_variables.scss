@@ -16,11 +16,25 @@ $pink: #FD337D;
 $background-color: $teal10;
 $text-color: $black;
 
+$horizontal-padding: calc((100% - 128rem)/2);
+
 $mobile: 580px;
 $small: 768px;
 $full: 1500px;
 $big: 1600px;
 $huge: 1820px;
+
+@font-face {
+  font-family: 'GT America';
+  src: url('../assets/fonts/GT-America-Standard-Light.eot');
+  src: url('../assets/fonts/GT-America-Standard-Light.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/GT-America-Standard-Light.woff2') format('woff2'),
+  url('../assets/fonts/GT-America-Standard-Light.woff') format('woff'),
+  url('../assets/fonts/GT-America-Standard-Light.ttf') format('truetype');
+  font-weight: light;
+  font-weight: 300;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'GT America';

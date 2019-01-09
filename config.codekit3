@@ -44,6 +44,41 @@
 		"oAP": "/assets/fonts/GT-America-Standard-Bold.woff2",
 		"oF": 0
 		},
+	"/assets/fonts/GT-America-Standard-Light.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Light.eot",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Light.otf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Light.otf",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Light.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Light.ttf",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Light.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Light.woff",
+		"oF": 0
+		},
+	"/assets/fonts/GT-America-Standard-Light.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/fonts/GT-America-Standard-Light.woff2",
+		"oF": 0
+		},
 	"/assets/fonts/GT-America-Standard-Medium.eot": {
 		"cB": 0,
 		"ft": 8192,
@@ -125,51 +160,11 @@
 		"opt": 0,
 		"q": 100
 		},
-	"/assets/images/arrow.svg": {
+	"/assets/images/chat-1.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "/assets/images/arrow.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/assets/images/auction.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/auction.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/assets/images/bandage-2.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/bandage-2.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/assets/images/banknote-1.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/banknote-1.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/assets/images/car.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/car.svg",
+		"oAP": "/assets/images/chat-1.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -180,36 +175,6 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "/assets/images/check.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/assets/images/check_blue.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/check_blue.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/assets/images/cloud-locked.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/cloud-locked.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/assets/images/download-2.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/download-2.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -226,55 +191,104 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/assets/images/fridge.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/fridge.svg",
+	"/assets/images/logo1.png": {
+		"ft": 32768,
+		"iS": 6883,
+		"oA": 0,
+		"oAP": "/assets/images/logo1.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
-	"/assets/images/help.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/help.svg",
+	"/assets/images/logo2.png": {
+		"ft": 32768,
+		"iS": 9131,
+		"oA": 0,
+		"oAP": "/assets/images/logo2.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
-	"/assets/images/question.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/question.svg",
+	"/assets/images/logo3.png": {
+		"ft": 32768,
+		"iS": 9356,
+		"oA": 0,
+		"oAP": "/assets/images/logo3.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
-	"/assets/images/shop-1.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/shop-1.svg",
+	"/assets/images/logo4.png": {
+		"ft": 32768,
+		"iS": 11246,
+		"oA": 0,
+		"oAP": "/assets/images/logo4.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
-	"/assets/images/smartphone-laptop.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/smartphone-laptop.svg",
+	"/assets/images/logo5.png": {
+		"ft": 32768,
+		"iS": 6029,
+		"oA": 0,
+		"oAP": "/assets/images/logo5.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
+		"oT": 1,
+		"q": 100
+		},
+	"/assets/images/office_bg.jpg": {
+		"ft": 16384,
+		"iS": 183986,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/office_bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/assets/images/office_flavor.jpg": {
+		"ft": 16384,
+		"iS": 133863,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/office_flavor.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/assets/images/salon_bg.jpg": {
+		"ft": 16384,
+		"iS": 183710,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/salon_bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/assets/images/salon_flavor.jpg": {
+		"ft": 16384,
+		"iS": 39811,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/salon_flavor.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"/assets/images/star.svg": {
 		"ft": 2097152,
@@ -286,15 +300,27 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/assets/images/tooltip.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/tooltip.svg",
+	"/assets/images/wine_bg.jpg": {
+		"ft": 16384,
+		"iS": 157336,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/wine_bg.jpg",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
+		"q": 100
+		},
+	"/assets/images/wine_flavor.jpg": {
+		"ft": 16384,
+		"iS": 80266,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/wine_flavor.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"/css/style-min.css": {
 		"aP": 1,
@@ -322,16 +348,6 @@
 		"oA": 0,
 		"oAP": "/index.html",
 		"oF": 0
-		},
-	"/jawn.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/jawn-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
 		},
 	"/README.md": {
 		"cB": 0,
@@ -371,72 +387,12 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"/scripts/brickbreaker.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/brickbreaker-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/scripts/components-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/components-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/scripts/components.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/components-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"/scripts/confetti.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/confetti-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"/scripts/constants.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/scripts/constants-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/scripts/form-components.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/form-components-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/scripts/helpers-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/helpers-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -450,36 +406,6 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
-		},
-	"/scripts/steps-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/steps-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/scripts/steps.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/steps-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"/scripts/ui-components.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/ui-components-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
 		},
 	"/scss/_forms.scss": {
 		"aP": 0,
@@ -553,7 +479,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 564183473.41726601,
-	"displayValue": "intuit_proto",
+	"displayValue": "white_label",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-fry",
 	"iconImageWasSetByUser": 0

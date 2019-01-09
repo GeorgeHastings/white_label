@@ -2,81 +2,106 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Insurance flow</title>
+    <title>Insurance page</title>
     <link rel="stylesheet" href="css/style.css" media="screen">
-    <meta name="description" content="Insurance flow">
+    <meta name="description" content="Insurance page">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	  <meta name="apple-mobile-web-app-capable" content="yes" />
   </head>
-  <body class="">
+  <body>
     <div class="wrapper" id="wrapper">
-      <div class="sidebar">
+      <section id="introBg" class="intro">
         <div class="header">
-          <div class="logo"></div>
+          <div class="header-lockup">
+            <div id="siteName" class="site-name">Salon insurance</div>
+            <div id="agencyName" class="agency-name">Brown, Moore, & Endler</div>
+          </div>
+          <div class="header-actions">
+            <a id="agencyLink" href="">About us</a>
+            <div class="button button__tertiary button__small">Refer a business</div>
+          </div>
         </div>
-        <div id="navigationContainer" class="navigation-container">
-          <div class="navigation">
-            <div class="nav-item nav-item__active">
-              <div class="nav-circle"></div>
-              <span>About you</span>
-            </div>
-            <div class="nav-item">
-              <div class="nav-circle"></div>
-              <span>Business info</span>
-            </div>
-            <div class="nav-item">
-              <div class="nav-circle"></div>
-              <span>Coverage</span>
+        <div class="usp-copy">
+          <h5>Get a quote for your</h5>
+          <h1><span id="siteUsp">Beauty salon</span> insurance in minutes.</h1>
+          <h3>Just a few questions, real prices, no hassle, help anytime you need it.</h3>
+        </div>
+        <div class="usp-actions">
+          <div class="button button__primary"><a href="https://georgehastings.github.io/insurance_flow/?agent=endler">Get a quote</a></div>
+          <div class="button button__secondary">Retrieve a quote</div>
+        </div>
+      </section>
+      <section class="promo-bar">
+        <div class="promo">
+          <div class="tag">online</div>
+          <span>We're available to chat about any inquiries 8AM - 6PM EST</span>
+        </div>
+      </section>
+      <section class="class-info">
+        <div class="class-info-text">
+          <h2 id="classInfo">We love working with <span id="classCodePlural">salons</span></h2>
+          <p id="classBody" class="big-text">As a small business ourselves, we know what it takes to help others get the right coverage. When it comes to <span id="bodyBusinessType">beauty salons</span>, we've got over 15 years of experience writing policies that keep our customers covered and happy.</p>
+          <div class="selling-points">
+            <h5>We have you covered</h5>
+            <div id="checkList" class="check-list">
+              <div class="check-point">Chairs and furniture</div>
+              <div class="check-point">Computers</div>
+              <div class="check-point">Printers & copiers</div>
+              <div class="check-point">Perishable supplies</div>
             </div>
           </div>
         </div>
-        <div class="unlink">No longer interested?<br>Unlink this app</div>
+        <div class="class-image">
+          <img id="flavorImage" src="assets/images/salon_flavor.jpg">
+        </div>
+      </section>
+      <section class="social-proof">
+        <div class="review-card">
+          <div class="stars">
+            <img src="assets/images/star.svg">
+            <img src="assets/images/star.svg">
+            <img src="assets/images/star.svg">
+            <img src="assets/images/star.svg">
+            <img src="assets/images/star.svg">
+          </div>
+          <p id="userReview" class="huge-text">If you are looking for insurance from people that are actually people and not just a phone number, you should chose this firm. They care and will get you exactly what you need not a bunch of nonsense!</p>
+          <div class="reviewer">
+            <div class="reviewer-name">Janice Marby</div>
+            <div class="role-name">Owner — <span id="reviewerBusiness">Finailly</span>, <span id="reviewerLocation">Charlston NC</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="partners">
+        <h5>A few of our trusted partners</h5>
+        <div class="logo-stack">
+          <img src="assets/images/logo1.png">
+          <img src="assets/images/logo2.png">
+          <img src="assets/images/logo3.png">
+          <img src="assets/images/logo4.png">
+          <img src="assets/images/logo5.png">
+        </div>
+      </section>
+      <section class="footer">
+        <div class="footer-rich-info">
+          <div class="about">
+            <h4 id="aboutAgencyTitle">We're Brown, Moore & Endler</h4>
+            <p id="aboutAgencyText" class="small-text">With a unique perspective as natives to the Lowcountry, partners Hunter Brown and Patrick Moore have successfully become leaders in both residential and commercial development and brokerage along the Grand Strand.  From shopping centers, restaurants, child care centers, gas stations, national franchise site selection, and local business development - they have covered most any arena of the commercial development space.</p>
+          </div>
+          <div class="contact">
+            <span>Feel free to contact us at</span>
+            <div id="agencyPhone" class="phone-number">1-800-555-5555</div>
+            <span id="agencyEmail">hello@bmeinsurance.com<span>
+          </div>
+        </div>
+        <div class="footer-info">
+          <div id="copyRight" class="copyright">© 2019 Brown Moore & Endler</div>
+          <div class="social"></div>
+          <div class="powered">Powered by Attune</div>
+        </div>
+      <section>
+      <div class="chat-widget">
+          <img src="assets/images/chat-1.svg">
       </div>
-      <div id="mainContainer" class="main-container">
-        <div class="step-container">
-          <div id="breadCrumb" class="breadcrumb-container">
-            <div class="back-button">
-              <img src="assets/images/arrow.svg">
-            </div>
-            <div class="breadcrumb">1 / 3</div>
-          </div>
-          <div id="questionContainer" class="question-container">
-          </div>
-        </div>
-        <div id="rightRail" class="right-rail">
-          <div class="help-card">
-            <img src="assets/images/help.svg">
-            <div>
-              <h4>Need help?</h4>
-              <p class="small-text">Our licensed agents are standing by ready to assist you.</p>
-            </div>
-            <div class="button button__small button__secondary">Chat with an agent</div>
-          </div>
-          <div id="adminz-only"></div>
-        </div>
-      </div>
-    </div>
-    <div id="fullScreenLoader" class="full-screen-loader _hidden">
-      <div class="loading-message">
-        <div class="square-wrapper" id="squareLoader">
-          <div class="square">
-            <div class="square-top"></div>
-            <div class="square-left"></div>
-            <div class="square-right"></div>
-          </div>
-          <div class="square">
-            <div class="square-top"></div>
-            <div class="square-left"></div>
-            <div class="square-right"></div>
-          </div>
-        </div>
-        <h4>Preparing your quotes...</h4>
-        <!-- <div class="progress-bar"></div> -->
-      </div>
-    </div>
-    <canvas id="canvas"></canvas>
-    <div class="sticky-help-button _hidden" id="helpButtonSticky">
-      <div class="button button__small button__secondary">Chat with your agent</div>
     </div>
   </body>
   <script type="module" src="scripts/app.js"></script>
