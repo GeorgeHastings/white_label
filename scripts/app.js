@@ -68,6 +68,8 @@ const configParams = () => {
   const agency = urlParams.get('agency');
   if(classcode) {
     renderClasscodeElements(classcodes[classcode]);
+  } else {
+    renderClasscodeElements(OFFICE);
   }
   if(agency) {
     renderAgencyElements(agencies[agency]);
