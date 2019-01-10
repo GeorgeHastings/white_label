@@ -32,7 +32,8 @@ export const KING_STREET = {
   email: 'info@kingstreetagency.com',
   phone: '(843) 408-4232',
   reviewCopy: 'King Street Agency has handled all my insurance needs for over 6 years.  Compared to my previous insurer, KSA was able to get me a policy with better coverage and a lower premium.  Top notch customer service and very easy to get in touch with.',
-  aboutCopy: 'King Street Agency is the number one choice for personal and commercial insurance needs. While some agencies specialize in contracts, paperwork and legalese, we specialize in people. As active members of your local community, we know what matters most to you, and we are here to protect it.'
+  aboutCopy: 'King Street Agency is the number one choice for personal and commercial insurance needs. While some agencies specialize in contracts, paperwork and legalese, we specialize in people. As active members of your local community, we know what matters most to you, and we are here to protect it.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=endler'
 };
 
 //CLASSCODES
@@ -45,7 +46,7 @@ export const BEAUTY_SALON = {
   flavorImg: 'assets/images/salon_flavor.jpg',
   reviewerBusiness: 'Finailly',
   checklist: [
-    'Hair things',
+    'Appliances',
     'Massage chairs',
     'Inventory',
     'Contract employees',

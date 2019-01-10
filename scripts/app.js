@@ -24,7 +24,7 @@ const classcodes = {
 const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
-  kingstreet: KING_STREET
+  ksa: KING_STREET
 };
 
 const render = (id, content) => {
