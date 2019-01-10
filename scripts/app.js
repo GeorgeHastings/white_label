@@ -53,6 +53,7 @@ const renderAgencyElements = agency => {
   render('copyRight', `© 2019 ${agency.name}`);
   $('agencyLink').setAttribute('href', agency.about);
   $('agencyLinkHome').setAttribute('href', agency.website);
+  $('buttonLink').setAttribute('href', agency.buttonLink);
 };
 
 const renderClasscodeElements = classcode => {
