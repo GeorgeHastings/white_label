@@ -11,6 +11,7 @@ import {
   OFFICE,
   WINE_SHOP,
   BROWN_MOORE_ENDLER,
+  KING_STREET,
   ATTUNE
 } from './constants.js';
 
@@ -22,7 +23,8 @@ const classcodes = {
 
 const agencies = {
   bme: BROWN_MOORE_ENDLER,
-  attune: ATTUNE
+  attune: ATTUNE,
+  kingstreet: KING_STREET
 };
 
 const render = (id, content) => {
@@ -41,14 +43,16 @@ const createChecklist = items => {
 };
 
 const renderAgencyElements = agency => {
-  render('agencyName', agency.name);
-  render('agencyName', agency.name);
+  render('agencyLinkHome', agency.name);
   render('aboutAgencyTitle', `We\'re ${agency.name}`);
   render('agencyPhone', agency.phone);
   render('agencyEmail', agency.email);
+  render('userReview', agency.reviewCopy);
   render('reviewerLocation', agency.location);
+  render('aboutAgencyText', agency.aboutCopy);
   render('copyRight', `© 2019 ${agency.name}`);
   $('agencyLink').setAttribute('href', agency.about);
+  $('agencyLinkHome').setAttribute('href', agency.website);
 };
 
 const renderClasscodeElements = classcode => {
