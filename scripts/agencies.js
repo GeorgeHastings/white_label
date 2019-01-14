@@ -2,7 +2,7 @@
 
 //AGENCIES
 
-export const BROWN_MOORE_ENDLER = {
+const BROWN_MOORE_ENDLER = {
   name: 'Brown, Moore & Endler',
   location: 'Murrells Inlet, SC',
   website: 'https://www.bmeinsurance.com/',
@@ -14,7 +14,7 @@ export const BROWN_MOORE_ENDLER = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=endler'
 };
 
-export const ATTUNE = {
+const ATTUNE = {
   name: 'Attune Insurance',
   location: 'New York, NY',
   website: 'https://www.attuneinsurance.com/',
@@ -26,7 +26,7 @@ export const ATTUNE = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=andrew'
 };
 
-export const KING_STREET = {
+const KING_STREET = {
   name: 'King Street Agency',
   location: 'Charleston, SC',
   website: 'https://kingstreetagency.com',
@@ -38,49 +38,8 @@ export const KING_STREET = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=elaena'
 };
 
-//CLASSCODES
-
-export const BEAUTY_SALON = {
-  logo: 'salon insurance',
-  displayName: 'Beauty salon',
-  plural: 'beauty salons',
-  backgroundCover: 'assets/images/salon_bg.jpg',
-  flavorImg: 'assets/images/salon_flavor.jpg',
-  reviewerBusiness: 'Finailly',
-  checklist: [
-    'Appliances',
-    'Massage chairs',
-    'Inventory',
-    'Contract employees',
-  ]
-};
-
-export const OFFICE = {
-  logo: 'office insurance',
-  displayName: 'Office',
-  plural: 'offices',
-  backgroundCover: 'assets/images/office_bg.jpg',
-  flavorImg: 'assets/images/office_flavor.jpg',
-  reviewerBusiness: 'Boyd & Partners',
-  checklist: [
-    'Chairs and furniture',
-    'Computers',
-    'Printers & copiers',
-    'Perishable supplies',
-  ]
-};
-
-export const WINE_SHOP = {
-  logo: 'wine & liquor store insurance',
-  displayName: 'Wine & liquor store',
-  plural: 'wine & liquor stores',
-  backgroundCover: 'assets/images/wine_bg.jpg',
-  flavorImg: 'assets/images/wine_flavor.jpg',
-  reviewerBusiness: 'Vine Wine',
-  checklist: [
-    'Inventory',
-    'Computers',
-    'Printers & copiers',
-    'Perishable supplies',
-  ]
+export const agencies = {
+  bme: BROWN_MOORE_ENDLER,
+  attune: ATTUNE,
+  ksa: KING_STREET
 };

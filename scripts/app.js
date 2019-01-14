@@ -6,26 +6,8 @@ import {
   getFormField
 } from './helpers.js';
 
-import {
-  BEAUTY_SALON,
-  OFFICE,
-  WINE_SHOP,
-  BROWN_MOORE_ENDLER,
-  KING_STREET,
-  ATTUNE
-} from './constants.js';
-
-const classcodes = {
-  office: OFFICE,
-  salon: BEAUTY_SALON,
-  wine: WINE_SHOP
-};
-
-const agencies = {
-  bme: BROWN_MOORE_ENDLER,
-  attune: ATTUNE,
-  ksa: KING_STREET
-};
+import { classcodes } from './classcodes.js';
+import { agencies } from './agencies.js';
 
 const render = (id, content) => {
   $(id).innerHTML = null;
@@ -74,7 +56,7 @@ const configParams = () => {
   if(classcode) {
     renderClasscodeElements(classcodes[classcode]);
   } else {
-    renderClasscodeElements(OFFICE);
+    renderClasscodeElements(classcodes.office);
   }
   if(agency) {
     renderAgencyElements(agencies[agency]);

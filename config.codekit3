@@ -374,6 +374,16 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"/scripts/agencies.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/scripts/agencies-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/scripts/app-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -394,12 +404,12 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"/scripts/constants.js": {
+	"/scripts/classcodes.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/constants-min.js",
+		"oA": 1,
+		"oAP": "/scripts/classcodes-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
