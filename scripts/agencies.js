@@ -38,8 +38,21 @@ const KING_STREET = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=elaena'
 };
 
+const PREMIER_INSURANCE = {
+  name: 'Premier Insurance Advisors',
+  location: 'Hilton Head Island, SC',
+  website: 'https://www.premierinshhi.com/',
+  about: 'https://www.premierinshhi.com/about-us.html',
+  email: 'info@premierinshhi.com',
+  phone: '(843) 689-5300',
+  reviewCopy: 'If you are in the market for insurance for your home.business,auto, or any other type of coverage then this is the place to go. If you want to lower your rates you have to get a quote from Premier Insurance Advisors.',
+  aboutCopy: 'Premier Insurance Advisors is a locally owned, independent insurance agency with offices on Hilton Head Island, South Carolina and soon in Bluffton, South Carolina. We have a wealth of knowledge and experience to provide you with the proper amount of insurance coverage for you and your companies’ needs…',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=brian'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
-  ksa: KING_STREET
+  ksa: KING_STREET,
+  premier: PREMIER_INSURANCE
 };
