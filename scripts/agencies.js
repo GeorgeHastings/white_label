@@ -50,9 +50,22 @@ const PREMIER_INSURANCE = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=brian'
 };
 
+const ASSUREX_GLOBAL = {
+  name: 'Assurex Global',
+  location: 'Columbus, OH',
+  website: 'https://www.assurexglobal.com/',
+  about: 'https://www.assurexglobal.com/about/company/',
+  email: 'info@assurexglobal.com',
+  phone: '(614) 793-0841',
+  reviewCopy: 'Assurex Global has handled all my insurance needs for over 6 years.  Compared to my previous insurer, Assurex was able to get me a policy with better coverage and a lower premium.  Top notch customer service and very easy to get in touch with.',
+  aboutCopy: 'Founded in 1954, Assurex Global is an exclusive Partnership of the most prominent independent agents and brokers in the world. With $29 billion in annual premium volume and more than 600 Partner offices, Assurex Global is the world’s largest privately held commercial insurance, risk management, and employee benefits brokerage group.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=tim'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
   ksa: KING_STREET,
-  premier: PREMIER_INSURANCE
+  premier: PREMIER_INSURANCE,
+  assurex: ASSUREX_GLOBAL
 };
