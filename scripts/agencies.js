@@ -71,7 +71,7 @@ const GIA_TX = {
   phone: '(409) 740-1251',
   reviewCopy: 'GIA  has covered our residential and commercial insurance and has provided us with fast and efficient service. The agents and staff have always promptly and professionally given us answers and service for all of our questions and needs. I enjoy working with the professionals at GIA!',
   aboutCopy: 'Founded in 1892, Galveston Insurance Associates (GIA) is Galveston County’s oldest insurance agency. Our principal office is located at 6025 Heards Lane on beautiful Galveston Island. Our Friendswood office is located in downtown Friendswood at 211 W. Edgewood Dr, Ste 200. In addition, we have Associates located in Houston, Austin and Willis.',
-  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=michael-ruiz'
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=michael_ruiz'
 };
 
 export const agencies = {
