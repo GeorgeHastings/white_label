@@ -79,5 +79,6 @@ export const agencies = {
   attune: ATTUNE,
   ksa: KING_STREET,
   premier: PREMIER_INSURANCE,
-  assurex: ASSUREX_GLOBAL
+  assurex: ASSUREX_GLOBAL,
+  gia_tx: GIA_TX
 };
