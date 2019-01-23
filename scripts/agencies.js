@@ -74,11 +74,24 @@ const GIA_TX = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=michael_ruiz'
 };
 
+const PALMETTO_MOON = {
+  name: 'Palmetto Moon',
+  location: 'Charleston, SC',
+  website: 'https://palmettomoon.com/',
+  about: 'https://palmettomoon.com/coverages/',
+  email: 'info@palmettomoon.com',
+  phone: '(843) 375-1234',
+  reviewCopy: 'What is there to say about Palmetto Moon that hasn\'t been said before? They\'re an amazing company with attention to detail. I feel like a valued person every time i come in. When i do come in, I know i will be dealt with swiftly and professionally. I trust them with all my insurance needs.',
+  aboutCopy: 'Palmetto Moon Insurance Agency offers a wide variety of coverages including personal and commercial lines. Insurance can be complicated and convoluted at times and we are eager to help clients figure out the best way to secure the best coverage for their property, businesses, and families. Through Palmetto Moon’s independent status, we can truly shop around for clients, saving them time and money and helping them feel secure that they are covered. Let us know if we can help you with any of the following policies.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=foxy'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
   ksa: KING_STREET,
   premier: PREMIER_INSURANCE,
   assurex: ASSUREX_GLOBAL,
-  gia_tx: GIA_TX
+  gia_tx: GIA_TX,
+  palmetto_moon: PALMETTO_MOON
 };
