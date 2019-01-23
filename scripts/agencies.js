@@ -86,6 +86,18 @@ const PALMETTO_MOON = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=foxy'
 };
 
+const CLJ_RISK_MANAGEMENT = {
+  name: 'CLJ Risk Management',
+  location: 'Humble, TX',
+  website: 'https://cljriskmanagement.com/',
+  about: 'https://cljriskmanagement.com/commercial-insurance/',
+  email: 'info@cljriskmanagement.com',
+  phone: '(832) 777-0381',
+  reviewCopy: 'I reached out to Chelsey to get a quote for homeowner\'s and auto insurance. She was fantastic throughout the process and made the transition extremely easy. She was very responsive and attentive to me and always available. Quotes were provided quickly and best of all...she saved me a bunch of money. I would highly recommend Chelsey and CLJ Risk Management to anyone and everyone with insurance needs.',
+  aboutCopy: 'Life is an adventure. At CLJ Risk Management, we want to be there through all stages - the thrill of getting your very first car or home, getting married, having a baby, starting a business, or retiring. But we also understand that life will throw you curveballs. Unfortunately, natural disasters occur, accidents happen, lawsuits can cause bankruptcy, and death is inevitable. Through our consultative approach, we identify potential risk exposures and implement strategic plans to protect your family, personal and business assets, and finances.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=chelsey'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -93,5 +105,6 @@ export const agencies = {
   premier: PREMIER_INSURANCE,
   assurex: ASSUREX_GLOBAL,
   gia_tx: GIA_TX,
-  palmetto_moon: PALMETTO_MOON
+  palmetto_moon: PALMETTO_MOON,
+  clj_risk_management: CLJ_RISK_MANAGEMENT
 };
