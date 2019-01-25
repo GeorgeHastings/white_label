@@ -98,6 +98,18 @@ const CLJ_RISK_MANAGEMENT = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=chelsey'
 };
 
+const AON_AFFINITY = {
+  name: 'Aon Affinity',
+  location: 'New York, NY',
+  website: 'https://www.aon.com/risk-services/group-individual-insurance/aon-affinity-home.jsp',
+  about: 'https://www.aon.com/risk-services/group-individual-insurance/products-overview.jsp',
+  email: 'affinity@aon.com',
+  phone: '(800) 453-0567',
+  reviewCopy: 'Aon Affinity has covered our commercial insurance and has provided us with fast and efficient service. The agents and staff have always promptly and professionally given us answers and service for all of our questions and needs. I enjoy working with the professionals at Aon Affinity!',
+  aboutCopy: 'Aon Affinity specializes in developing, marketing and administering customized insurance programs and specialty market solutions for affinity organizations and their members or affiliates. Today more than 200 associations, non-profit and professional organizations benefit from our client advocacy and expertise in brokerage, marketing, administration and claims management services.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=brian_specht'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
