@@ -49,8 +49,23 @@ export const LAW_OFFICE = {
   logo: 'law office insurance',
   displayName: 'Law office',
   plural: 'law offices',
-  backgroundCover: 'assets/images/lawyer-main.jpg',
+  backgroundCover: 'assets/images/law-main-3.jpg',
   flavorImg: 'assets/images/lawyer-small.jpg',
+  reviewerBusiness: 'Vine Wine',
+  checklist: [
+    'Computers',
+    'Printers & copiers',
+    'Chairs & desks',
+    'General liability'
+  ]
+};
+
+export const ACCOUNTING_OFFICE = {
+  logo: 'accounting office insurance',
+  displayName: 'Accounting office',
+  plural: 'accounting offices',
+  backgroundCover: 'assets/images/accounting-main.jpg',
+  flavorImg: 'assets/images/accounting-small.jpg',
   reviewerBusiness: 'Vine Wine',
   checklist: [
     'Computers',
@@ -64,5 +79,6 @@ export const classcodes = {
   office: OFFICE,
   salon: BEAUTY_SALON,
   wine: WINE_SHOP,
-  law: LAW_OFFICE
+  law: LAW_OFFICE,
+  accounting: ACCOUNTING_OFFICE
 };
