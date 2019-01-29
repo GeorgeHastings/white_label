@@ -160,6 +160,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/assets/images/brian-premier.jpg": {
+		"ft": 16384,
+		"iS": 12861,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/brian-premier.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/assets/images/chat-1.svg": {
 		"ft": 2097152,
 		"miP": 0,
