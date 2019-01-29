@@ -45,8 +45,24 @@ export const WINE_SHOP = {
   ]
 };
 
+export const LAW_OFFICE = {
+  logo: 'law office insurance',
+  displayName: 'Law office',
+  plural: 'law offices',
+  backgroundCover: 'assets/images/lawyers-main.jpg',
+  flavorImg: 'assets/images/lawyers-small.jpg',
+  reviewerBusiness: 'Vine Wine',
+  checklist: [
+    'Computers',
+    'Printers & copiers',
+    'Chairs & desks',
+    'General liability'
+  ]
+};
+
 export const classcodes = {
   office: OFFICE,
   salon: BEAUTY_SALON,
-  wine: WINE_SHOP
+  wine: WINE_SHOP,
+  law: LAW_OFFICE
 };
