@@ -49,8 +49,8 @@ export const LAW_OFFICE = {
   logo: 'law office insurance',
   displayName: 'Law office',
   plural: 'law offices',
-  backgroundCover: 'assets/images/lawyers-main.jpg',
-  flavorImg: 'assets/images/lawyers-small.jpg',
+  backgroundCover: 'assets/images/lawyer-main.jpg',
+  flavorImg: 'assets/images/lawyer-small.jpg',
   reviewerBusiness: 'Vine Wine',
   checklist: [
     'Computers',
