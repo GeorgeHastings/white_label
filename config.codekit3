@@ -149,23 +149,34 @@
 		"oAP": "/assets/fonts/GT-America-Standard-Regular.woff2",
 		"oF": 0
 		},
+	"/assets/images/accounting-main.jpg": {
+		"ft": 16384,
+		"iS": 619475,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/accounting-main.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/assets/images/accounting-small.jpg": {
+		"ft": 16384,
+		"iS": 815584,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/accounting-small.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/assets/images/andrew.jpeg": {
 		"ft": 16384,
 		"iS": 4728,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/assets/images/andrew.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/assets/images/brian-premier.jpg": {
-		"ft": 16384,
-		"iS": 12861,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/assets/images/brian-premier.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -200,6 +211,28 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/assets/images/lawyer-main.jpg": {
+		"ft": 16384,
+		"iS": 328972,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/lawyer-main.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/assets/images/lawyer-small.jpg": {
+		"ft": 16384,
+		"iS": 2378991,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/lawyer-small.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/assets/images/logo1.png": {
