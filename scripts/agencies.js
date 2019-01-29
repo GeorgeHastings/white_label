@@ -131,5 +131,6 @@ export const agencies = {
   gia_tx: GIA_TX,
   palmetto_moon: PALMETTO_MOON,
   clj_risk_management: CLJ_RISK_MANAGEMENT,
-  aon_affinity: AON_AFFINITY
+  aon_affinity: AON_AFFINITY,
+  cravens_warren: CRAVENS_WARREN
 };
