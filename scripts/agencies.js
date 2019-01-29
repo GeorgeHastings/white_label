@@ -110,6 +110,18 @@ const AON_AFFINITY = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=brian_specht'
 };
 
+const CRAVENS_WARREN = {
+  name: 'Cravens Warren',
+  location: 'Houston, TX',
+  website: 'http://www.cravenswarren.com/',
+  about: 'http://www.cravenswarren.com/insurance/about-cravens-warren/page110.html',
+  email: 'info@cravenswarren.com',
+  phone: '(713) 690-6000',
+  reviewCopy: 'There are very few insurance conversations that make you feel refreshed once the dust settles. At Cravens-Warren & Company, they, "service all of their client\'s accounts" and shop* the best price for your situation. All for no extra costs or hidden fees.',
+  aboutCopy: 'Cravens Warren, founded in 1946, has been serving the insurance needs of Texans for over 70 years. We are a full service agency, representing numerous insurance companies for Personal Lines, Commercial Lines, Surety Bonds, and Life & Health Insurance.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=conrad_hart'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
