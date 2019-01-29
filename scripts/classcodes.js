@@ -49,7 +49,7 @@ export const LAW_OFFICE = {
   logo: 'law office insurance',
   displayName: 'Law office',
   plural: 'law offices',
-  backgroundCover: 'assets/images/lawyer-main.jpg',
+  backgroundCover: 'assets/images/law-main-3.jpg',
   flavorImg: 'assets/images/lawyer-small.jpg',
   reviewerBusiness: 'Vine Wine',
   checklist: [
