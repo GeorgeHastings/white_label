@@ -60,9 +60,25 @@ export const LAW_OFFICE = {
   ]
 };
 
+export const ACCOUNTING_OFFICE = {
+  logo: 'accounting office insurance',
+  displayName: 'Accounting office',
+  plural: 'accounting offices',
+  backgroundCover: 'assets/images/accounting-main.jpg',
+  flavorImg: 'assets/images/accounting-small.jpg',
+  reviewerBusiness: 'Vine Wine',
+  checklist: [
+    'Computers',
+    'Printers & copiers',
+    'Chairs & desks',
+    'General liability'
+  ]
+};
+
 export const classcodes = {
   office: OFFICE,
   salon: BEAUTY_SALON,
   wine: WINE_SHOP,
-  law: LAW_OFFICE
+  law: LAW_OFFICE,
+  accounting: ACCOUNTING_OFFICE
 };
