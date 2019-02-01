@@ -122,6 +122,18 @@ const CRAVENS_WARREN = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=conrad_hart'
 };
 
+const NAAIA = {
+  name: 'NAAIA',
+  location: 'Washington, D.C.',
+  website: 'https://www.naaia.org/',
+  about: 'https://www.naaia.org/about-us/',
+  email: 'naaia.office@gmail.com',
+  phone: '(866) 566-2242',
+  reviewCopy: 'There are very few insurance conversations that make you feel refreshed once the dust settles. At NAAIA, they, "service all of their client\'s accounts" and shop* the best price for your situation. All for no extra costs or hidden fees.',
+  aboutCopy: 'The National African American Insurance Association (NAAIA) was organized to create a network among people of color and others employed in or affiliated with the insurance industry. The association currently has 15 chapters, with 2 others in development, throughout the nation and its members represent every sector of the industry. Pooling this wealth of talent contributes significantly to the association and its members through the sharing of professional knowledge, information and experiences.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=jerald_tillman'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -132,5 +144,6 @@ export const agencies = {
   palmetto_moon: PALMETTO_MOON,
   clj_risk_management: CLJ_RISK_MANAGEMENT,
   aon_affinity: AON_AFFINITY,
-  cravens_warren: CRAVENS_WARREN
+  cravens_warren: CRAVENS_WARREN,
+  naaia: NAAIA
 };
