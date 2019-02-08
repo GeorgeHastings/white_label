@@ -135,7 +135,7 @@ const NAAIA = {
 };
 
 const GALLAGHER = {
-  name: 'GALLAGHER',
+  name: 'Gallagher',
   location: 'Chicago, IL',
   website: 'https://www.ajg.com/',
   about: 'https://www.ajg.com/about-us/',
