@@ -146,6 +146,18 @@ const GALLAGHER = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=jen_tadin'
 };
 
+const AGRoth = {
+  name: 'AGRoth',
+  location: 'Savannah, GA',
+  website: 'https://agroth.com/',
+  about: 'https://agroth.com/insurance-markets',
+  email: 'info@agroth.com',
+  phone: '(678) 429-5782',
+  reviewCopy: 'A.G.Roth has covered our commercial insurance and has provided us with fast and efficient service. A.G.Roth has always promptly and professionally given us answers and service for all of our questions and needs.',
+  aboutCopy: 'A.G.Roth helps businesses achieve increases in their internal rates of return (IRR) by controlling and stabilizing the various  business risk embedded in their company. The solutions can include combination of insurance, self-insurance, captives, 831b captives or warranty programs.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=andy_agroth'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -158,5 +170,6 @@ export const agencies = {
   aon_affinity: AON_AFFINITY,
   cravens_warren: CRAVENS_WARREN,
   naaia: NAAIA,
-  gallagher: GALLAGHER
+  gallagher: GALLAGHER,
+  agroth: AGRoth
 };
