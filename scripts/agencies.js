@@ -122,6 +122,42 @@ const CRAVENS_WARREN = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=conrad_hart'
 };
 
+const NAAIA = {
+  name: 'NAAIA',
+  location: 'Washington, D.C.',
+  website: 'https://www.naaia.org/',
+  about: 'https://www.naaia.org/about-us/',
+  email: 'naaia.office@gmail.com',
+  phone: '(866) 566-2242',
+  reviewCopy: 'There are very few insurance conversations that make you feel refreshed once the dust settles. At NAAIA, they, "service all of their client\'s accounts" and shop* the best price for your situation. All for no extra costs or hidden fees.',
+  aboutCopy: 'The National African American Insurance Association (NAAIA) was organized to create a network among people of color and others employed in or affiliated with the insurance industry. The association currently has 15 chapters, with 2 others in development, throughout the nation and its members represent every sector of the industry. Pooling this wealth of talent contributes significantly to the association and its members through the sharing of professional knowledge, information and experiences.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=jerald_tillman'
+};
+
+const GALLAGHER = {
+  name: 'Gallagher',
+  location: 'Chicago, IL',
+  website: 'https://www.ajg.com/',
+  about: 'https://www.ajg.com/about-us/',
+  email: 'info@ajg.com',
+  phone: '(630) 773-3800',
+  reviewCopy: 'I obtained liability insurance at the recommendation of my attorney as I opened my business. The representative I spoke with at Arthur Gallagher was able to provide me with this information and more – by the time I was done speaking with him I had all of the information I needed to go ahead with this insurance and it was much less expensive than I thought it would be.',
+  aboutCopy: 'Every day, our clients face massive challenges across a range of issues. Gallagher\'s advisors understand your business and how hard you work to deliver on your promises. We\'re your global partner in achieving your goals. And that only begins to describe the shared values, corporate culture and passion for excellence that define The Gallagher Way of doing business. Arthur J. Gallagher & Co. - the only insurance broker on the Ethisphere Institute\'s list of the World\'s Most Ethical Companies. ',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=jen_tadin'
+};
+
+const AGRoth = {
+  name: 'AGRoth',
+  location: 'Savannah, GA',
+  website: 'https://agroth.com/',
+  about: 'https://agroth.com/insurance-markets',
+  email: 'info@agroth.com',
+  phone: '(678) 429-5782',
+  reviewCopy: 'A.G.Roth has covered our commercial insurance and has provided us with fast and efficient service. A.G.Roth has always promptly and professionally given us answers and service for all of our questions and needs.',
+  aboutCopy: 'A.G.Roth helps businesses achieve increases in their internal rates of return (IRR) by controlling and stabilizing the various  business risk embedded in their company. The solutions can include combination of insurance, self-insurance, captives, 831b captives or warranty programs.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=andy_agroth'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -132,5 +168,8 @@ export const agencies = {
   palmetto_moon: PALMETTO_MOON,
   clj_risk_management: CLJ_RISK_MANAGEMENT,
   aon_affinity: AON_AFFINITY,
-  cravens_warren: CRAVENS_WARREN
+  cravens_warren: CRAVENS_WARREN,
+  naaia: NAAIA,
+  gallagher: GALLAGHER,
+  agroth: AGRoth
 };
