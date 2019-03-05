@@ -164,11 +164,11 @@ section {
 	padding: 0.25rem 1rem;
 	text-transform: uppercase;
 	font-size: 1.2rem;
+	font-weight: 600;
 	letter-spacing: 0.1rem;
 	text-align: center;
 	border-radius: 0.3rem;
 	color: $teal;
-	font-weight: 600;
 }
 
 .class-info {
@@ -230,8 +230,6 @@ section {
 
 	img {
 		transform: scale(0.5);
-		// height: auto;
-		// max-width: 14rem;
 	}
 }
 
@@ -291,10 +289,10 @@ section {
 }
 
 .phone-number {
-	font-size: 3.6rem;
-	color: $teal10;
 	margin-top: 3rem;
 	margin-bottom: 1.5rem;
+	font-size: 3.6rem;
+	color: $teal10;
 }
 
 .footer-info {

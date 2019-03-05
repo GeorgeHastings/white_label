@@ -309,11 +309,11 @@ section {
   padding: 0.25rem 1rem;
   text-transform: uppercase;
   font-size: 1.2rem;
+  font-weight: 600;
   letter-spacing: 0.1rem;
   text-align: center;
   border-radius: 0.3rem;
-  color: #00E5E6;
-  font-weight: 600; }
+  color: #00E5E6; }
 
 .class-info {
   display: flex;
@@ -400,10 +400,10 @@ section {
     color: #E6FAFA; }
 
 .phone-number {
-  font-size: 3.6rem;
-  color: #E6FAFA;
   margin-top: 3rem;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  font-size: 3.6rem;
+  color: #E6FAFA; }
 
 .footer-info {
   display: flex;

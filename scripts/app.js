@@ -59,6 +59,7 @@ const configParams = () => {
     renderClasscodeElements(classcodes.office);
   }
   if(agency) {
+    console.log(agency)
     renderAgencyElements(agencies[agency]);
   }
 };
