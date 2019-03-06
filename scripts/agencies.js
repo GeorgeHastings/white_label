@@ -158,6 +158,18 @@ const AGRoth = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=andy_agroth'
 };
 
+export const STERLING = {
+  name: 'SterlingRisk',
+  location: 'Woodbury, NY',
+  website: 'https://www.sterlingrisk.com/',
+  about: 'https://www.sterlingrisk.com/about-us/',
+  email: 'info@sterlingrisk.com',
+  phone: '(800) 767-7837',
+  reviewCopy: 'SterlingRisk has covered our commercial insurance and has provided us with fast and efficient service. SterlingRisk has always promptly and professionally given us answers and service for all of our questions and needs.',
+  aboutCopy: 'At SterlingRisk, we understand that to your business, the bottom line is the bottom line. That is why we do all we can to help companies of all sizes, as well as the successful individuals who manage them, reduce the real cost of both their personal and commercial insurance. Our approach looks beyond the premium to help solve your critical risk challenges, control losses and manage your claims so you ultimately spend less protecting your assets and your business. We are one of the largest national insurance brokers and a leading provider of risk management services and employee benefits.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=geraldine'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -171,5 +183,6 @@ export const agencies = {
   cravens_warren: CRAVENS_WARREN,
   naaia: NAAIA,
   gallagher: GALLAGHER,
-  agroth: AGRoth
+  agroth: AGRoth,
+  sterling: STERLING
 };

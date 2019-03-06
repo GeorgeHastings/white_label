@@ -343,6 +343,28 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/assets/images/restaurant.jpg": {
+		"ft": 16384,
+		"iS": 291896,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/restaurant.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/assets/images/restaurant_small.jpg": {
+		"ft": 16384,
+		"iS": 328544,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/restaurant_small.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/assets/images/salon_bg.jpg": {
 		"ft": 16384,
 		"iS": 183710,

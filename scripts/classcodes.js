@@ -75,10 +75,28 @@ export const ACCOUNTING_OFFICE = {
   ]
 };
 
+export const JETRO = {
+  logo: 'Jetro Restaurant Program',
+  displayName: 'Restaurant',
+  plural: 'restaurants',
+  backgroundCover: 'assets/images/restaurant.jpg',
+  flavorImg: 'assets/images/restaurant_small.jpg',
+  reviewerBusiness: 'Tony\'s Pizzeria',
+  checklist: [
+    'Kitchen appliances',
+    'Inventory',
+    'Chairs & furniture',
+    'Spoilage',
+    'Liquor Liability',
+    'General Liability'
+  ]
+};
+
 export const classcodes = {
   office: OFFICE,
   salon: BEAUTY_SALON,
   wine: WINE_SHOP,
   law: LAW_OFFICE,
-  accounting: ACCOUNTING_OFFICE
+  accounting: ACCOUNTING_OFFICE,
+  jetro: JETRO
 };
