@@ -170,6 +170,18 @@ export const STERLING = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=geraldine'
 };
 
+export const MARSH_MCLENNAN = {
+  name: 'Marsh & McLennan',
+  location: 'Quincy, MA',
+  website: 'https://www.mma-ne.com/',
+  about: 'https://www.mma-ne.com/about',
+  email: 'info@mma-ne.com',
+  phone: '(617) 587-2300',
+  reviewCopy: 'Marsh & McLennan has covered our commercial insurance and has provided us with fast and efficient service. Marsh & McLennan has always promptly and professionally given us answers and service for all of our questions and needs.',
+  aboutCopy: 'At Marsh & McLennan, we understand that to your business, the bottom line is the bottom line. That is why we do all we can to help companies of all sizes, as well as the successful individuals who manage them, reduce the real cost of both their personal and commercial insurance. Our approach looks beyond the premium to help solve your critical risk challenges, control losses and manage your claims so you ultimately spend less protecting your assets and your business. We are one of the largest national insurance brokers and a leading provider of risk management services and employee benefits.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=michael_dye'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -184,5 +196,6 @@ export const agencies = {
   naaia: NAAIA,
   gallagher: GALLAGHER,
   agroth: AGRoth,
-  sterling: STERLING
+  sterling: STERLING,
+  marsh_mclennan: MARSH_MCLENNAN
 };
