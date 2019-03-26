@@ -182,6 +182,18 @@ export const MARSH_MCLENNAN = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=michael_dye'
 };
 
+export const RIC_INSURANCE = {
+  name: 'RIC Insurance General Agency',
+  location: 'Santa Rosa, CA',
+  website: 'https://ric-ins.com/',
+  about: 'https://ric-ins.com/team/tom-clansen/',
+  email: 'info@ric-ins.com',
+  phone: '(888) 693-7892',
+  reviewCopy: 'RIC Insurance has covered our commercial insurance and has provided us with fast and efficient service. RIC Insurance has always promptly and professionally given us answers and service for all of our questions and needs.',
+  aboutCopy: 'We represent the top A rated Admitted and Non-Admitted property and casualty carriers providing all types and sizes of business risks. From Main Street to small artisan contractors and beyond, we have the market access and insurance coverage to protect the unique exposures for all types and sizes of small business risks.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=tom_clansen'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -197,5 +209,6 @@ export const agencies = {
   gallagher: GALLAGHER,
   agroth: AGRoth,
   sterling: STERLING,
-  marsh_mclennan: MARSH_MCLENNAN
+  marsh_mclennan: MARSH_MCLENNAN,
+  ric: RIC_INSURANCE
 };
