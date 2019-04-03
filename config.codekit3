@@ -343,6 +343,28 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/assets/images/realestate-main.jpg": {
+		"ft": 16384,
+		"iS": 559115,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/realestate-main.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/assets/images/realestate-main_old.jpg": {
+		"ft": 16384,
+		"iS": 405196,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/realestate-main_old.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/assets/images/restaurant.jpg": {
 		"ft": 16384,
 		"iS": 291896,

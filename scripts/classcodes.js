@@ -75,6 +75,21 @@ export const ACCOUNTING_OFFICE = {
   ]
 };
 
+export const REALESTATE_OFFICE = {
+  logo: 'real estate office insurance',
+  displayName: 'Real Estate office',
+  plural: 'real estate offices',
+  backgroundCover: 'assets/images/realestate-main.jpg',
+  flavorImg: 'assets/images/office_flavor.jpg',
+  reviewerBusiness: 'Toll Bros',
+  checklist: [
+    'Computers',
+    'Printers & copiers',
+    'Chairs & desks',
+    'General liability'
+  ]
+};
+
 export const JETRO = {
   logo: 'Jetro Restaurant Program',
   displayName: 'Restaurant',
@@ -98,5 +113,6 @@ export const classcodes = {
   wine: WINE_SHOP,
   law: LAW_OFFICE,
   accounting: ACCOUNTING_OFFICE,
-  jetro: JETRO
+  jetro: JETRO,
+  realestate: REALESTATE_OFFICE
 };
