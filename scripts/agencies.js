@@ -194,6 +194,18 @@ export const RIC_INSURANCE = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=tom_clansen'
 };
 
+export const SCHMUTTER = {
+  name: 'Schmutter, Strull, Fleisch, Inc.',
+  location: 'New York, NY',
+  website: 'http://www.ssfinsurance.com/',
+  about: 'http://www.ssfinsurance.com/about-us/',
+  email: 'info@ssfinsurance.com',
+  phone: '(212) 964-6190',
+  reviewCopy: 'Schmutter, Strull, Fleisch Insurance has covered our commercial insurance and has provided us with fast and efficient service. They have always promptly and professionally given us answers and service for all of our questions and needs.',
+  aboutCopy: 'Founded in 1894 by William H. Fleisch, our full-service insurance brokerage firm has served the business needs of this area for over 100 years. SSF Inc. currently serves a diversified commercial, non-profit and personal clientele throughout the New York- Northern New Jersey area. Our office features a state-of-the-art computer system for record keeping, account statements and underwriting database. Our advanced technology and industry expertise allows us to provide prompt response to all of your insurance needs.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -210,5 +222,6 @@ export const agencies = {
   agroth: AGRoth,
   sterling: STERLING,
   marsh_mclennan: MARSH_MCLENNAN,
-  ric: RIC_INSURANCE
+  ric: RIC_INSURANCE,
+  schmutter: SCHMUTTER
 };

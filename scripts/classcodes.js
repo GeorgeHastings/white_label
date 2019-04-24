@@ -107,6 +107,23 @@ export const JETRO = {
   ]
 };
 
+export const RESTAURANT = {
+  logo: 'restaurant insurance',
+  displayName: 'Restaurant',
+  plural: 'restaurants',
+  backgroundCover: 'assets/images/restaurant.jpg',
+  flavorImg: 'assets/images/restaurant_small.jpg',
+  reviewerBusiness: 'Tony\'s Pizzeria',
+  checklist: [
+    'Kitchen appliances',
+    'Inventory',
+    'Chairs & furniture',
+    'Spoilage',
+    'Liquor Liability',
+    'General Liability'
+  ]
+};
+
 export const classcodes = {
   office: OFFICE,
   salon: BEAUTY_SALON,
@@ -114,5 +131,6 @@ export const classcodes = {
   law: LAW_OFFICE,
   accounting: ACCOUNTING_OFFICE,
   jetro: JETRO,
+  restaurant: RESTAURANT,
   realestate: REALESTATE_OFFICE
 };
