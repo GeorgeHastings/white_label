@@ -206,6 +206,18 @@ export const SCHMUTTER = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/'
 };
 
+export const USI = {
+  name: 'USI',
+  location: 'Bedford, NH',
+  website: 'https://www.usi.com/',
+  about: 'https://www.usi.com/about-usi/the-power-of-one/',
+  email: 'info@usi.com',
+  phone: '(914) 749-8500',
+  reviewCopy: 'USI has covered our commercial insurance and has provided us with fast and efficient service. They have always promptly and professionally given us answers and service for all of our questions and needs.',
+  aboutCopy: 'From many great individuals USI has become one unique industry leader. USI began in 1994 with a single office of $6.5 million of revenue and 40 associates. Today, USI is approaching $2 billion in revenue with more than 6,000 associates in over 150 offices across the country.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=brenda_colton'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -223,5 +235,6 @@ export const agencies = {
   sterling: STERLING,
   marsh_mclennan: MARSH_MCLENNAN,
   ric: RIC_INSURANCE,
-  schmutter: SCHMUTTER
+  schmutter: SCHMUTTER,
+  usi: USI
 };
