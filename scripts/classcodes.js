@@ -129,7 +129,7 @@ export const HAIRCUT = {
   displayName: 'Salon',
   plural: 'salons',
   backgroundCover: 'assets/images/haircut.jpg',
-  flavorImg: 'assets/images/restaurant_small.jpg',
+  flavorImg: 'assets/images/haircut-small-image.jpg',
   reviewerBusiness: 'Next Level Hair Salon',
   checklist: [
     'Clippers',
