@@ -124,6 +124,23 @@ export const RESTAURANT = {
   ]
 };
 
+export const HAIRCUT = {
+  logo: 'salon insurance',
+  displayName: 'Salon',
+  plural: 'salons',
+  backgroundCover: 'assets/images/haircut.jpg',
+  flavorImg: 'assets/images/restaurant_small.jpg',
+  reviewerBusiness: 'Next Level Hair Salon',
+  checklist: [
+    'Clippers',
+    'Inventory',
+    'Chairs',
+    'Shampoos',
+    'Furniture',
+    'General Liability'
+  ]
+};
+
 export const classcodes = {
   office: OFFICE,
   salon: BEAUTY_SALON,
@@ -132,5 +149,6 @@ export const classcodes = {
   accounting: ACCOUNTING_OFFICE,
   jetro: JETRO,
   restaurant: RESTAURANT,
-  realestate: REALESTATE_OFFICE
+  realestate: REALESTATE_OFFICE,
+  hairsalon: HAIRCUT
 };
