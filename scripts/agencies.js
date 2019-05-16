@@ -170,18 +170,6 @@ export const STERLING = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=geraldine'
 };
 
-export const AFI = {
-  name: 'Armed Forces Insurance',
-  location: 'Leavenworth, KS',
-  website: 'https://www.afi.org/',
-  about: 'https://www.afi.org/About-AFI',
-  email: '	service@afi.org',
-  phone: '	800-495-8234',
-  reviewCopy: 'When it comes to sound business decisions, its important to trust the right people. Armed Forces Insurance, the name military families have trusted with their home, renter, and auto insurance, is proud to offer coverage for your business.',
-  aboutCopy: 'Since 1887, Armed Forces Insurance (AFI) has existed with a single, unwavering purpose: To protect the people who protect our nation. So for more than 130 years, weve provided military homeowner insurance, military renter insurance, military auto insurance and much more to our members.,
-  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=andrew'
-};
-
 export const MARSH_MCLENNAN = {
   name: 'Marsh & McLennan',
   location: 'Quincy, MA',
@@ -230,6 +218,18 @@ export const USI = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=brenda_colton'
 };
 
+export const AFI = {
+  name: 'Armed Forces Insurance',
+  location: 'Leavenworth, KS',
+  website: 'https://www.afi.org/',
+  about: 'https://www.afi.org/About-AFI',
+  email: '	service@afi.org',
+  phone: '	800-495-8234',
+  reviewCopy: 'When it comes to sound business decisions, its important to trust the right people. Armed Forces Insurance, the name military families have trusted with their home, renter, and auto insurance, is proud to offer coverage for your business.',
+  aboutCopy: 'Since 1887, Armed Forces Insurance (AFI) has existed with a single, unwavering purpose: To protect the people who protect our nation. So for more than 130 years, weve provided military homeowner insurance, military renter insurance, military auto insurance and much more to our members.,
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=andrew'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -248,6 +248,6 @@ export const agencies = {
   marsh_mclennan: MARSH_MCLENNAN,
   ric: RIC_INSURANCE,
   schmutter: SCHMUTTER,
-  usi: USI
+  usi: USI,
   afi: AFI
 };
