@@ -225,7 +225,7 @@ export const AFI = {
   about: 'https://www.afi.org/About-AFI',
   email: '	service@afi.org',
   phone: '	800-495-8234',
-  reviewCopy: 'When it comes to sound business decisions, its important to trust the right people. Armed Forces Insurance, the name military families have trusted with their home, renter, and auto insurance, is proud to offer coverage for your business.',
+  reviewCopy: 'AFI has handled all my insurance needs for over 6 years.  Compared to my previous insurer, AFI was able to get me a policy with better coverage and a lower premium.  Top notch customer service and very easy to get in touch with.',
   aboutCopy: 'Since 1887, Armed Forces Insurance (AFI) has existed with a single, unwavering purpose: To protect the people who protect our nation. So for more than 130 years, weve provided military homeowner insurance, military renter insurance, military auto insurance and much more to our members.',
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=andrew'
 };
