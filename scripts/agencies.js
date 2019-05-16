@@ -170,6 +170,18 @@ export const STERLING = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=geraldine'
 };
 
+export const AFI = {
+  name: 'Armed Forces Insurance',
+  location: 'Leavenworth, KS',
+  website: 'https://www.afi.org/',
+  about: 'https://www.afi.org/About-AFI',
+  email: '	service@afi.org',
+  phone: '	800-495-8234',
+  reviewCopy: 'this is the review copy section',
+  aboutCopy: 'Since 1887, Armed Forces Insurance (AFI) has existed with a single, unwavering purpose: To protect the people who protect our nation. So for more than 130 years, we've provided military homeowner insurance, military renter insurance, military auto insurance and much more to our members.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=andrew'
+};
+
 export const MARSH_MCLENNAN = {
   name: 'Marsh & McLennan',
   location: 'Quincy, MA',
