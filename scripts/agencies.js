@@ -249,4 +249,5 @@ export const agencies = {
   ric: RIC_INSURANCE,
   schmutter: SCHMUTTER,
   usi: USI
+  afi: AFI
 };
