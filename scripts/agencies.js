@@ -230,6 +230,29 @@ export const AFI = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=andrew'
 };
 
+export const HUB_INTERNATIONAL_NE_LIMITED = {
+  name: 'HUB International Northeast Limited',
+  location: 'New York, NY',
+  website: 'https://www.hubinternational.com/',
+  about: 'https://www.hubinternational.com/products/business-insurance/',
+  email: 'info@hubinternational.com',
+  phone: '212-338-2000',
+  reviewCopy: 'HUB International has covered our commercial insurance and has provided us with fast and efficient service.',
+  aboutCopy: 'At HUB International, we understand that to your business, the bottom line is the bottom line. That is why we do all we can to help companies of all sizes, as well as the successful individuals who manage them, reduce the real cost of both their personal and commercial insurance. Our approach looks beyond the premium to help solve your critical risk challenges, control losses and manage your claims so you ultimately spend less protecting your assets and your business. We are one of the largest national insurance brokers and a leading provider of risk management services and employee benefits.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=james_hutchinson'
+};
+
+export const HUB_INTERNATIONAL = {
+  name: 'HUB International',
+  location: 'New York, NY',
+  website: 'https://www.hubinternational.com/',
+  about: 'https://www.hubinternational.com/products/business-insurance/',  email: 'info@hubinternational.com',
+  phone: '212-338-2000',
+  reviewCopy: 'HUB International has covered our commercial insurance and has provided us with fast and efficient service.',
+  aboutCopy: 'At HUB International, we understand that to your business, the bottom line is the bottom line. That is why we do all we can to help companies of all sizes, as well as the successful individuals who manage them, reduce the real cost of both their personal and commercial insurance. Our approach looks beyond the premium to help solve your critical risk challenges, control losses and manage your claims so you ultimately spend less protecting your assets and your business. We are one of the largest national insurance brokers and a leading provider of risk management services and employee benefits.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=paul_collins'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -249,5 +272,7 @@ export const agencies = {
   ric: RIC_INSURANCE,
   schmutter: SCHMUTTER,
   usi: USI,
-  afi: AFI
+  afi: AFI,
+  hub:HUB_INTERNATIONAL_NE_LIMITED,
+  hub_intl: HUB_INTERNATIONAL
 };
