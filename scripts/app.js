@@ -63,7 +63,7 @@ const configParams = () => {
   }
 
   if(classcode === 'restaurant') {
-    $('buttonLink').setAttribute('href', agencies[agency].buttonLink + `?classcode=restaurant`);
+    $('buttonLink').setAttribute('href', agencies[agency].buttonLink + `&classcode=restaurant`);
   }
 };
 
