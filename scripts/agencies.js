@@ -253,6 +253,18 @@ export const HUB_INTERNATIONAL = {
   buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=paul_collins'
 };
 
+export const MT_BANK = {
+  name: 'M&T Bank',
+  location: 'Buffalo, NY',
+  website: 'https://www.mtb.com/home-page',
+  about: 'https://www.mtb.com/home-page',  
+  email: 'info@mtb.com',
+  phone: '800-724-2440',
+  reviewCopy: 'M&T Bank has covered our commercial insurance and provided us with fast and efficient service.',
+  aboutCopy: 'At M&T Bank, we understand that to your business, the bottom line is the bottom line. That is why we do all we can to help companies of all sizes, as well as the successful individuals who manage them, reduce the real cost of both their personal and commercial insurance.',
+  buttonLink: 'https://georgehastings.github.io/insurance_flow/?agent=peggy_kingsley'
+};
+
 export const agencies = {
   bme: BROWN_MOORE_ENDLER,
   attune: ATTUNE,
@@ -274,5 +286,6 @@ export const agencies = {
   usi: USI,
   afi: AFI,
   hub:HUB_INTERNATIONAL_NE_LIMITED,
-  hub_intl: HUB_INTERNATIONAL
+  hub_intl: HUB_INTERNATIONAL,
+  mt_bank: MT_BANK
 };
